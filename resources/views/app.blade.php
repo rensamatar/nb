@@ -6,10 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="{{ asset('/css/output/style.css') }}" rel="stylesheet">
-
-	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href="{{ elixir('css/styles.css') }}" rel="stylesheet">
+	<script src="{{ asset('js/vendor/modernizr.js') }}"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,6 +54,6 @@
 	@yield('content')
 
 	<!-- Scripts -->
-	<script src="{{ asset('/js/output/scripts.js') }}"></script>
+	<script src="{{ elixir('js/scripts.js') }}"></script>
 </body>
 </html>

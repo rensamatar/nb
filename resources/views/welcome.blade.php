@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href='http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	<link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+	<link href="{{ elixir('css/styles.css') }}" rel="stylesheet">
 	<!-- Scripts -->
 	<script src="{{ asset('js/vendor/modernizr.js') }}"></script>
   	
@@ -120,6 +120,6 @@
 	<div class="cd-overlay"><!-- shadow layer visible when navigation is visible --></div>
 	
 
-	<script src="{{ asset('js/scripts.js') }}"></script> <!-- Resource jQuery -->
+	<script src="{{ elixir('js/scripts.js') }}"></script> <!-- Resource jQuery -->
 </body>
 </html>
