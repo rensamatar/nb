@@ -1,25 +1,16 @@
-// Variable settings for /addons/prefixer.scss
-$prefix-for-webkit:    true !default;
-$prefix-for-mozilla:   true !default;
-$prefix-for-microsoft: true !default;
-$prefix-for-opera:     true !default;
-$prefix-for-spec:      true !default; // required for keyframe mixin
-
 // colors
-
-$color-1: #9e87ce; // East Side
-$color-2: #5c4b51; // Don Juan
-$color-3: #e0cf75; // Chenin
-$color-4: #f5b65a; // Casablanca
-$color-5: #f25f5c; // Carnation
-$color-6: #8abeb2; // Gulf Stream
-$color-7: #ffffff; // White
+$color-1: #2c343b; // 
+$color-2: #d44457; //
+$color-3: #ffffff; // White
 
 // fonts 
-
-$primary-font: 'Open Sans', sans-serif;
-$secondary-font: 'Lora', serif;
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Merriweather', serif;
 
 // animation
+$animation-duration: 0.7s;
 
-$animation-duration: 0.4s;
+// intro height
+$intro-height-S: 360px;
+$intro-height-M: 500px;
+$intro-height-L: 680px;

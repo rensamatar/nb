@@ -21,7 +21,7 @@ require('laravel-elixir-sass-compass');
 
 var destination = {
     'base': 'resources/assets/',
-    'script': 'resources/assets/js/',
+    'script': 'resources/assets/js/vendor/',
     'style': 'resources/assets/sass/'
 }
 
@@ -29,20 +29,17 @@ elixir.extend('sourcemaps', false);
 
 elixir(function(mix) {
     mix.copy(paths.jquery + '/dist/jquery.js', destination.script + 'jquery.js')
+    .copy(destination.script + 'jquery.js', 'public/js/vendor/jquery.js')
     .copy(paths.bootstrap + 'stylesheets', destination.style + 'bootstrap')
     .copy(paths.bootstrap + 'javascripts/bootstrap.min.js', destination.script + 'bootstrap.js')
+    .copy(destination.script + 'bootstrap.js', 'public/js/vendor/bootstrap.js')
+    .copy(destination.script + 'modernizr.js', 'public/js/vendor/modernizr.js')
     .copy(paths.bootstrap + 'fonts', 'public/fonts')
     .copy(paths.awesome + 'scss', destination.style + 'fontawesome')
     .copy(paths.awesome + 'fonts', 'public/fonts')
-    .copy(destination.script + 'vendor/modernizr.js', 'public/js/vendor/modernizr.js')
     .copy(paths.animate + 'animate.css', 'public/css/vendor/animate.css');
 
-    mix.scripts(
-        [
-        'js/jquery.js',
-        'js/bootstrap.js',
-        'js/main.js'
-        ], 'public/js/scripts.js', 'resources/assets');
+    mix.scripts(['js/main.js'], 'public/js/main.js', 'resources/assets');
 
     mix.compass('styles.scss', 'public/css',{
         style: 'compressed',
@@ -51,7 +48,7 @@ elixir(function(mix) {
         comments: true
     });
 
-    mix.version(['css/styles.css', 'js/scripts.js']);
+    mix.version(['css/styles.css', 'js/main.js']);
 
 });
 
