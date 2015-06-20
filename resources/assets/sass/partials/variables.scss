@@ -3,6 +3,13 @@ $color-1: #2c343b; //
 $color-2: #d44457; //
 $color-3: #ffffff; // White
 
+$color-4: #2b334f; // Pickled Bluewood
+$color-5: #2e5367; // San Juan
+$color-6: #267481; // Lochinvar
+$color-7: #fcb052; // Texas Rose
+$color-8: #f06a59; // Burnt Sienna
+$color-9: #ffffff; // White
+
 // fonts 
 $primary-font: 'Roboto', sans-serif;
 $secondary-font: 'Merriweather', serif;
@@ -14,3 +21,7 @@ $animation-duration: 0.7s;
 $intro-height-S: 360px;
 $intro-height-M: 500px;
 $intro-height-L: 680px;
+
+// z-index
+$main-elements: main-content, navigation;
+$bg-elements: fixed-bg, scrolling-bg;

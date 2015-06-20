@@ -15,6 +15,7 @@
 
 		@include('layouts.nav')
 		<script src="{{ asset('js/vendor/jquery.js') }}"></script>
+		<script src="{{ asset('js/vendor/onepage-scroll.js') }}"></script>
 		<script src="{{ elixir('js/main.js') }}"></script>
 
 		@yield('script')

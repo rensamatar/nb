@@ -16,7 +16,8 @@ require('laravel-elixir-sass-compass');
     'jquery': './vendor/bower_components/jquery/',
     'bootstrap': './vendor/bower_components/bootstrap-sass-official/assets/',
     'awesome': './vendor/bower_components/fontawesome/',
-    'animate': './vendor/bower_components/animate-css/'
+    'animate': './vendor/bower_components/animate-css/',
+    'onepage': './vendor/bower_components/onepage-scroll/'
 }
 
 var destination = {
@@ -37,7 +38,9 @@ elixir(function(mix) {
     .copy(paths.bootstrap + 'fonts', 'public/fonts')
     .copy(paths.awesome + 'scss', destination.style + 'fontawesome')
     .copy(paths.awesome + 'fonts', 'public/fonts')
-    .copy(paths.animate + 'animate.css', 'public/css/vendor/animate.css');
+    .copy(paths.animate + 'animate.css', 'public/css/vendor/animate.css')
+    .copy(paths.onepage + 'jquery.onepage-scroll.min.js', destination.script + 'onepage-scroll.js')
+    .copy(destination.script + 'onepage-scroll.js', 'public/js/vendor/onepage-scroll.js');
 
     mix.scripts(['js/main.js'], 'public/js/main.js', 'resources/assets');
 

@@ -12,11 +12,11 @@
 		{{-- <h2>Navigation</h2> --}}
 			<nav>
 				<ul class="cd-primary-nav">
-					<li><a href="#0" class="selected">Intro</a></li>
-					<li><a href="#0">About</a></li>
-					<li><a href="#0">Activities</a></li>
-					<li><a href="#0">Careers</a></li>
-					<li><a href="#0">Contact</a></li>
+					<li><a href="/" class="selected">Intro</a></li>
+					<li><a href="{{ URL::to('about') }}">About</a></li>
+					<li><a href="{{ URL::to('about') }}">Activities</a></li>
+					<li><a href="{{ URL::to('career') }}">Careers</a></li>
+					<li><a href="{{ URL::to('about') }}">Contact</a></li>
 				</ul>
 			</nav>
 		</div>

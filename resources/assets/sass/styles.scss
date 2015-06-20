@@ -32,12 +32,15 @@ body {
 		family: $primary-font;
 	}
 	color: $color-1;
-	background-color: $color-3;
+	background-color: shade($color-4, 20%);
+	@include font-smoothing;
+
 }
 
 body, html {
 	/* prevent horizontal scrolling */
 	overflow-x: hidden;
+	@include transition(400ms);
 }
 
 a {
@@ -384,170 +387,194 @@ main {
 }
 
 /* -------------------------------- 
-Slider
+Index scrolling style : onepage
 -------------------------------- */
 
-.cd-hero {
-	position: relative;
-	@include font-smoothing;
-}
-
-.cd-hero-slider {
-	position: relative;
-	height: $intro-height-S;
-	overflow: hidden;
-
-	.cd-full-width {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		left: 0;
-		top: 0;
-		/* this padding is used to align the text */
-		padding-top: 100px;
+.onepage-main {
+	section {
 		text-align: center;
-		
-		/* Force Hardware Acceleration in WebKit */
+		font-family: $primary-font;
+		@include font-smoothing;
 		@include backface-visibility(hidden);
 		@include transform(translateZ(0));
-
+		display: block;
 		background-position: center center;
-		background-size: cover;
 		background-repeat: no-repeat;
-		background-color: $color-1;
-	 	background-image: url(../../img/img.jpg);
+		background-size: cover;
+
+		&:nth-child(1) { background-image: url(../../img/img.jpg); }
+		&:nth-child(2) { background-image: url(../../img/img-1.jpg); }
+		&:nth-child(3) { background-image: url(../../img/img-2.jpg); }
+		&:nth-child(4) { background-image: url(../../img/img-3.jpg); }
 	}
 
-	.cd-img-container {
-		/* hide image on mobile device */
-		display: none;
-
-		img {
-			position: absolute;
-			@include center;
-		}
-	}
-
-	.cd-bg-video-wrapper {
-		/* hide video on mobile device */
-		display: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-
-		video {
-			/* you won't see this element in the html, but it will be injected using js */
-			display: block;
-			min-height: 100%;
-			min-width: 100%;
-			max-width: none;
-			height: auto;
-			width: auto;
-			position: absolute;
-			@include center;
-		}
-	}
-
-	h2, p {
-		text-shadow: 0 1px 3px rgba(#000, .1);
-		line-height: 1.2;
-		margin: 0 auto 14px;
-		color: $color-3;
-		width: 90%;
-		max-width: 400px;
-	}
-
-	h2 {
-		font-size: 2.4rem;
-	}
-
-	p {
-		font-size: 1.4rem;
-		line-height: 1.4;
-	}
-
-	.cd-btn {
-		display: inline-block;
-		padding: 1.2em 1.4em;
-		margin-top: .8em;
-		background-color: rgba($color-2, .9);
-		font-size: 1.3rem;
-		font-weight: 700;
-		letter-spacing: 1px;
-		color: $color-3;
-		text-transform: uppercase;
-		box-shadow: 0 3px 6px rgba(#000, .1);
-		@include transition(background-color .2s);
-
-		&.secondary {
-			background-color: rgba(darken($color-1, 10%), .8);
-		}
-
-		&:nth-of-type(2) {
-			margin-left: 1em;
-		}
-
-		.no-touch &:hover {
-			background-color: $color-2;
-		}
-
-		.no-touch &.secondary:hover {
-			background-color: darken($color-1, 10%);
-		}
-	}
-
-	@include MQ(M) {
-		height: $intro-height-M;
-
-		.cd-full-width {
-			padding-top: 150px;
-		}
-
-		.cd-bg-video-wrapper {
-			display: block;
-		}
-
-		.cd-img-container {
-			display: block;
-		}
+	.hero {
 
 		h2, p {
-			max-width: 520px;
+			text-shadow: 0 1px 3px rgba(#000, .1);
+			line-height: 1.2;
+			margin: 0 auto 14px;
+			color: $color-3;
+			width: 90%;
+			max-width: 400px;
 		}
 
 		h2 {
-			font-size: 2.4em;
-			font-weight: 300;
-		}
-
-		.cd-btn {
-			font-size: 1.4rem;
-		}
-	}
-
-	@include MQ(L) {
-		height: $intro-height-L;
-
-		.cd-full-width {
-			padding-top: 220px;
-		}
-
-		h2, p {
-			margin-bottom: 20px;
-		}
-
-		h2 {
-			font-size: 3.2em;
+			font-size: 2.4rem;
 		}
 
 		p {
-			font-size: 1.6rem;
+			font-size: 1.4rem;
+			line-height: 1.4;
 		}
+
+		.cd-btn {
+			display: inline-block;
+			padding: 1.2em 1.4em;
+			margin-top: .8em;
+			background-color: rgba($color-2, .9);
+			font-size: 1.3rem;
+			font-weight: 700;
+			letter-spacing: 1px;
+			color: $color-3;
+			text-transform: uppercase;
+			box-shadow: 0 3px 6px rgba(#000, .1);
+			@include transition(background-color .2s);
+
+			&.secondary {
+				background-color: rgba(darken($color-1, 10%), .8);
+			}
+
+			&:nth-of-type(2) {
+				margin-left: 1em;
+			}
+
+			.no-touch &:hover {
+				background-color: $color-2;
+			}
+
+			.no-touch &.secondary:hover {
+				background-color: darken($color-1, 10%);
+			}
+		}
+
+		@include MQ(M) {
+			padding-top: 150px;
+
+			h2, p {
+				max-width: 520px;
+			}
+
+			h2 {
+				font-size: 2.4em;
+				font-weight: 300;
+			}
+
+			.cd-btn {
+				font-size: 1.4rem;
+			}
+		}
+
+		@include MQ(L) {
+			padding-top: 220px;
+
+			h2, p {
+				margin-bottom: 20px;
+			}
+
+			h2 {
+				font-size: 3.2em;
+			}
+
+			p {
+				font-size: 2.4rem;
+			}
+		}
+
 	}
 
+}
+
+body, .onepage-wrapper, html {
+	display: block;
+	position: static;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.onepage-wrapper {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: relative;
+	padding: 0;
+	-webkit-transform-style: preserve-3d;
+
+	.section {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.onepage-pagination {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	z-index: 5;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: -48px;
+	li {
+		padding: 0;
+		text-align: center;
+		a {
+			padding: 10px;
+			width: 4px;
+			height: 4px;
+			display: block;
+		}
+		a:before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			background: $color-3;
+			@include border-radius(10px);
+		}
+		a.active:before {
+			width: 10px;
+			height: 10px;
+			background: $color-3;
+			border: 1px solid $color-3;
+			margin-top: -4px;
+			left: 8px;
+		}
+	}
+}
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+	overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+	position: relative !important;
+	top: auto !important;
+}
+.disabled-onepage-scroll .onepage-wrapper {
+	-webkit-transform: none !important;
+	-moz-transform: none !important;
+	transform: none !important;
+	-ms-transform: none !important;
+	min-height: 100%;
+}
+
+.disabled-onepage-scroll .onepage-pagination {
+	display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+	position: inherit;
 }
 
