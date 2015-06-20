@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['firstname', 'lastname', 'email', 'password', 'gravatar', 'last_login'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +30,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+	public function nabunActivity()
+	{
+		return $this->belongTos('Activity');
+	}
+
+	public function nabunCareer()
+	{
+		return $this->belongTos('Career');
+	}
 
 }

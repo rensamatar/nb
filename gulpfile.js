@@ -59,8 +59,15 @@ elixir(function(mix) {
 // Admin
 elixir(function(mix) {
     mix.copy(paths.adminLTE + '/build/less', destination.base + 'less/admin-lte')
-    .copy(paths.adminLTE + '/build/bootstrap-less', destination.base + 'less/bootstrap-less');
+    .copy(paths.adminLTE + '/build/bootstrap-less', destination.base + 'less/bootstrap-less')
+    .copy(paths.adminLTE + 'plugins/iCheck/square/blue.css', 'public/plugins/iCheck/icheck.css')
+    .copy(paths.adminLTE + 'plugins/iCheck/square/blue.png', 'public/plugins/iCheck/blue.png')
+    .copy(paths.adminLTE + 'plugins/iCheck/square/blue@2x.png', 'public/plugins/iCheck/blue@2x.png1')
+    .copy(paths.adminLTE + 'plugins/iCheck/icheck.min.js', 'public/plugins/iCheck/icheck.js')
+    .copy(paths.adminLTE + 'dist/js/app.min.js', 'public/js/vendor/admin.js')
+    .copy(paths.adminLTE + 'dist/img', 'public/img/admin');
 
-    mix.less(['admin-lte/AdminLTE.less'], 'public/css', 'resources/assets');
+    mix.less(['admin-lte/AdminLTE.less', 'admin-lte/skins/_all-skins.less'], 'public/css', 'resources/assets');
+    mix.sass(['bootstrap.scss'], 'public/css', 'resources/assets');
 });
 

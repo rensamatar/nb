@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<head>
+	<meta charset="UTF-8">
+	<title>Nabun Upgrade | Dashboard</title>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-	<link href="{{ elixir('css/styles.css') }}" rel="stylesheet">
-	<script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('css/_all-skins.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('plugins/iCheck/icheck.css') }}" rel="stylesheet" type="text/css" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
-		<div class="container">
+
+	<body class="skin-purple sidebar-mini">
+    	<div class="wrapper">
+    		@include('admin.layouts.header')
+    		@include('admin.layouts.aside')
 			@yield('content')
 		</div>
 
 		@include('errors.notification')
-		<!-- Scripts -->
-		<script src="{{ elixir('js/scripts.js') }}"></script>
+
+		<script src="{{ asset('js/vendor/jquery.js') }}"></script>
+		<script src="{{ asset('js/vendor/bootstrap.js') }}"></script>
+		<script src="{{ asset('js/vendor/admin.js') }}"></script>
+		
+		@yield('script')
 	</body>
-	</html>
+</html>

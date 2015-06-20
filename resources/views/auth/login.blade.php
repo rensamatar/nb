@@ -1,61 +1,75 @@
-@extends('app')
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Nabun Upgrade | Dashboard</title>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	<link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('plugins/iCheck/icheck.css') }}" rel="stylesheet" type="text/css" />
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+<body class="login-page">
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="{{ url('home') }}"><b>Nabun</b>Upgrade</a>
+		</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+		<div class="login-box-body">
+			<p class="login-box-msg">Sign in to start your session</p>
+			{!! Form::open(array('url' => 'auth/login')) !!}
+    			<div class="form-group has-feedback {!! $errors->first('email', 'has-error') !!}">
+    				{!! Form::email('email', Input::old('email'), array('class' => 'form-control', 'placeholder' => 'E-mail')) !!}
+    				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    				<p>{!! $errors->first('email', '<span class="help-block">:message</span>') !!}</p>
+    			</div>
+    			<div class="form-group has-feedback {!! $errors->first('password', 'has-error') !!}">
+    				{!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
+    				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    				<p>{!! $errors->first('password', '<span class="help-block">:message</span>') !!}</p>
+    			</div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
+    			<div class="row">
+    				<div class="col-xs-8">    
+    					<div class="checkbox icheck">
+    						<label>
+    							<input name="remember" value="1" type="checkbox"> Remember Me
+    						</label>
+    					</div>
+    				</div>
+    				<div class="col-xs-4">
+    					{!! Form::button('Sign In', array('type' => 'submit', 'class' => 'btn btn-primary btn-block btn-flat')) !!}
+    				</div>
+    			</div>
+    			{!! Form::close() !!}
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
+			<a href="{{ url('/password/email') }}">I forgot my password</a><br>
+			<a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
 		</div>
 	</div>
-</div>
-@endsection
+
+	<script src="{{ asset('js/vendor/jquery.js') }}"></script>
+	<script src="{{ asset('js/vendor/bootstrap.js') }}"></script>
+	<script src="{{ asset('plugins/iCheck/icheck.js') }}"></script>
+	<script type="text/javascript">
+ 		$(function () {
+        	$('input').iCheck({
+          		checkboxClass: 'icheckbox_square-blue',
+          		radioClass: 'iradio_square-blue',
+          		increaseArea: '20%' // optional
+        	});
+      	});
+	</script>
+
+</body>
+</html>
