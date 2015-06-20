@@ -17,7 +17,8 @@ require('laravel-elixir-sass-compass');
     'bootstrap': './vendor/bower_components/bootstrap-sass-official/assets/',
     'awesome': './vendor/bower_components/fontawesome/',
     'animate': './vendor/bower_components/animate-css/',
-    'onepage': './vendor/bower_components/onepage-scroll/'
+    'onepage': './vendor/bower_components/onepage-scroll/',
+    'adminLTE': './vendor/bower_components/admin-lte/'
 }
 
 var destination = {
@@ -53,5 +54,13 @@ elixir(function(mix) {
 
     mix.version(['css/styles.css', 'js/main.js']);
 
+});
+
+// Admin
+elixir(function(mix) {
+    mix.copy(paths.adminLTE + '/build/less', destination.base + 'less/admin-lte')
+    .copy(paths.adminLTE + '/build/bootstrap-less', destination.base + 'less/bootstrap-less');
+
+    mix.less(['admin-lte/AdminLTE.less'], 'public/css', 'resources/assets');
 });
 

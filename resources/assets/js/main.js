@@ -9,12 +9,7 @@
 
 jQuery(document).ready(function($) {
 
-	var contentSections = $('.cd-section'),
-		navigationItems = $('.onepage-pagination a');
-
-	updateNavigation();
 	$(window).resize(function() {
-		updateNavigation();
 		$('.onepage-main .item').heightFull();
 	});
 
@@ -29,19 +24,6 @@ jQuery(document).ready(function($) {
 		loop: false,  
 		responsiveFallback: 600
 	});
-
-
-	function updateNavigation() {
-		contentSections.each(function() {
-			$this = $(this);
-			var activeSection = $('.onepage-pagination a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-			if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
-				navigationItems.eq(activeSection).addClass('is-selected');
-			}else {
-				navigationItems.eq(activeSection).removeClass('is-selected');
-			}
-		});
-	}
 
 	//------- Navigation Menu ---------
 

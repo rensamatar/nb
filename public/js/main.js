@@ -11,8 +11,6 @@
 
 jQuery(document).ready(function ($) {
 
-	$('.onepage-main .item').heightFull();
-
 	$(window).resize(function () {
 		$('.onepage-main .item').heightFull();
 	});
