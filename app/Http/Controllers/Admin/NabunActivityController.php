@@ -6,7 +6,7 @@ use App\Http\Requests\ActivityRequest;
 use App\Http\Controllers\Controller as Controller;
 
 
-class ActivityController extends Controller {
+class NabunActivityController extends Controller {
 
 	public function index()
 	{
@@ -31,7 +31,7 @@ class ActivityController extends Controller {
 	{
 		Activity::create($request->all());
 
-		return redirect('activities');
+		return redirect('activity');
 	}
 
 	public function edit($id)
@@ -47,7 +47,7 @@ class ActivityController extends Controller {
 
 		$activity->update($request->all());
 
-		return redirect('activities');
+		return redirect('activity');
 	}
 
 }

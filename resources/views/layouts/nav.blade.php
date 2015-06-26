@@ -9,14 +9,13 @@
 <div id="cd-nav" class="cd-nav">
 	<div class="cd-navigation-wrapper">
 		<div class="cd-half-block">
-		{{-- <h2>Navigation</h2> --}}
 			<nav>
 				<ul class="cd-primary-nav">
-					<li><a href="/" class="selected">Intro</a></li>
-					<li><a href="{{ URL::to('about') }}">About</a></li>
-					<li><a href="{{ URL::to('about') }}">Activities</a></li>
-					<li><a href="{{ URL::to('career') }}">Careers</a></li>
-					<li><a href="{{ URL::to('about') }}">Contact</a></li>
+					<li><a href="/" {!! Request::is('/') ? 'class="selected"' : '' !!}>Intro</a></li>
+					<li><a href="{!! url('about') !!}" {!! Request::is('about') ? 'class="selected"' : '' !!}>About</a></li>
+					<li><a href="{!! url('activities') !!}" {!! Request::is('activities') ? 'class="selected"' : '' !!} {!! Request::is('activities/*') ? 'class="selected"' : '' !!}>Activities</a></li>
+					<li><a href="{!! url('careers') !!}" {!! Request::is('careers') ? 'class="selected"' : '' !!} {!! Request::is('careers/*') ? 'class="selected"' : '' !!}>Careers</a></li>
+					<li><a href="{!! url('contact') !!}" {!! Request::is('contact') ? 'class="selected"' : '' !!}>Contact</a></li>
 				</ul>
 			</nav>
 		</div>

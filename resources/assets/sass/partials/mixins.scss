@@ -36,3 +36,76 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
+
+// mouse animated
+@mixin mouse-animate {
+  @-webkit-keyframes ani-mouse {
+    0% {
+      top: 29%;
+      opacity: 1;
+    }
+    15% {
+      top: 50%;
+      opacity: 1;
+    }
+    40% {
+      top: 50%;
+      opacity: 0;
+    }
+    45% {
+      top: 29%;
+      opacity: 0;
+    }
+    46% {
+      top: 29%;
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes ani-mouse {
+    0% {
+      top: 29%;
+      opacity: 1;
+    }
+    15% {
+      top: 50%;
+      opacity: 1;
+    }
+    40% {
+      top: 50%;
+      opacity: 0;
+    }
+    45% {
+      top: 29%;
+      opacity: 0;
+    }
+    46% {
+      top: 29%;
+      opacity: 1;
+    }
+  }
+  @keyframes ani-mouse {
+    0% {
+      top: 29%;
+      opacity: 1;
+    }
+    15% {
+      top: 50%;
+      opacity: 1;
+    }
+    40% {
+      top: 50%;
+      opacity: 0;
+    }
+    45% {
+      top: 29%;
+      opacity: 0;
+    }
+    46% {
+      top: 29%;
+      opacity: 1;
+    }
+  }
+  -webkit-animation: ani-mouse 2s linear infinite;
+  -moz-animation: ani-mouse 2s linear infinite;
+  animation: ani-mouse 2s linear infinite;
+}

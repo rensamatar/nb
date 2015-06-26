@@ -1,0 +1,82 @@
+/* -------------------------------- 
+Client : onepage
+-------------------------------- */
+.client {
+	padding-top: 100px;
+	h2, p {
+		text-shadow: 0 1px 3px rgba(#000, .1);
+		line-height: 1.2;
+		margin: 0 auto 14px;
+		color: lighten($color-0, 10%);
+		width: 90%;
+		max-width: 400px;
+	}
+
+	h2 {
+		font-size: 2.4rem;
+	}
+
+	p {
+		font-size: 1.4rem;
+		line-height: 1.4;
+	}
+
+	.client-wrap {
+		position: relative;
+		padding-top: 40px;
+		li {
+			position: relative;
+			display: inline-block;
+			margin: 0% 3%;
+			width: 11%;
+			height: auto;
+			overflow: hidden;
+			padding-bottom: 30px;
+
+			.res-img {
+				width: auto\9;
+				height: auto;
+				max-width: 100%;
+				min-width: 100%;
+				vertical-align: middle;
+				border: 0;
+				outline: none;
+				-ms-interpolation-mode: bicubic;
+			}
+		}
+	}
+}
+
+@include MQ(M) {
+	.client {
+		padding-top: 80px;
+
+		h2, p {
+			max-width: 520px;
+		}
+
+		h2 {
+			font-size: 2.4em;
+			font-weight: 300;
+		}
+	}
+}
+
+@include MQ(L) {
+	.client {
+		padding-top: 70px;
+
+		h2, p {
+			margin-bottom: 20px;
+		}
+
+		h2 {
+			font-size: 3.2em;
+		}
+
+		p {
+			font-size: 2.4rem;
+		}
+	}
+}
+

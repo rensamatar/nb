@@ -38,9 +38,9 @@ class WelcomeController extends Controller {
 		return view('pages.about');
 	}
 
-	public function career()
+	public function clients()
 	{
-		return view('pages.career');
+		return view('pages.client');
 	}
 
 }

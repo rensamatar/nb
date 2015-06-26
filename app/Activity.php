@@ -5,6 +5,8 @@ use Carbon\Carbon;
 
 class Activity extends Model {
 
+	protected $table = 'nabun_activity';
+
 	protected $fillable = ['title', 'body', 'published_date'];
 
 	public function scopePublished($query)

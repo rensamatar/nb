@@ -1,0 +1,87 @@
+/* -------------------------------- 
+Footer
+-------------------------------- */
+.footer {
+	background-color: $color-1; 
+	padding: 13px 0; 
+	a { 
+		color: $color-3; 
+	}
+	p { 
+		color: $color-3; 
+		line-height: 22px;
+	}
+	ul.legals { 
+		list-style: none; 
+		color: $color-3; 
+		line-height: 22px; 
+		li { 
+			display: inline-block; 
+			margin-right: 10px;
+			&::after { 
+				content: " "; 
+			}
+			&:last-child::after { 
+				content: ""; 
+			}
+		}
+	}
+	.legals { text-align: right; }
+	.credit { text-align: left; }
+}
+
+// address
+.address {
+	padding: 70px 0;
+	.address-wrapper {
+		margin: 50px 0;
+		h5 {
+			color: $color-0;
+			font-family: $primary-font;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+		}
+		.footer-logo {
+			width: 80%;
+			margin: 2em 3em;
+			border: 0;
+		}
+		li {
+			text-decoration: none;
+			margin: 15px 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			a {
+				color: $color-0;
+				&:hover,
+				&:focus {
+					color: $color-1;
+				}
+			}
+		}
+		p {
+			@include font-smoothing;
+			@include font-size(22px);
+			margin: 0 0 10px 0;
+			.contact-btn { 
+				margin-top: 10px;
+				display: inline-block; 
+				padding: 6px 18px; 
+				color: $color-0; 
+				border: solid 1px $color-0; 
+				text-transform: uppercase; 
+				font-weight: 400;
+				text-decoration: none; 
+				letter-spacing: 1px; 
+			}
+			.contact-btn:hover,
+			.contact-btn:focus { 
+				color: $color-3; 
+				border: solid 1px $color-1;
+				background-color: $color-1;
+			}
+		}
+	}
+}
+

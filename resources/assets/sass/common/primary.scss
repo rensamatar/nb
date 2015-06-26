@@ -1,0 +1,57 @@
+/* -------------------------------- 
+Primary style
+-------------------------------- */
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+html {
+	font-size: 62.5%;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+	* {
+		@include font-smoothing;
+	}
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $primary-font;
+	}
+	color: $color-1;
+	background-color: shade($color-4, 20%);
+	@include font-smoothing;
+
+}
+
+body, html {
+	/* prevent horizontal scrolling */
+	overflow-x: hidden;
+	@include transition(400ms);
+}
+
+a {
+	transition: all 0.3s ease;
+	color: $color-2;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+h1 {font-size:40px;}
+h2 {font-size:36px;}
+h3 {font-size:30px;}
+h4 {font-size:24px;}
+h5 {font-size:20px;}
+h6 {font-size:18px;}
+.text-center {text-align: center;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.white-font-color {color: $color-3;}
+.panel-left{padding-left: 4.5em;}
+.panel-right {padding-right: 4.5em;}
+.padding-top {padding-top: 4.5em;}
+.padding-bottom {padding-bottom: 4.5em;} 

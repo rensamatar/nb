@@ -1,4 +1,5 @@
 // colors
+$color-0: #27272b; // black
 $color-1: #2c343b; // 
 $color-2: #d44457; //
 $color-3: #ffffff; // White
@@ -11,17 +12,16 @@ $color-8: #f06a59; // Burnt Sienna
 $color-9: #ffffff; // White
 
 // fonts 
+$heading-text: #484d53;
+$subheading-text: #6a727b;
 $primary-font: 'Roboto', sans-serif;
 $secondary-font: 'Merriweather', serif;
 
 // animation
 $animation-duration: 0.7s;
 
-// intro height
-$intro-height-S: 360px;
-$intro-height-M: 500px;
-$intro-height-L: 680px;
-
 // z-index
 $main-elements: main-content, navigation;
 $bg-elements: fixed-bg, scrolling-bg;
+
+$google-background: #e7eaf0; // google background color

@@ -1,0 +1,19 @@
+/* activity */
+.activity-hero {
+	height: 300px;
+	background: url(../../img/pattern-ui-faces.png) no-repeat;
+	background-size: cover;
+	padding-top: 60px;
+
+	.created-date {
+		color: $color-3;
+		margin-bottom: 50px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		font-size: 20px;
+	}
+}
+
+.activity {
+	
+}

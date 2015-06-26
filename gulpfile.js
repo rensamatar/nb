@@ -18,6 +18,7 @@ require('laravel-elixir-sass-compass');
     'awesome': './vendor/bower_components/fontawesome/',
     'animate': './vendor/bower_components/animate-css/',
     'onepage': './vendor/bower_components/onepage-scroll/',
+    'wow': './vendor/bower_components/wow/',
     'adminLTE': './vendor/bower_components/admin-lte/'
 }
 
@@ -41,7 +42,10 @@ elixir(function(mix) {
     .copy(paths.awesome + 'fonts', 'public/fonts')
     .copy(paths.animate + 'animate.css', 'public/css/vendor/animate.css')
     .copy(paths.onepage + 'jquery.onepage-scroll.min.js', destination.script + 'onepage-scroll.js')
-    .copy(destination.script + 'onepage-scroll.js', 'public/js/vendor/onepage-scroll.js');
+    .copy(destination.script + 'onepage-scroll.js', 'public/js/vendor/onepage-scroll.js')
+    .copy(paths.wow + 'dist/wow.min.js', destination.script + 'wow.js')
+    .copy(destination.script + 'wow.js', 'public/js/vendor/wow.js')
+    .copy(destination.script + 'google.js', 'public/js/vendor/google.js');
 
     mix.scripts(['js/main.js'], 'public/js/main.js', 'resources/assets');
 

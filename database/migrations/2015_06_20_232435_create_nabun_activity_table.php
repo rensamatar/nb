@@ -18,8 +18,8 @@ class CreateNabunActivityTable extends Migration {
 			$table->string('title');
 			$table->string('image')->nullable();
 			$table->text('body');
-			$table->timestamp('published_date');
 			$table->string('author');
+			$table->timestamp('published_date');
 			$table->timestamps();
 		});
 	}

@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Carbon\Carbon;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -40,5 +41,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->belongTos('Career');
 	}
+
+	public function getFullName()
+	{
+		return $this->firstname . ' ' . $this->lastname;
+	}
+
+	public function getRegisterDate()
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->toFormattedDateString();
+	}
+
+	public function gravatar()
+    {
+        $gravatar = md5(strtolower(trim($this->gravatar)));
+        return "//gravatar.org/avatar/{$gravatar}";
+    }
 
 }

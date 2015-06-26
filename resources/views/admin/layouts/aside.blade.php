@@ -4,10 +4,10 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-      <img src="img/admin/user2-160x160.jpg" class="img-circle" alt="User Image" />
+      <img src="{{ Auth::user()->gravatar() }}" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p>{{ Auth::user()->getFullName() }}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -24,8 +24,8 @@
           <span class="label label-primary pull-right">4</span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> All activity</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Add new activity</a></li>
+          <li><a href="{{ url('activity') }}"><i class="fa fa-circle-o"></i> All activity</a></li>
+          <li><a href="{{ url('activity/create') }}"><i class="fa fa-circle-o"></i> Add new activity</a></li>
         </ul>
       </li>     
       <li class="treeview">
