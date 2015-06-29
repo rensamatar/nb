@@ -43,3 +43,5 @@ Route::get('careers/{id}', array( 'as' => 'careers/view', 'uses' => 'NabunCareer
 
 Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
 Route::resource('activity', 'Admin\NabunActivityController');
+Route::resource('career', 'Admin\NabunCareersController');
+

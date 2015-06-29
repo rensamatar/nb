@@ -36,7 +36,8 @@
 			</div>
 			<div class="col-md-6">
 				<h2>Vision</h2>
-				<p>เป็นองค์กรชั้นนำในการบริการด้าน SUB CONTRACT อันเป็นที่ต้องการของธุรกิจ</p>
+				{{-- <p>เป็นองค์กรชั้นนำในการบริการด้าน SUB CONTRACT อันเป็นที่ต้องการของธุรกิจ</p> --}}
+				<p>To be a leading organization in terms of service through Sub-contract, that businesses needed.</p>
 			</div>
 		</div>
 	</section>
@@ -46,9 +47,12 @@
 		<div class="row hero">
 			<div class="col-md-6">
 				<h2>Mission</h2>
-				<p>มีการบริหารองค์กรที่ดีมีประสิทธิภาพ</p>
+				{{-- <p>มีการบริหารองค์กรที่ดีมีประสิทธิภาพ</p>
 				<p>มีบุคลากรที่มีความรู้และทักษะสูง</p>
-				<p>มีระบบสารสนเทศที่มีประสิทธิภาพ</p>
+				<p>มีระบบสารสนเทศที่มีประสิทธิภาพ</p> --}}
+				<p>To have a good and efficient management</p>
+				<p>To have a well-educated and skilled personnel</p>
+				<p>To have an efficient Information Technology System</p>
 			</div>
 			<div class="col-md-6">
 				{{-- some animation --}}
@@ -64,9 +68,12 @@
 			</div>
 			<div class="col-md-6">
 				<h2>Philosophy</h2>
-				<p>มีจิตสำนึกในการให้บริการ (service mind)</p>
+				{{-- <p>มีจิตสำนึกในการให้บริการ (service mind)</p>
 				<p>ยึดถือกฏหุ้นส่วนแห่งความสำเร็จ</p>
-				<p>มีจริยธรรมในการทำธุรกิจ</p>
+				<p>มีจริยธรรมในการทำธุรกิจ</p> --}}
+				<p>Service mind</p>
+				<p>Adherence to the rult of Success</p>
+				<p>Ethics in doing business</p>
 			</div>
 		</div>
 	</section>

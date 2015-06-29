@@ -34,8 +34,8 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> All career</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Add new carreer</a></li>
+          <li><a href="{{ url('career') }}"><i class="fa fa-circle-o"></i> All career</a></li>
+          <li><a href="{{ url('career/create') }}"><i class="fa fa-circle-o"></i> Add new carreer</a></li>
         </ul>
       </li>
       <li>
