@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="box">
-					{!! Form::open(array('url' => 'activity', 'files' => true)) !!}
+					{!! Form::open(array('url' => 'admin/activity', 'files' => true)) !!}
 
 					@include('admin.activity.form', array('buttonText' => 'Add activity'))
 

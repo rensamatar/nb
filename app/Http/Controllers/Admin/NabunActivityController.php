@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use App\Activity;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
 use Input;
@@ -67,7 +67,7 @@ class NabunActivityController extends Controller {
 			}
 		}
 
-		return redirect('activity');
+		return redirect('admin/activity');
 	}
 
 	public function edit($id)
@@ -103,7 +103,7 @@ class NabunActivityController extends Controller {
 			}
 		}
 
-		return redirect('activity');
+		return redirect('admin/activity');
 	}
 
 }

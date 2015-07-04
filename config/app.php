@@ -150,6 +150,7 @@ return [
 		 * Third party
 		 */
 		'Intervention\Image\ImageServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
 
 	],
 
@@ -200,7 +201,18 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
+		/*
+		 * Third party
+		 */
 		'Image' 	=> 'Intervention\Image\Facades\Image',
+		'Entrust' 	=> 'Zizaco\Entrust\EntrustFacade',
+
+		/*
+		 * Model alias
+		 */
+		'User'     => 'App\Models\User',
+		'Activity' => 'App\Models\Activity',
+		'Career'   => 'App\Models\Career',
 
 	],
 

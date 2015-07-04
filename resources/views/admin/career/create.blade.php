@@ -13,7 +13,7 @@
 					</div><!-- /.box-header -->
 
 					<div class="box-body">
-						{!! Form::open(array('url' => 'careers')) !!}
+						{!! Form::open(array('url' => 'admin/careers')) !!}
 
 						@include('admin.career.form', array('buttonText' => 'Add career'))
 

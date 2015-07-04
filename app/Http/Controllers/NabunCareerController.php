@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Career;
+use App\Models\Career;
 
 class NabunCareerController extends Controller {
 

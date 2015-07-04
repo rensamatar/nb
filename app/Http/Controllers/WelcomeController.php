@@ -42,5 +42,4 @@ class WelcomeController extends Controller {
 	{
 		return view('pages.client');
 	}
-
 }

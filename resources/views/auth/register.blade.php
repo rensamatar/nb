@@ -26,7 +26,7 @@
 
 				<div class="login-box-body">
 					<p class="login-box-msg">Register a new membership</p>
-					{!! Form::open(array('url' => 'auth/register')) !!}
+					{!! Form::open(array('url' => 'auth/signup')) !!}
 					{{-- firstname --}}
 					<div class="form-group has-feedback {!! $errors->first('firstname', 'has-error') !!}">
 						{!! Form::text('firstname', Input::old('firstname'), array('class' => 'form-control', 'placeholder' => 'Firstname')) !!}
@@ -35,7 +35,7 @@
 					</div>
 					{{-- lastname --}}
 					<div class="form-group has-feedback {!! $errors->first('lastname', 'has-error') !!}">
-						{!! Form::text('lastname', Input::old('lastname'), array('class' => 'form-control', 'placeholder' => 'Full name')) !!}
+						{!! Form::text('lastname', Input::old('lastname'), array('class' => 'form-control', 'placeholder' => 'Last name')) !!}
 						<span class="glyphicon glyphicon-user form-control-feedback"></span>
 						<p>{!! $errors->first('lastname', '<span class="help-block">:message</span>') !!}</p>
 					</div>

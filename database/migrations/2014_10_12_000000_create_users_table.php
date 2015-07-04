@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration {
 			$table->string('ip_address')->nullable();
 			$table->string('user_agent')->nullable();
 			$table->date('last_login')->nullable();
+			$table->integer('activated');
+			$table->string('activation_code')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

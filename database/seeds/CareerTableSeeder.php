@@ -3,13 +3,13 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class ActivityTableSeeder extends Seeder {
+class CareerTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('nabun_activity')->truncate();
+		DB::table('nabun_career')->truncate();
 
-		$activity = [
+		$career = [
 		[
 		'title'          => 'This is the anoucement from the Server',
 		'banner'         => '',
@@ -30,6 +30,6 @@ class ActivityTableSeeder extends Seeder {
 		],
 		];
 
-		DB::table('nabun_activity')->insert($activity);
+		DB::table('nabun_career')->insert($career);
 	}
 }

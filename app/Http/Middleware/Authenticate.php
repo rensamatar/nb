@@ -40,8 +40,12 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('auth/login');
+				return redirect()->guest('auth/signin');
 			}
+		}
+		else if ($this->auth->user()->hasRole('admin'))
+		{
+			return redirect()->route('admin.dashboard');
 		}
 
 		return $next($request);

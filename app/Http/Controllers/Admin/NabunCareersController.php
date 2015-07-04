@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use App\Career;
+use App\Models\Career;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ class NabunCareersController extends Controller {
 	{
 		Career::create($request->all());
 
-		return redirect('career');
+		return redirect('admin/career');
 	}
 
 	public function edit($id)
@@ -46,7 +46,7 @@ class NabunCareersController extends Controller {
 
 		$career->update($request->all());
 
-		return redirect('career');
+		return redirect('admin/career');
 	}
 
 }

@@ -17,25 +17,25 @@
       <li>
         <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
       </li>
-      <li class="treeview {!! (Request::is('activity*') ? 'active' : '') !!}">
+      <li class="treeview {!! (Request::is('admin/activity*') ? 'active' : '') !!}">
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Activity</span>
           <span class="label label-primary pull-right">4</span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('activity') }}"><i class="fa fa-circle-o {!! (Request::is('activity') ? 'text-red' : '') !!}"></i> All activity</a></li>
-          <li><a href="{{ url('activity/create') }}"><i class="fa fa-circle-o {!! (Request::is('activity/create') ? 'text-red' : '') !!}"></i> Add new activity</a></li>
+          <li><a href="{{ url('admin/activity') }}"><i class="fa fa-circle-o {!! (Request::is('admin/activity') ? 'text-red' : '') !!}"></i> All activity</a></li>
+          <li><a href="{{ url('admin/activity/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/activity/create') ? 'text-red' : '') !!}"></i> Add new activity</a></li>
         </ul>
       </li>     
-      <li class="treeview {!! (Request::is('career*') ? 'active' : '') !!}">
+      <li class="treeview {!! (Request::is('admin/career*') ? 'active' : '') !!}">
         <a href="#">
           <i class="fa fa-table"></i> <span>Career</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('career') }}"><i class="fa fa-circle-o {!! (Request::is('career') ? 'text-red' : '') !!}"></i> All career</a></li>
-          <li><a href="{{ url('career/create') }}"><i class="fa fa-circle-o {!! (Request::is('career/create') ? 'text-red' : '') !!}"></i> Add new carreer</a></li>
+          <li><a href="{{ url('admin/career') }}"><i class="fa fa-circle-o {!! (Request::is('admin/career') ? 'text-red' : '') !!}"></i> All career</a></li>
+          <li><a href="{{ url('admin/career/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/career/create') ? 'text-red' : '') !!}"></i> Add new carreer</a></li>
         </ul>
       </li>
       <li>
