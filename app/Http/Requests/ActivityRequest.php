@@ -24,6 +24,8 @@ class ActivityRequest extends Request {
 		return [
 			'title'          => 'required|min:3',
 			'body'           => 'required',
+			'banner'		 => '',
+			'author'         => '',
 			'published_date' => 'required|date'
 		];
 	}

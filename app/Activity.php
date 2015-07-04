@@ -19,4 +19,18 @@ class Activity extends Model {
 		$this->attributes['published_date'] = Carbon::parse($date);
 	}
 
+	public function thumbnail($default = 'no-image.jpg')
+	{   
+		$filter = 'backend';
+
+		if($this->banner == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->banner );
+		}
+	}
+
 }

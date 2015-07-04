@@ -16,10 +16,10 @@ class CreateNabunCareerTable extends Migration {
 		{
 			$table->increments('id')->unsigned();
 			$table->string('title');
-			$table->string('image')->nullable();
+			$table->string('banner')->nullable();
 			$table->text('body');
+			$table->string('author')->nullable();
 			$table->timestamp('published_date');
-			$table->string('author');
 			$table->timestamps();
 		});
 	}

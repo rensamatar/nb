@@ -2,12 +2,29 @@
 
 @section('content')
 
-<h2>Create</h2>
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>New Activity<small>create new activity</small></h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li class="active">Create</li>
+		</ol>
+	</section>
+	
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					{!! Form::open(array('url' => 'activity', 'files' => true)) !!}
 
-{!! Form::open(array('url' => 'activities')) !!}
+					@include('admin.activity.form', array('buttonText' => 'Add activity'))
 
-@include('admin.activity.form', array('buttonText' => 'Add activity'))
-
-{!! Form::close() !!}
-
+					{!! Form::close() !!}
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
 @stop

@@ -27,8 +27,6 @@
 			@yield('content')
 		</div>
 
-		@include('errors.notification')
-
 		<script src="{{ asset('js/vendor/jquery.js') }}"></script>
 		<script src="{{ asset('js/vendor/bootstrap.js') }}"></script>
 		<script src="{{ asset('js/vendor/admin.js') }}"></script>

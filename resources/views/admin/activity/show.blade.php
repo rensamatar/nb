@@ -21,6 +21,8 @@
 						<h3 class="box-title">{{ $activity->title }}</h3>
 					</div><!-- /.box-header -->
 					<div class="box-body">
+						<img src="{!! $activity->thumbnail() !!}" />
+						<br />
 						{{ $activity->body }}
 					</div>
 				</div>
