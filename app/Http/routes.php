@@ -15,12 +15,15 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'WelcomeController@index');
 Route::get('about', 'WelcomeController@about');
 Route::get('clients', 'WelcomeController@career');
-Route::get('contact', 'ContactUsController@index');
 
 Route::controllers([
 	//'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 	]);
+
+# Contact us
+Route::get('contact', array('as' => 'contact', 'uses' => 'ContactUsController@index'));
+Route::post('contact', 'ContactUsController@postIndex');
 
 # Activity
 Route::get('activities', array( 'as' => 'activities', 'uses' => 'NabunActivityController@index'));

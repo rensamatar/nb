@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="box">
-					{!! Form::model($activity, array('method' => 'PATCH', 'action' => ['Admin\ActivityController@update', $activity->id ], 'files' => true)) !!}
+					{!! Form::model($activity, array('method' => 'PATCH', 'action' => ['Admin\NabunActivityController@update', $activity->id ], 'files' => true)) !!}
 
 					@include('admin.activity.form', array('buttonText' => 'Edit activity'))
 

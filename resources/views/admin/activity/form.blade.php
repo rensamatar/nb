@@ -14,7 +14,11 @@
 	<div class="form-group {!! $errors->first('banner', 'has-error') !!}">
 		{!! Form::label('banner', 'Image : ') !!}
 		{!! Form::file('banner') !!}
+		@if($activity->banner)
+		<p class="help-block"><img src="{!! $activity->thumbnail() !!}" alt=""></p>
+		@else
 		<p class="help-block">Banner for activity</p>
+		@endif
 		{!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
 	</div>
 

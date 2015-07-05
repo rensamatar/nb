@@ -29,18 +29,26 @@
 									<th style="width: 40px">Edit</th>
 									<th style="width: 40px">Trash</th>
 								</tr>
-
+								@var $i = 1
 								@foreach ($activities as $activity)
 								<tr>
-									<td>1.</td>
+									<td>{!! $i++ !!}</td>
 									<td>
 										<a href="{{ url('admin/activity', $activity->id) }}">{{ $activity->title }}</a>
 									</td>
 									<td>
 										<p>{{ $activity->created_at->diffForHumans() }}</p>
 									</td>
-									<td><span class="badge bg-green"><i class="fa fa-pencil"></i></span></td>
-									<td><span class="badge bg-red"><i class="fa fa-trash"></i></span></td>
+									<td>
+										<a href="{!! url('admin/activity/' .$activity->id.'/edit') !!}">
+											<span class="badge bg-green"><i class="fa fa-pencil"></i></span>
+										</a>
+									</td>
+									<td>
+									<a href="{!! url('admin/activity/' .$activity->id.'/delete') !!}">
+											<span class="badge bg-red"><i class="fa fa-trash"></i></span>
+										</a>
+									</td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -48,13 +56,7 @@
 					</div><!-- /.box-body -->
 
 					<div class="box-footer clearfix">
-						<ul class="pagination pagination-sm no-margin pull-right">
-							<li><a href="#">«</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">»</a></li>
-						</ul>
+						@include('vendor.admin-pagination', ['paginator' => $activities])
 					</div>
 				</div><!-- /.box -->
 			</div>

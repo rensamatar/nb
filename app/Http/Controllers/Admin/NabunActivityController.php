@@ -25,7 +25,7 @@ class NabunActivityController extends Controller {
 
 	public function index()
 	{
-		$activities = $this->activity->latest()->published()->get();
+		$activities = $this->activity->latest()->published()->paginate(20);
 
 		return view('admin.activity.index', compact('activities'));
 	}

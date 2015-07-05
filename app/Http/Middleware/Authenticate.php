@@ -45,7 +45,7 @@ class Authenticate {
 		}
 		else if ($this->auth->user()->hasRole('admin'))
 		{
-			return redirect()->route('admin.dashboard');
+			return redirect()->route('admin/dashboard');
 		}
 
 		return $next($request);

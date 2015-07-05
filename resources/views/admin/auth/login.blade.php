@@ -26,7 +26,7 @@
 
 		<div class="login-box-body">
 			<p class="login-box-msg">Sign in to start your session</p>
-			{!! Form::open(array('url' => 'auth/signin')) !!}
+			{!! Form::open(array('url' => 'admin/signin')) !!}
     			<div class="form-group has-feedback {!! $errors->first('email', 'has-error') !!}">
     				{!! Form::email('email', Input::old('email'), array('class' => 'form-control', 'placeholder' => 'E-mail')) !!}
     				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>

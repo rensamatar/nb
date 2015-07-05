@@ -22,6 +22,7 @@
 
 	<body class="skin-purple sidebar-mini">
     	<div class="wrapper">
+    		@include('vendor.notifications')
     		@include('admin.layouts.header')
     		@include('admin.layouts.aside')
 			@yield('content')

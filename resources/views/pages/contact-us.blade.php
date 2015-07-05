@@ -29,19 +29,19 @@
 <section class="contact-form text-center">
 	<div class="container">
 		<h1>Write to us</h1>
-		<form action="#">
-			<div class="row form-wrapper">
-				<div class="col-md-5 col-md-offset-1">
-					<input type="text" name="name" value="" placeholder="Your name" required>
-					<input type="email" name="email" value="" placeholder="Your e-mail" required>
-					<input type="text" name="subject" value="" placeholder="Subject" required>
-				</div>
-				<div class="col-md-5">
-					<textarea name="message" placeholder="Your message" required></textarea>
-					<input class="pull-right" type="submit" name="submit" value="Send message">
-				</div>
+		{!! Form::open(array('url' => 'contact')) !!}
+		<div class="row form-wrapper">
+			<div class="col-md-5 col-md-offset-1">
+				{!! Form::text('name', Input::old('name'), array('placeholder' => 'Your name', 'required')) !!}
+				{!! Form::email('email', Input::old('email'), array('placeholder' => 'Your e-mail', 'required')) !!}
+				{!! Form::text('subject', Input::old('subject'), array('placeholder' => 'Subject', 'required')) !!}
 			</div>
-		</form>
+			<div class="col-md-5">
+				{!! Form::textarea('message', Input::old('message'), array('placeholder' => 'Your message', 'required')) !!}
+				{!! Form::submit('Send message', array('class' => 'pull-right')) !!}
+			</div>
+		</div>
+		{!! Form::close() !!}
 	</div>
 </section>
 

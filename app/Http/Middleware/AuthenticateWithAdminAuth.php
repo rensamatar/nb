@@ -33,7 +33,7 @@ class AuthenticateWithAdminAuth {
 			}
 			else
 			{
-				return redirect()->guest('/');
+				return redirect()->guest('/admin/dashboard');
 			}
 		}
 

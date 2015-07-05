@@ -14,7 +14,7 @@
 
 					<div class="box-body">
 
-						{!! Form::model($career, ['method' => 'PATCH', 'action' => ['Admin\CareersController@update', $carreer->id ]]) !!}
+						{!! Form::model($career, ['method' => 'PATCH', 'action' => ['Admin\NabunCareersController@update', $career->id ]]) !!}
 
 						@include('admin.career.form', array('buttonText' => 'Edit career'))
 

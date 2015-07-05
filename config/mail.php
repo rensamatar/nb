@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => 'dev.tarconcept@gmail.com', 'name' => 'Nabun Upgrade Team'],
+	'from' => ['address' => 'rensamatar@gmail.com', 'name' => 'Nabun Upgrade Team'],
 
 	/*
 	|--------------------------------------------------------------------------

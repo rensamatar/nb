@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'App\Services\Registrar'
 		);
+
+		// Define variable in blade template
+		\Blade::extend(function($value) {
+    		return preg_replace('/\@var(.+)/', '<?php ${1}; ?>', $value);
+		});
 	}
 
 }
