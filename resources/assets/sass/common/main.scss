@@ -28,7 +28,7 @@ main {
 	}
 
 	p {
-		font-family: $secondary-font;
+		font-family: $primary-font;
 		color: lighten($color-0, 20%);
 		//max-width: 450px;
 		margin: 0 auto;
@@ -46,9 +46,6 @@ main {
 			font-size: 3.6rem;
 		}
 
-		p {
-			font-size: 2rem;
-		}
 	}
 }
 

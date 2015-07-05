@@ -103,3 +103,103 @@ Normal Components
 	color: #FFF;
 	border-bottom:2px #2ECC71 solid;
 }
+
+/* Activity and Career box */
+.card {
+	border-radius: 6px;
+	position: relative;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	margin-bottom: 30px;
+}
+
+.card-plain {
+	background-color: transparent;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.card-blog .image {
+	width: 100%;
+	overflow: hidden;
+	height: 190px;
+	border-radius: 6px;
+	position: relative;
+	background-size: cover; 
+	background-position: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.card .filter {
+	-webkit-transition: all 150ms linear;
+	-moz-transition: all 150ms linear;
+	-o-transition: all 150ms linear;
+	-ms-transition: all 150ms linear;
+	transition: all 150ms linear;
+}
+
+.card .filter {
+	position: absolute;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.68);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	&:hover {
+		opacity: .7;
+	}
+}
+
+.card .filter .btn {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.card .filter .btn-simple {
+	background-color: rgba(0,0,0,0);
+	border: solid 1px #ccc;
+	font-size: 16px;
+	color: $color-3;
+}
+
+.card-blog {
+	.content {
+		padding: 15px 0 10px 0;
+	}
+	.category {
+		font-size: 14px;
+		color: #9a9a9a;
+		margin-bottom: 0;
+	}
+	.card-link {
+		color: #9a9a9a;
+	}
+	.title {
+		margin: 0 0 10px 0;
+		color: #333333;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 30px;
+		min-height: 60px;
+	}
+	.footer {
+		padding: 0;
+		background-color: transparent;
+		line-height: 30px;
+	}
+	.stats {
+		margin-right: 5px;
+		color: #9a9a9a;
+	}
+}
+
+

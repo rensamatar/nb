@@ -11,24 +11,39 @@
 	</div>
 </section>
 
-<div class="container normal">
-	@foreach($careers as $career)
+<div class="container content-body">
 	<div class="row">
-		<div class="col-sm-6">
-			<a href="{!! url('careers/'.$career->id) !!}">
-				<img src="{!! asset('img/img-07.jpg') !!}" alt="" class="img-responsive">
-			</a>
+		@foreach($careers as $career)
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="card card-blog card-plain">
+				<div class="image" style="background-image: url('{!! $career->thumbnail() !!}'); background-size: cover; background-position: 50% 50%;">
+					<a href="{!! url('careers/'.$career->id) !!}">
+						<div class="filter filter-white">
+							<button class="btn btn-neutral btn-simple">
+								<i class="fa fa-align-left"></i> Read More
+							</button>
+						</div>
+					</a>
+				</div>
+				<div class="content">
+					<p class="category">
+					<i class="fa fa-clock-o"></i> {!! $career->created_at->diffForHumans() !!}
+					<span class="pull-right">{!! $career->author !!}</span>
+					</p>
+					<a class="card-link" href="{!! url('activities/'.$career->id) !!}">
+						<h4 class="title">{!! str_limit($career->title, $limit = 100, $end = '...') !!}</h4>
+						<p>{!! str_limit($career->body, $limit = 200, $end = '...') !!}</p>
+					</a>
+					<div class="footer">
+						<div class="stats pull-right">
+							
+						</div>
+					</div>
+				</div>
+			</div> <!-- end card -->
 		</div>
-		<div class="col-sm-6">
-			<h2>
-				<a href="{!! url('careers/'.$career->id) !!}">
-				{!! str_limit($career->title, $limit = 100, $end = '...') !!}
-				</a>
-			</h2>
-			<p class="small">{!! str_limit($career->body, $limit = 200, $end = '...') !!}</p>
-		</div>
+		@endforeach
 	</div>
-	@endforeach
 </div>
 
 @include('layouts.address')

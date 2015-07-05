@@ -38,6 +38,7 @@ a {
 	&:hover,
 	&:focus {
 		text-decoration: none;
+		color: $color-2;
 	}
 }
 
@@ -51,7 +52,9 @@ h6 {font-size:18px;}
 .text-left {text-align: left;}
 .text-right {text-align: right;}
 .white-font-color {color: $color-3;}
-.panel-left{padding-left: 4.5em;}
+.panel-left {padding-left: 4.5em;}
 .panel-right {padding-right: 4.5em;}
 .padding-top {padding-top: 4.5em;}
 .padding-bottom {padding-bottom: 4.5em;} 
+
+.content-body {padding: 2em 5em;}
