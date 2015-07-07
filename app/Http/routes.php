@@ -10,16 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', 'WelcomeController@index');
-Route::get('home', 'WelcomeController@index');
-Route::get('about', 'WelcomeController@about');
-Route::get('clients', 'WelcomeController@career');
-
 Route::controllers([
 	//'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 	]);
+
+Route::get('/', 'WelcomeController@index');
+Route::get('home', 'WelcomeController@index');
+Route::get('about', 'WelcomeController@about');
+Route::get('history', 'WelcomeController@history');
+Route::get('client', 'WelcomeController@client');
 
 # Contact us
 Route::get('contact', array('as' => 'contact', 'uses' => 'ContactUsController@index'));

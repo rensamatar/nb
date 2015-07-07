@@ -13,21 +13,11 @@ class WelcomeController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
 	public function __construct()
 	{
 		$this->middleware('guest');
 	}
 
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		return view('welcome');
@@ -38,7 +28,12 @@ class WelcomeController extends Controller {
 		return view('pages.about');
 	}
 
-	public function clients()
+	public function history()
+	{
+		return view('pages.history');
+	}
+
+	public function client()
 	{
 		return view('pages.client');
 	}

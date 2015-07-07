@@ -13,6 +13,7 @@
 				<ul class="cd-primary-nav">
 					<li><a href="/" {!! Request::is('/') ? 'class="selected"' : '' !!}>Intro</a></li>
 					<li><a href="{!! url('about') !!}" {!! Request::is('about') ? 'class="selected"' : '' !!}>About</a></li>
+					<li><a href="{!! url('history') !!}" {!! Request::is('history') ? 'class="selected"' : '' !!}>History</a></li>
 					<li><a href="{!! url('activities') !!}" {!! Request::is('activities') ? 'class="selected"' : '' !!} {!! Request::is('activities/*') ? 'class="selected"' : '' !!}>Activities</a></li>
 					<li><a href="{!! url('careers') !!}" {!! Request::is('careers') ? 'class="selected"' : '' !!} {!! Request::is('careers/*') ? 'class="selected"' : '' !!}>Careers</a></li>
 					<li><a href="{!! url('contact') !!}" {!! Request::is('contact') ? 'class="selected"' : '' !!}>Contact</a></li>
