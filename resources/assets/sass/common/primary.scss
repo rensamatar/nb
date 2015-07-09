@@ -56,5 +56,14 @@ h6 {font-size:18px;}
 .panel-right {padding-right: 4.5em;}
 .padding-top {padding-top: 4.5em;}
 .padding-bottom {padding-bottom: 4.5em;} 
-
 .content-body {padding: 2em 5em;}
+.img-animate {
+	cursor: pointer;
+	display: initial;
+	@include tar();
+	&:hover {
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}

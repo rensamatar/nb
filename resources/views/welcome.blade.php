@@ -12,7 +12,7 @@
 <div class="onepage-main">
 	{{-- Intro --}}
 	<section class="item">
-		<div class="hero">
+		<div class="hero intro">
 			<h2 class="animated fadeInDown">Nabun Upgrade</h2>
 			<p class="animated fadeInUp delay-05s">การบริหารงานทรัพยากรมนุษย์เพื่อเพิ่มผลผลิต</p>
 			<div class="row">
@@ -45,81 +45,66 @@
 	{{-- Mission --}}
 	<section>
 		<div class="row hero">
-			<div class="col-md-6">
-				<h2>Mission</h2>
+			<div class="container">
+				<div class="col-md-12">
+					<h2>Mission</h2>
 				{{-- <p>มีการบริหารองค์กรที่ดีมีประสิทธิภาพ</p>
 				<p>มีบุคลากรที่มีความรู้และทักษะสูง</p>
 				<p>มีระบบสารสนเทศที่มีประสิทธิภาพ</p> --}}
-				<p>To have a good and efficient management</p>
-				<p>To have a well-educated and skilled personnel</p>
-				<p>To have an efficient Information Technology System</p>
-			</div>
-			<div class="col-md-6">
-				{{-- some animation --}}
+				<div class="row">
+					<div class="col-md-4">
+						<div class="icon"><i class="fa fa-trophy"></i></div>
+						<p>To have a good and efficient management</p>
+					</div>
+					<div class="col-md-4">
+						<div class="icon"><i class="fa fa-thumbs-o-up"></i></div>
+						<p>To have a well-educated and skilled personnel</p>
+					</div>
+					<div class="col-md-4">
+						<div class="icon"><i class="fa fa-laptop"></i></div>
+						<p>To have an efficient Information Technology System</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	{{-- Philosophy --}}
-	<section>
-		<div class="row hero">
-			<div class="col-md-6">
-				{{-- some animation --}}
-			</div>
-			<div class="col-md-6">
+{{-- Philosophy --}}
+<section>
+	<div class="row hero">
+		<div class="container">
+			<div class="col-md-12">
 				<h2>Philosophy</h2>
 				{{-- <p>มีจิตสำนึกในการให้บริการ (service mind)</p>
 				<p>ยึดถือกฏหุ้นส่วนแห่งความสำเร็จ</p>
 				<p>มีจริยธรรมในการทำธุรกิจ</p> --}}
-				<p>Service mind</p>
-				<p>Adherence to the rult of Success</p>
-				<p>Ethics in doing business</p>
-			</div>
-		</div>
-	</section>
-
-	{{-- Clients --}}
-	<section>
-		<div class="row client">
-			<div class="col-md-12">
-				<h2 class="client-title">Our Clients</h2>
-				<div class="client-wrap">
-					<ul>
-						<li><img src="{{ asset('img/clients/fujitsu.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/gm.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/emerson.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/cerebos.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/samsung.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/slab.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/srab.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/tokai.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/sji.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/takahata.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/tft.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/amaka.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/sumitomo.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/teknia.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/wellpack.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/yamahatsu.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/titan.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/dhl.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/brand.png') }}" class="res-img" alt=""></li>
-						<li><img src="{{ asset('img/clients/kobelco.png') }}" class="res-img" alt=""></li>
-					</ul>
+				<div class="col-md-4">
+					<div class="icon"><i class="fa fa-heart"></i></div>
+					<p>Service mind</p>
+				</div>
+				<div class="col-md-4">
+					<div class="icon"><i class="fa fa-leaf"></i></div>
+					<p>Adherence to the rult of Success</p>
+				</div>
+				<div class="col-md-4">
+					<div class="icon"><i class="fa fa-legal"></i></div>
+					<p>Ethics in doing business</p>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	{{-- slogan --}}
-	<section>
-		<div class="row hero">
-			<div class="col-md-12">
-				<h2>Slogan</h2>
-				<p>รู้จักปรับตัว ครอบครัวเดียวกัน มุ่งมั่นประสาน การงานทุ่มเท มีพลังสดใส รู้ในรายละเอียด แย้มใจเปิดกว้าง คล่องแคล่วว่องไว ใส่ใจบริการ</p>
-			</div>
+{{-- slogan --}}
+<section>
+	<div class="row hero">
+		<div class="col-md-12">
+			<h2>Slogan</h2>
+			<p>รู้จักปรับตัว ครอบครัวเดียวกัน มุ่งมั่นประสาน การงานทุ่มเท มีพลังสดใส รู้ในรายละเอียด แย้มใจเปิดกว้าง คล่องแคล่วว่องไว ใส่ใจบริการ</p>
 		</div>
-	</section>
+	</div>
+</section>
 </div>
 
 @stop

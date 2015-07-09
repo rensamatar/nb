@@ -2,6 +2,23 @@
 Index scrolling style : onepage
 -------------------------------- */
 .onepage-main {
+	.icon { 
+		height: 155px; 
+		width: 155px; 
+		line-height: 155px; 
+		max-width: 100%; 
+		background: transparent; 
+		@include border-radius(50%);
+		display: block; 
+		color: $color-3; 
+		font-size: 70px; 
+		text-align: center; 
+		vertical-align: middle; 
+		position: relative; 
+		margin: 0 auto 40px; 
+		border: solid 3px $color-3;
+	}
+
 	section {
 		text-align: center;
 		font-family: $primary-font;
@@ -17,12 +34,15 @@ Index scrolling style : onepage
 		&:nth-child(2) { background-image: url(../../img/img-02.jpg); }
 		&:nth-child(3) { background-image: url(../../img/img-03.jpg); }
 		&:nth-child(4) { background-image: url(../../img/img-04.jpg); }
-		&:nth-child(5) { background-color: $color-3; }
+		&:nth-child(5) { background-image: url(../../img/img-05.jpg); }
 		&:nth-child(6) { background-image: url(../../img/img-06.jpg); }
 		&:nth-child(7) { background-image: url(../../img/img-07.jpg); }
 	}
 
 	.hero {
+		&.intro {
+			padding-top: 50%;
+		}
 		padding-top: 50%;
 		h2, p {
 			text-shadow: 0 1px 3px rgba(#000, .1);
@@ -43,42 +63,42 @@ Index scrolling style : onepage
 		}
 
 		.scroll-down {
-		padding-top: 8em;
-		text-align: center;
-		display: block;
-		a {
-			font-size: 10px;
-		}
-		.mouse {
-			width: 30px;
-			height: 48px;
-			position: relative;
+			padding-top: 8em;
+			text-align: center;
 			display: block;
-			@include box-sizing(border-box);
-			margin: 0 auto 20px;
-			border: 2px solid #fff;
-			border-radius: 23px;
+			a {
+				font-size: 10px;
+			}
+			.mouse {
+				width: 30px;
+				height: 48px;
+				position: relative;
+				display: block;
+				@include box-sizing(border-box);
+				margin: 0 auto 20px;
+				border: 2px solid #fff;
+				border-radius: 23px;
+			}
+			.mouse > * {
+				font-family: 'Helvetica Neue', Helvetica, sans-serif;
+				font-size: 13px;
+				font-weight: normal;
+				line-height: 18px;
+				display: inline-block;
+				letter-spacing: 1px;
+				color: #fff;
+				position: absolute;
+				top: 29%;
+				left: 50%;
+				display: block;
+				width: 8px;
+				height: 8px;
+				margin: -4px 0 0 -4px;
+				@include mouse-animate;
+				border-radius: 50%;
+				background: #fff;
+			}
 		}
-		.mouse > * {
-			font-family: 'Helvetica Neue', Helvetica, sans-serif;
-			font-size: 13px;
-			font-weight: normal;
-			line-height: 18px;
-			display: inline-block;
-			letter-spacing: 1px;
-			color: #fff;
-			position: absolute;
-			top: 29%;
-			left: 50%;
-			display: block;
-			width: 8px;
-			height: 8px;
-			margin: -4px 0 0 -4px;
-			@include mouse-animate;
-			border-radius: 50%;
-			background: #fff;
-		}
-	}
 
 		.cd-btn {
 			display: inline-block;
@@ -112,6 +132,9 @@ Index scrolling style : onepage
 
 		@include MQ(M) {
 			padding-top: 150px;
+			&.intro {
+				padding-top: 150px;
+			}
 
 			h2, p {
 				max-width: 520px;
@@ -128,7 +151,10 @@ Index scrolling style : onepage
 		}
 
 		@include MQ(L) {
-			padding-top: 220px;
+			padding-top: 160px;
+			&.intro {
+				padding-top: 220px;
+			}
 
 			h2, p {
 				margin-bottom: 20px;

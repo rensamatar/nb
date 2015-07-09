@@ -9,7 +9,7 @@ Footer
 	}
 	p { 
 		color: $color-3; 
-		line-height: 22px;
+		line-height: 20px;
 	}
 	ul.legals { 
 		list-style: none; 
@@ -35,7 +35,7 @@ Footer
 	padding: 70px 0;
 	.address-wrapper {
 		margin: 50px 0;
-		h5 {
+		h4 {
 			color: $color-0;
 			font-family: $primary-font;
 			margin-bottom: 20px;
@@ -52,6 +52,7 @@ Footer
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			font-size: 20px;
 			a {
 				color: $color-0;
 				&:hover,
@@ -62,7 +63,7 @@ Footer
 		}
 		p {
 			@include font-smoothing;
-			@include font-size(22px);
+			font-size: 20px;
 			margin: 0 0 10px 0;
 			.contact-btn { 
 				margin-top: 10px;

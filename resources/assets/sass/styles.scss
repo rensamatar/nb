@@ -1,5 +1,4 @@
 @import '//fonts.googleapis.com/css?family=Roboto:400,300';
-@import '//fonts.googleapis.com/css?family=Merriweather:400,700';
 
 @import 'compass/css3';
 @import 'partials/reset';
@@ -7,6 +6,7 @@
 @import 'partials/mixins';
 @import 'partials/layout';
 @import 'bootstrap/_bootstrap';
+@import 'fontawesome/font-awesome';
 
 // Common
 @import 'common/primary';

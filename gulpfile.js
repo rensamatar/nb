@@ -56,7 +56,7 @@ elixir(function(mix) {
         comments: true
     });
 
-    mix.version(['css/styles.css', 'js/main.js']);
+    //mix.version(['css/styles.css', 'js/main.js']);
 
 });
 

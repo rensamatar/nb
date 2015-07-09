@@ -7,7 +7,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<h5>Site map</h5>
+				<h4>Site map</h4>
 				<ul>
 					<li><a href="{!! url('home') !!}">Intro</a></li>
 					<li><a href="{!! url('about') !!}">About</a></li>
@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h5>Get in touch</h5>
+				<h4>Get in touch</h4>
 				<p><strong>Nabun Upgrade International Co.,Ltd</strong></p>
 				<p>230/49 หมู่ 11 ตำบลทุ่งสุขลา</p>
 				<p>อำเภอศรีราชา ชลบุรี 20230</p>

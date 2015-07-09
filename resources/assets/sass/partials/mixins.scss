@@ -1,5 +1,13 @@
-// center vertically and/or horizontally an absolute positioned element
+// clearfix
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
 
+// center vertically and/or horizontally an absolute positioned element
 @mixin center($xy:xy) {
   @if $xy == xy {
     left: 50%;
@@ -21,7 +29,6 @@
 }
 
 // antialiasing mode font rendering
-
 @mixin font-smoothing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -108,4 +115,13 @@
   -webkit-animation: ani-mouse 2s linear infinite;
   -moz-animation: ani-mouse 2s linear infinite;
   animation: ani-mouse 2s linear infinite;
+}
+
+// Transition
+@mixin tar() {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }

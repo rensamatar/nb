@@ -18,22 +18,22 @@ main {
 	@include transition(transform $animation-duration);
 	@include transition-timing-function(cubic-bezier(.91,.01,.6,.99)); 
 
-	h1 {
-		text-align: center;
-	}
+	// h1 {
+	// 	text-align: center;
+	// }
 	
-	h1 {
-		font-size: 2.6rem;
-		margin-bottom: 1em;
-	}
+	// h1 {
+	// 	font-size: 2.6rem;
+	// 	margin-bottom: 1em;
+	// }
 
-	p {
-		font-family: $primary-font;
-		color: lighten($color-0, 20%);
-		//max-width: 450px;
-		margin: 0 auto;
-		line-height: 1.6;
-	}
+	// p {
+	// 	font-family: $primary-font;
+	// 	color: lighten($color-0, 20%);
+	// 	//max-width: 450px;
+	// 	margin: 0 auto;
+	// 	line-height: 1.6;
+	// }
 
 	.navigation-is-open & {
 		@include transform(translateX(100%));
@@ -42,9 +42,9 @@ main {
 	@include MQ(M) {
 		padding: 0px 0%;
 
-		h1 {
-			font-size: 3.6rem;
-		}
+		// h1 {
+		// 	font-size: 3.6rem;
+		// }
 
 	}
 }

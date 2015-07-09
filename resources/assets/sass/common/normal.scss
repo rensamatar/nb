@@ -59,11 +59,7 @@ Normal Components
 	cursor: pointer;
 	border-radius: 50%;
 	display: initial;
-	-webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
-	-ms-transition: all 0.2s ease-out;
-	-o-transition: all 0.2s ease-out;
-	transition: all 0.2s ease-out;
+	@include tar();
 }
 
 .team-member img:hover {
@@ -93,6 +89,7 @@ Normal Components
 		font-size: 32px;
 	}
 }
+
 /*pagination*/
 .pagination li a {
 	color: #FFF;
