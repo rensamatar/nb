@@ -11,6 +11,7 @@
 	<link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('css/_all-skins.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('plugins/iCheck/icheck.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('css/vendor/summernote.css') }}" rel="stylesheet" type="text/css" />
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +31,7 @@
 
 		<script src="{{ asset('js/vendor/jquery.js') }}"></script>
 		<script src="{{ asset('js/vendor/bootstrap.js') }}"></script>
+		<script src="{{ asset('js/vendor/summernote.js') }}"></script>
 		<script src="{{ asset('js/vendor/admin.js') }}"></script>
 		
 		@yield('script')

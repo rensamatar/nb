@@ -7,6 +7,6 @@ class BackendFilter implements FilterInterface
 {
     public function applyFilter(Image $image)
     {
-        return $image->fit(400);
+        return $image->fit(318, 190);
     }
 }

@@ -23,8 +23,13 @@
 
 <div class="container normal">
 	<div class="row about">
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<h2 class="heading">About The Nabun</h2>
+			<h4 class="subheading">
+				We are always happy to make valuable new contacts and are looking forward to receiving your mail or call. Even if you’re not sure we’ll be the right ones for your project. We’re always open to a chat and will be happy to help – of course also in person, wherever you are.
+			</h4>
+		</div>
+		<div class="col-md-6">
 			<div class="row">
 				<div class="col-sm-8 text-center"> 
 					<div class="row team-member text-center">
@@ -38,9 +43,6 @@
 					</div>	
 				</div>
 			</div>
-			<h4 class="subheading">
-				We are always happy to make valuable new contacts and are looking forward to receiving your mail or call. Even if you’re not sure we’ll be the right ones for your project. We’re always open to a chat and will be happy to help – of course also in person, wherever you are.
-			</h4>
 		</div>
 	</div>
 </div>
@@ -145,6 +147,7 @@
 		</div>	
 	</section>
 
+	@include('layouts.address')
 	@include('layouts.footer')
 	@stop
 

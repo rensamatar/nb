@@ -20,7 +20,22 @@
 	</div>
 </section>
 
-<div class="container">
+<div class="container normal">
+	<div class="row">
+		<div class="col-md-9 col-md-offset-1">
+			<div class="row">
+				<div class="col-md-5">
+					<div><strong>7 พฤศจิกายน 2545</strong></div>
+					<div>โดยมี ดร.พิเชต วงศ์สวัสดิ์</div>
+				</div>
+				<div class="col-md-7">
+					<div>ก่อตั้งห้างหุ้นส่วนจำกัด นาบุญคอนซัลท์ อินเตอร์เนชันแนล</div>
+					<div>ถือหุ้น 500,000 บาท</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<h2 class="heading text-center">History</h2>
@@ -84,4 +99,7 @@
 	</div>
 </div>
 
+
+@include('layouts.address')
+@include('layouts.footer')
 @stop

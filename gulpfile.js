@@ -19,7 +19,8 @@ require('laravel-elixir-sass-compass');
     'animate': './vendor/bower_components/animate-css/',
     'onepage': './vendor/bower_components/onepage-scroll/',
     'wow': './vendor/bower_components/wow/',
-    'adminLTE': './vendor/bower_components/admin-lte/'
+    'adminLTE': './vendor/bower_components/admin-lte/',
+    'summernote': './vendor/bower_components/summernote/'
 }
 
 var destination = {
@@ -69,7 +70,9 @@ elixir(function(mix) {
     .copy(paths.adminLTE + 'plugins/iCheck/square/blue@2x.png', 'public/plugins/iCheck/blue@2x.png1')
     .copy(paths.adminLTE + 'plugins/iCheck/icheck.min.js', 'public/plugins/iCheck/icheck.js')
     .copy(paths.adminLTE + 'dist/js/app.min.js', 'public/js/vendor/admin.js')
-    .copy(paths.adminLTE + 'dist/img', 'public/img/admin');
+    .copy(paths.adminLTE + 'dist/img', 'public/img/admin')
+    .copy(paths.summernote + 'dist/summernote.min.js', 'public/js/vendor/summernote.js')
+    .copy(paths.summernote + 'dist/summernote.css', 'public/css/vendor/summernote.css');
 
     mix.less(['admin-lte/AdminLTE.less', 'admin-lte/skins/_all-skins.less'], 'public/css', 'resources/assets');
     mix.sass(['bootstrap.scss'], 'public/css', 'resources/assets');
