@@ -12,9 +12,12 @@ class NabunCareersController extends Controller {
 	protected $career;
 	protected $validationRules = array(
 		'title'          => 'required|min:3',
-		'body'           => 'required',
-		'banner'		 => '',
+		'banner'         => '',
 		'author'         => '',
+		'attribute'      => 'required',
+		'gender'         => 'required',
+		'age'            => 'required',
+		'qualifications' => 'required',
 		'published_date' => 'required|date'
 		);
 
@@ -49,9 +52,29 @@ class NabunCareersController extends Controller {
 
 		$career = new Career;
 		$career->title          = $request->input('title');
-		$career->body           = $request->input('body');
 		$career->author         = Auth::user()->getFullName();
+		$career->attribute      = $request->input('attribute');
+		$career->gender         = $request->input('gender');
+		$career->age            = $request->input('age');
+		$career->qualifications = $request->input('qualifications');
 		$career->published_date = $request->input('published_date');
+		//wage
+		$career->wage_1         = $request->input('wage_1');
+		$career->wage_2         = $request->input('wage_2');
+		$career->wage_3         = $request->input('wage_3');
+		$career->wage_4         = $request->input('wage_4');
+		$career->wage_5         = $request->input('wage_5');
+		$career->wage_6         = $request->input('wage_6');
+		$career->wage_7         = $request->input('wage_7');
+		$career->wage_8         = $request->input('wage_8');
+		$career->wage_9         = $request->input('wage_9');
+		$career->wage_10        = $request->input('wage_10');
+		$career->wage_11        = $request->input('wage_11');
+		$career->wage_12        = $request->input('wage_12');
+		$career->wage_13        = $request->input('wage_13');
+		$career->wage_14        = $request->input('wage_14');
+		$career->wage_15        = $request->input('wage_15');
+		$career->wage_16        = $request->input('wage_16');
 		$career->save();
 
 		// Now check if image file exist
@@ -85,9 +108,29 @@ class NabunCareersController extends Controller {
 		$this->validate($request, $this->validationRules);
 
 		$career->title          = $request->input('title');
-		$career->body           = $request->input('body');
 		$career->author         = Auth::user()->getFullName();
+		$career->attribute      = $request->input('attribute');
+		$career->gender         = $request->input('gender');
+		$career->age            = $request->input('age');
+		$career->qualifications = $request->input('qualifications');
 		$career->published_date = $request->input('published_date');
+		//wage
+		$career->wage_1         = $request->input('wage_1');
+		$career->wage_2         = $request->input('wage_2');
+		$career->wage_3         = $request->input('wage_3');
+		$career->wage_4         = $request->input('wage_4');
+		$career->wage_5         = $request->input('wage_5');
+		$career->wage_6         = $request->input('wage_6');
+		$career->wage_7         = $request->input('wage_7');
+		$career->wage_8         = $request->input('wage_8');
+		$career->wage_9         = $request->input('wage_9');
+		$career->wage_10        = $request->input('wage_10');
+		$career->wage_11        = $request->input('wage_11');
+		$career->wage_12        = $request->input('wage_12');
+		$career->wage_13        = $request->input('wage_13');
+		$career->wage_14        = $request->input('wage_14');
+		$career->wage_15        = $request->input('wage_15');
+		$career->wage_16        = $request->input('wage_16');
 		$career->save();
 
 		// Now check if image file exist

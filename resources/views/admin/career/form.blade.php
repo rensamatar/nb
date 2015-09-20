@@ -6,10 +6,25 @@
 				{!! Form::text('title', null, array('class' => 'form-control')) !!}
 				{!! $errors->first('title', '<span class="help-block">:message</span>') !!}
 			</div>
-			<div class="form-group {!! $errors->first('published_date', 'has-error') !!}">
-				{!! Form::label('published_date', 'Published On : ') !!}
-				{!! Form::input('date', 'published_date', date('Y-m-d'), array('class' => 'form-control')) !!}
-				{!! $errors->first('published_date', '<span class="help-block">:message</span>') !!}
+			<div class="form-group {!! $errors->first('attribute', 'has-error') !!}">
+				{!! Form::label('attribute', 'Detail : ') !!}
+				{!! Form::text('attribute', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('attribute', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('gender', 'has-error') !!}">
+				{!! Form::label('gender', 'Gender : ') !!}
+				{!! Form::text('gender', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('gender', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('age', 'has-error') !!}">
+				{!! Form::label('age', 'Age : ') !!}
+				{!! Form::text('age', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('age', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('qualifications', 'has-error') !!}">
+				{!! Form::label('qualifications', 'Qualifications : ') !!}
+				{!! Form::text('qualifications', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('qualifications', '<span class="help-block">:message</span>') !!}
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -23,13 +38,99 @@
 				@endif
 				{!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
 			</div>
+			<div class="form-group {!! $errors->first('published_date', 'has-error') !!}">
+				{!! Form::label('published_date', 'Published On : ') !!}
+				{!! Form::input('date', 'published_date', date('Y-m-d'), array('class' => 'form-control')) !!}
+				{!! $errors->first('published_date', '<span class="help-block">:message</span>') !!}
+			</div>
 		</div>
 	</div>
-
-	<div class="form-group {!! $errors->first('body', 'has-error') !!}">
-		{!! Form::label('body', 'Body : ') !!}
-		{!! Form::textarea('body', null, array('class' => 'form-control', 'id' => 'content-editor')) !!}
-		{!! $errors->first('body', '<span class="help-block">:message</span>') !!}
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group {!! $errors->first('wage_1', 'has-error') !!}">
+				{!! Form::label('wage_1', 'wage_1 : ') !!}
+				{!! Form::text('wage_1', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_1', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_2', 'has-error') !!}">
+				{!! Form::label('wage_2', 'wage_2 : ') !!}
+				{!! Form::text('wage_2', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_2', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_3', 'has-error') !!}">
+				{!! Form::label('wage_3', 'wage_3 : ') !!}
+				{!! Form::text('wage_3', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_3', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_4', 'has-error') !!}">
+				{!! Form::label('wage_4', 'wage_4 : ') !!}
+				{!! Form::text('wage_4', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_4', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_5', 'has-error') !!}">
+				{!! Form::label('wage_5', 'wage_5 : ') !!}
+				{!! Form::text('wage_5', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_5', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_6', 'has-error') !!}">
+				{!! Form::label('wage_6', 'wage_6 : ') !!}
+				{!! Form::text('wage_6', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_6', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_7', 'has-error') !!}">
+				{!! Form::label('wage_7', 'wage_7 : ') !!}
+				{!! Form::text('wage_7', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_7', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_8', 'has-error') !!}">
+				{!! Form::label('wage_8', 'wage_8 : ') !!}
+				{!! Form::text('wage_8', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_8', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group {!! $errors->first('wage_9', 'has-error') !!}">
+				{!! Form::label('wage_9', 'wage_9 : ') !!}
+				{!! Form::text('wage_9', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_9', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_10', 'has-error') !!}">
+				{!! Form::label('wage_10', 'wage_10 : ') !!}
+				{!! Form::text('wage_10', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_10', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_11', 'has-error') !!}">
+				{!! Form::label('wage_11', 'wage_11 : ') !!}
+				{!! Form::text('wage_11', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_11', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_12', 'has-error') !!}">
+				{!! Form::label('wage_12', 'wage_12 : ') !!}
+				{!! Form::text('wage_12', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_12', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_13', 'has-error') !!}">
+				{!! Form::label('wage_13', 'wage_13 : ') !!}
+				{!! Form::text('wage_13', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_13', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_14', 'has-error') !!}">
+				{!! Form::label('wage_14', 'wage_14 : ') !!}
+				{!! Form::text('wage_14', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_14', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_15', 'has-error') !!}">
+				{!! Form::label('wage_15', 'wage_15 : ') !!}
+				{!! Form::text('wage_15', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_15', '<span class="help-block">:message</span>') !!}
+			</div>
+			<div class="form-group {!! $errors->first('wage_16', 'has-error') !!}">
+				{!! Form::label('wage_16', 'wage_16 : ') !!}
+				{!! Form::text('wage_16', null, array('class' => 'form-control')) !!}
+				{!! $errors->first('wage_16', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
 	</div>
 
 	<div class="form-group">
@@ -40,7 +141,7 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#content-editor').summernote({ height: 300, minHeight: null, maxHeight: null });
+		$('#content-editor').summernote({ height: 100, minHeight: null, maxHeight: null });
 	});
 </script>
 @stop

@@ -19,7 +19,7 @@
 			<div class="card">
 				<a href="{!! url('careers/'.$career->id) !!}">
 					<img src="{!! $career->thumbnail() !!}" width="100%" alt="">
-					<h3>{!! str_limit($career->title, $limit = 100, $end = '...') !!}</h3>
+					<h3>{!! str_limit($career->title, $limit = 44, $end = '...') !!}</h3>
 				</a>
 				<p>{!! str_limit(strip_tags($career->body), $limit = 250, $end = '...') !!}</p>
 			</div>
