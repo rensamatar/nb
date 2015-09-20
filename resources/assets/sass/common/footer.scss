@@ -52,7 +52,7 @@ Footer
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			font-size: 20px;
+			//font-size: 20px;
 			a {
 				color: $color-0;
 				&:hover,
@@ -63,7 +63,7 @@ Footer
 		}
 		p {
 			@include font-smoothing;
-			font-size: 20px;
+			//font-size: 20px;
 			margin: 0 0 10px 0;
 			.contact-btn { 
 				margin-top: 10px;

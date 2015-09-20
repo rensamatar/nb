@@ -5,10 +5,10 @@
 	<title>Nabun Upgrade | Dashboard</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet" type="text/css" />
 	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 
-	<link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('css/vendor/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('plugins/iCheck/icheck.css') }}" rel="stylesheet" type="text/css" />
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

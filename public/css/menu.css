@@ -1,0 +1,291 @@
+#menu {
+	width: 240px !important;
+	height: 100%;
+	margin: 0px;
+	position: fixed;
+	background-color: #1a1a1a;
+	margin-left: -240px;
+	z-index: 1000;
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#menu li {
+	position: relative;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #272727;
+	text-decoration: none !important;
+	-webkit-transition: all .3s ease-out .15s;
+	-moz-transition: all .3s ease-out .15s;
+	-o-transition: all .3s ease-out .15s;
+	transition: all .3s ease-out .15s;
+	box-shadow: inset 0 0 0 0 #611a6a;
+}
+#menu li:hover {
+	cursor: pointer;
+	box-shadow: inset 240px 0 0 0 #611a6a;
+}
+#menu li a {
+	position: relative;
+	display: block;
+	z-index: 5;
+	padding: 1.2em 2em 1em 2em;
+	color: #666 !important;
+}
+#menu li a:hover {
+	color: #fff !important;
+	text-decoration: none !important;
+}
+#menu ul {
+	margin-top: 80px;
+	padding-left: 0px;
+	list-style: none !important;
+	text-decoration: none !important;
+}
+#menu.slide {
+	-webkit-transform: translate(240px, 0px);
+	-moz-transform: translate(240px, 0px);
+	-o-transform: translate(240px, 0px);
+	-ms-transform: translate(240px, 0px);
+	transform: translate(240px, 0px);
+}
+#main {
+	height: 100%;
+	width: 100%;
+	margin-left: 0px;
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	opacity: 1;
+}
+#main.slide {
+	-webkit-transform: translate(240px, 0px);
+	-moz-transform: translate(240px, 0px);
+	-o-transform: translate(240px, 0px);
+	-ms-transform: translate(240px, 0px);
+	transform: translate(240px, 0px);
+	opacity: 0.85;
+}
+
+/* Test */
+
+.nb-nav-trigger {
+  position: fixed;
+  display: inline-block;
+  top: 4%;
+  left: 2.5%;
+  height: 44px;
+  width: 44px;
+  z-index: 9999;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.nb-nav-trigger .nb-icon {
+  /* icon created in CSS */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+.nb-nav-trigger .nb-icon::before, .nb-nav-trigger .nb-icon:after {
+  /* upper and lower lines of the menu icon */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .3s;
+  -moz-transition: -moz-transform .3s;
+  transition: transform .3s;
+}
+.nb-nav-trigger .nb-icon::before {
+  -webkit-transform: translateY(-6px) rotate(0deg);
+  -moz-transform: translateY(-6px) rotate(0deg);
+  -ms-transform: translateY(-6px) rotate(0deg);
+  -o-transform: translateY(-6px) rotate(0deg);
+  transform: translateY(-6px) rotate(0deg);
+}
+.nb-nav-trigger .nb-icon::after {
+  -webkit-transform: translateY(6px) rotate(0deg);
+  -moz-transform: translateY(6px) rotate(0deg);
+  -ms-transform: translateY(6px) rotate(0deg);
+  -o-transform: translateY(6px) rotate(0deg);
+  transform: translateY(6px) rotate(0deg);
+}
+.nb-nav-trigger::before, .nb-nav-trigger::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+}
+.nb-nav-trigger::before {
+  background-color: #1a1a1a;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.nb-nav-trigger::after {
+  background-color: #611a6a;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.nb-nav-trigger.close-nav::before {
+  /* user clicks on the .nb-nav-trigger element - 1st rounded background disappears */
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.nb-nav-trigger.close-nav::after {
+  /* user clicks on the .nb-nav-trigger element - 2nd rounded background appears */
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.nb-nav-trigger.close-nav .nb-icon {
+  /* user clicks on the .nb-nav-trigger element - transform the icon */
+  background-color: rgba(255, 255, 255, 0);
+}
+.nb-nav-trigger.close-nav .nb-icon::before, .nb-nav-trigger.close-nav .nb-icon::after {
+  background-color: #ffffff;
+}
+.nb-nav-trigger.close-nav .nb-icon::before {
+  -webkit-transform: translateY(0) rotate(45deg);
+  -moz-transform: translateY(0) rotate(45deg);
+  -ms-transform: translateY(0) rotate(45deg);
+  -o-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
+}
+.nb-nav-trigger.close-nav .nb-icon::after {
+  -webkit-transform: translateY(0) rotate(-45deg);
+  -moz-transform: translateY(0) rotate(-45deg);
+  -ms-transform: translateY(0) rotate(-45deg);
+  -o-transform: translateY(0) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* Google map */
+#google-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #e7eaf0;
+}
+#map-google-map {
+  position: relative;
+}
+
+#map-google-map address {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1em 1em;
+  background-color: rgba(#27272b, 1);
+  color: #fff;
+  font-size :13px;
+}
+
+#map-zoom-in,
+#map-zoom-out {
+  z-index: 999;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: #27272b;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: 32px 64px;
+  background-image: url(../img/map-controller.svg);
+}
+#map-zoom-in:hover,
+#map-zoom-out:hover {
+  background-color: #27272b;
+  opacity: 1;
+}
+#map-zoom-in {
+  background-position: 50% 0;
+  margin-top: 36px;
+  margin-bottom: 1px;
+}
+#map-zoom-out {
+  background-position: 50% -32px;
+}
+

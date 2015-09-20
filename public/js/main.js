@@ -1,26 +1,31 @@
 'use strict';
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
 
 	//wow animation init
 	new WOW().init();
 
+    // CountTo init
+    $('.timer').countTo();
+
 	//------- Navigation Menu ---------
+	var toggleNav   = $('.nb-nav-trigger');
+	var menuPanel   = $('#menu');
+	var mainContent = $('#main');
 
-	var isLateralNavAnimating = false;
+            //open/close the menu and cover layers
+            toggleNav.on('click', function() {
+            	if(!toggleNav.hasClass('close-nav')) {
+            //it means navigation is not visible yet - open it and animate navigation layer
+            toggleNav.addClass('close-nav');
+            menuPanel.toggleClass('slide');
+            mainContent.toggleClass('slide');
+        } else {
+            //navigation is open - close it and remove navigation layer
+            toggleNav.removeClass('close-nav');
 
-	//open/close lateral navigation
-	$('.cd-nav-trigger').on('click', function (event) {
-		event.preventDefault();
-		//stop if nav animation is running
-		if (!isLateralNavAnimating) {
-			if ($(this).parents('.csstransitions').length > 0) isLateralNavAnimating = true;
-
-			$('body').toggleClass('navigation-is-open');
-			$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-				//animation is over
-				isLateralNavAnimating = false;
-			});
-		}
-	});
+            menuPanel.removeClass('slide');
+            mainContent.removeClass('slide');
+        }
+    });
 });

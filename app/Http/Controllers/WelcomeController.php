@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Career;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -12,15 +14,18 @@ class WelcomeController extends Controller {
 	| controllers, you are free to modify or remove it as you desire.
 	|
 	*/
+	protected $careers;
 
-	public function __construct()
+	public function __construct(Career $careers)
 	{
 		$this->middleware('guest');
+		$this->careers = $careers;
 	}
 
 	public function index()
 	{
-		return view('welcome');
+		$careers = $this->careers->latest()->published()->get();
+		return view('welcome', compact('careers'));
 	}
 
 	public function about()
@@ -28,13 +33,19 @@ class WelcomeController extends Controller {
 		return view('pages.about');
 	}
 
-	public function history()
+	public function team()
 	{
-		return view('pages.history');
+		return view('pages.team');
 	}
 
 	public function client()
 	{
 		return view('pages.client');
 	}
+
+	public function services()
+	{
+		return view('pages.services');
+	}
+	
 }

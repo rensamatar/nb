@@ -18,7 +18,8 @@ Route::controllers([
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'WelcomeController@index');
 Route::get('about', 'WelcomeController@about');
-Route::get('history', 'WelcomeController@history');
+Route::get('team', 'WelcomeController@team');
+Route::get('services', 'WelcomeController@services');
 Route::get('client', 'WelcomeController@client');
 
 # Contact us

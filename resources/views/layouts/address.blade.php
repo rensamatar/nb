@@ -1,5 +1,5 @@
 <session class="address section-padding" id="address">
-	<div class="container no-padding">
+	<div class="container">
 		<div class="row address-wrapper">
 			<div class="col-md-5">
 				<div>
@@ -18,7 +18,7 @@
 			</div>
 			<div class="col-md-4">
 				<h4>Get in touch</h4>
-				<p><strong>Nabun Upgrade International Co.,Ltd</strong></p>
+				<p>Nabun Upgrade International Co.,Ltd</p>
 				<p>230/49 หมู่ 11 ตำบลทุ่งสุขลา</p>
 				<p>อำเภอศรีราชา ชลบุรี 20230</p>
 				<p>Phone : (038) 763025</p>

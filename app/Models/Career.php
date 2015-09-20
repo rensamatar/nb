@@ -19,7 +19,7 @@ class Career extends Model {
 		$this->attributes['published_date'] = Carbon::parse($date);
 	}
 
-	public function thumbnail($default = 'no-image.jpg')
+	public function thumbnail($default = 'dummy.jpg')
 	{   
 		$filter = 'backend';
 
