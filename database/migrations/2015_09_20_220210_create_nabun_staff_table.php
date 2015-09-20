@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNabunActivityTable extends Migration {
+class CreateNabunStaffTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,13 @@ class CreateNabunActivityTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('activity', function(Blueprint $table)
+		Schema::create('staff', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
-			$table->string('title');
-			$table->string('banner')->nullable();
-			$table->text('body');
-			$table->string('author')->nullable();
-			$table->timestamp('published_date');
+			$table->string('name');
+			$table->string('position')->nullable();
+			$table->string('phone')->nullable();
+			$table->string('image')->nullable();
 			$table->timestamps();
 		});
 	}
@@ -31,7 +30,7 @@ class CreateNabunActivityTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('activity');
+		Schema::drop('staff');
 	}
 
 }

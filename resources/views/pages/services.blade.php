@@ -16,7 +16,8 @@
 	<div class="row centered bottom">
 		<div class="col-lg-12">
 			<p class="large">
-				With the help of our amazing sponsors we will be providing every guest 2 free drinks and cocktail canapés on the night!
+				1. Provide services to reference clients in Chonburi, Rayong, Chachaengsao, Samutprakarn, Prachinburi, Ayuttaya and Nakorn Ratchasima.<br/>
+				2. Group the type of employees required by the companies to work in factories or companies according to qualifications. The qualifications requirements are:
 			</p>
 		</div>
 	</div>

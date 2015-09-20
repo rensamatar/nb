@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
 class Career extends Model {
 
-	protected $table = 'nabun_career';
+	protected $table = 'career';
 
 	protected $fillable = ['title', 'body', 'published_date'];
 

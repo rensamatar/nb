@@ -12,24 +12,35 @@ class CreateNabunCareerTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('nabun_career', function(Blueprint $table)
+		Schema::create('career', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
 			$table->string('title');
 			$table->string('banner')->nullable();
-			$table->text('body');
 			$table->string('author')->nullable();
+			$table->text('attribute')->nullable();
+			$table->string('gender')->nullable();
+			$table->string('age')->nullable();
+			$table->string('qualifications')->nullable();
+			$table->string('wage-1')->nullable();
+			$table->string('wage-2')->nullable();
+			$table->string('wage-3')->nullable();
+			$table->string('wage-4')->nullable();
+			$table->string('wage-5')->nullable();
+			$table->string('wage-6')->nullable();
+			$table->string('wage-7')->nullable();
+			$table->string('wage-8')->nullable();
+			$table->string('wage-9')->nullable();
+			$table->string('wage-10')->nullable();
+			$table->string('wage-11')->nullable();
+			$table->string('wage-12')->nullable();
+			$table->string('wage-13')->nullable();
+			$table->string('wage-14')->nullable();
+			$table->string('wage-15')->nullable();
+			$table->string('wage-16')->nullable();
+			$table->string('wage-17')->nullable();
+			$table->string('person_id')->nullable();
 			$table->timestamp('published_date');
-			$table->string('attribute')->nullable();
-			$table->string('place')->nullable();
-			$table->string('work_kind')->nullable();
-			$table->string('day_shift')->nullable();
-			$table->string('night_shift')->nullable();
-			$table->string('wage')->nullable();
-			$table->string('benefits')->nullable();
-			$table->string('paid_date')->nullable();
-			$table->string('uniform')->nullable();
-			$table->string('other')->nullable();
 			$table->timestamps();
 		});
 	}
@@ -41,7 +52,7 @@ class CreateNabunCareerTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('nabun_career');
+		Schema::drop('career');
 	}
 
 }

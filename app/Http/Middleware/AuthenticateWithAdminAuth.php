@@ -22,7 +22,7 @@ class AuthenticateWithAdminAuth {
 			}
 			else
 			{
-				return redirect()->guest('admin');
+				return redirect()->guest('admin.signin');
 			}
 		}
 		else if(!$this->auth->user()->hasRole('admin'))
@@ -33,7 +33,7 @@ class AuthenticateWithAdminAuth {
 			}
 			else
 			{
-				return redirect()->guest('/admin/dashboard');
+				return redirect()->guest('home');
 			}
 		}
 

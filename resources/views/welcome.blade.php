@@ -75,7 +75,7 @@
 						Energetic, Well-organized and Efficient, <br />
 						Open-minded, Enthusiastic, Service-minded.
 					</p>
-					<footer class="">CEO, Dr.Phicheat Wongsawat</footer>
+					<footer class="">CEO, Dr.Picheat Wongsawat</footer>
 				</blockquote>
 			</div>
 		</div>
