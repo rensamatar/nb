@@ -132,16 +132,39 @@
 			</div>
 		</div>
 	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="form-group {!! $errors->first('staff_1', 'has-error') !!}">
+				{!! Form::label('staff_1', 'Staff 1') !!}
+				{!! Form::staff('staff_1', (isset($career) ? $career->staff_1 : ''), 'form-control') !!}
+				{!! $errors->first('staff_1', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group {!! $errors->first('staff_2', 'has-error') !!}">
+				{!! Form::label('staff_2', 'Staff 2') !!}
+				{!! Form::staff('staff_2', (isset($career) ? $career->staff_2 : ''), 'form-control') !!}
+				{!! $errors->first('staff_2', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group {!! $errors->first('staff_3', 'has-error') !!}">
+				{!! Form::label('staff_3', 'Staff 3') !!}
+				{!! Form::staff('staff_3', (isset($career) ? $career->staff_3 : ''), 'form-control') !!}
+				{!! $errors->first('staff_3', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group {!! $errors->first('staff_4', 'has-error') !!}">
+				{!! Form::label('staff_4', 'Staff 4') !!}
+				{!! Form::staff('staff_4', (isset($career) ? $career->staff_4 : ''), 'form-control') !!}
+				{!! $errors->first('staff_4', '<span class="help-block">:message</span>') !!}
+			</div>
+		</div>
+	</div>
 
 	<div class="form-group">
 		{!! Form::submit($buttonText, array('class' => 'btn btn-primary')) !!}
 	</div>
 </section>
-
-@section('script')
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#content-editor').summernote({ height: 100, minHeight: null, maxHeight: null });
-	});
-</script>
-@stop

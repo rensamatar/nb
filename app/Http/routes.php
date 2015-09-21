@@ -54,6 +54,7 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 	Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
 	Route::resource('activity', 'Admin\NabunActivityController');
 	Route::resource('career', 'Admin\NabunCareersController');
+	Route::resource('staff', 'Admin\NabunStaffController');
 
 });
 

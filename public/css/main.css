@@ -1,5 +1,5 @@
 @import "http://fonts.googleapis.com/css?family=Raleway:400,300,700";
-@import "fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic";
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic";
 
 html, button, input, select, textarea {
 	color: #222;
@@ -404,8 +404,9 @@ img.img-animate:hover {
 	background-color: #fff;
 	padding: 60px 0;
 }
-#careers .btn-default {
+#careers .btn-eye {
 	border: 0;
+	background-color: transparent;
 }
 #careers .btn {
 	font-weight: 500;
@@ -595,153 +596,117 @@ ul.social-buttons li a:active {
 	padding-bottom: 10px;
 }
 
-/* ==================================================
-	video
-	================================================== */
-	video, object {
-		display:inline-block;
-		vertical-align:baseline;
-		min-width:100%;
-		min-height:100%;
-	}
-	.de-video-container{
-		top:0%;
-		left:0%;
-		height:500px;
-		width:100%;
-		overflow: hidden;
-	}
-	.de-video-content{
-		width:100%;
-		position:absolute;
-		z-index:10;
-	}
-	.de-video-overlay{
-		position:absolute;
-		width:100%;
-		background:rgba(0, 0, 0, 0.8);
-	}
-	.de-video-container .btn-border:hover:after, .de-video-container a.btn-border:hover:after, .de-video-container a.btn-border.hover:after{
-		color:#eceff3;
-	}
-	/* Box Sections */
+/* Box Sections */
+.white h1 {
+	color: #999;
+}
+.white p {
+	padding-top: 25px;
+}
+/* Image Mask */
+.grid figure {
+	margin: 0;
+	position: relative;
+	border: 1px solid #ddd;
+}
+.grid figure img {
+	width: 100%;
+	display: block;
+	position: relative;
 
-	.white h1 {
-		color: #999;
-	}
-	.white p {
-		padding-top: 25px;
-	}
+}
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 10px 20px;
+	color: #fff;
+	background-color: #27AE60;
+}
+.grid figcaption h5 {
+	margin: 0;
+	padding: 20px;
+	color: #fff;
+	font-weight: 200;
+	font-size: 18px;
+	text-align: left;
+	letter-spacing: 1px;
+}
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	margin-left: 0px;
+	display: inline-block;
+	background: #2f2f2f;
+	color: #fff;
+	font-size: 13px;
+}
+/* Caption Style */
+.mask figure {
+	overflow: hidden;
+}
+.mask figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+.no-touch .mask figure:hover img, .mask figure.cs-hover img {
+	-webkit-transform: translateY(-30px);
+	-moz-transform: translateY(-30px);
+	-ms-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+.mask figcaption {
+	height: 100%;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.no-touch .mask figure:hover figcaption, .mask figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+.mask figcaption a {
+	position: absolute;
+	top: 50%;
+	bottom: 10px;
+	right: 40%;
+}
 
-	/* Image Mask */
+/* MEDIA QUERIES */
 
-	.grid figure {
-		margin: 0;
-		position: relative;
-		border: 1px solid #ddd;
+@media screen and (max-width:1050px), screen and (max-device-width:1050px) {
+	body .header {
+		background-attachment: scroll;
 	}
-	.grid figure img {
-		width: 100%;
-		display: block;
-		position: relative;
+}
 
+/*ipad portrait*/
+@media only screen and (min-device-width:768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.header {
+		background-attachment: scroll;
 	}
-	.grid figcaption {
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding: 10px 10px 20px;
-		color: #fff;
-		background-color: #34b1c4;
-	}
-	.grid figcaption h5 {
-		margin: 0;
-		padding-top: 0px;
-		padding-left: 20px;
-		padding-bottom: 5px;
-		color: #fff;
-		font-weight: 700;
-		text-align: left;
-		letter-spacing: 1px;
-	}
-	.grid figcaption a {
-		text-align: left;
-		padding: 5px 10px;
-		margin-left: 20px;
-		display: inline-block;
-		background: #2f2f2f;
-		color: #fff;
-		font-size: 13px;
-	}
-	/* Caption Style */
-	.mask figure {
-		overflow: hidden;
-	}
-	.mask figure img {
-		-webkit-transition: -webkit-transform 0.4s;
-		-moz-transition: -moz-transform 0.4s;
-		transition: transform 0.4s;
-	}
-	.no-touch .mask figure:hover img, .mask figure.cs-hover img {
-		-webkit-transform: translateY(-30px);
-		-moz-transform: translateY(-30px);
-		-ms-transform: translateY(-30px);
-		transform: translateY(-30px);
-	}
-	.mask figcaption {
-		height: 50px;
-		width: 100%;
-		top: auto;
-		bottom: 0;
-		opacity: 0;
-		-webkit-transform: translateY(100%);
-		-moz-transform: translateY(100%);
-		-ms-transform: translateY(100%);
-		transform: translateY(100%);
-		-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
-		-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
-		transition: transform 0.4s, opacity 0.1s 0.3s;
-	}
-	.no-touch .mask figure:hover figcaption, .mask figure.cs-hover figcaption {
-		opacity: 1;
-		-webkit-transform: translateY(0px);
-		-moz-transform: translateY(0px);
-		-ms-transform: translateY(0px);
-		transform: translateY(0px);
-		-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
-		-moz-transition: -moz-transform 0.4s, opacity 0.1s;
-		transition: transform 0.4s, opacity 0.1s;
-	}
-	.mask figcaption a {
-		position: absolute;
-		top: 10px;
-		bottom: 10px;
-		right: 30px;
-	}
+}
 
-/* ==========================================================================
-	MEDIA QUERIES
-	========================================================================== */
-
-
-	@media screen and (max-width:1050px), screen and (max-device-width:1050px) {
-		body .header {
-			background-attachment: scroll;
-		}
+@media screen and (max-width:769px) {
+	#headerwrap h1 {
+		font-size: 40px;
 	}
-
-	/*ipad portrait*/
-	@media only screen and (min-device-width:768px) and (max-device-width : 1024px) and (orientation : portrait) {
-		.header {
-			background-attachment: scroll;
-		}
+	#headerwrap p {
+		font-size: 20px;
 	}
-
-	@media screen and (max-width:769px) {
-		#headerwrap h1 {
-			font-size: 40px;
-		}
-		#headerwrap p {
-			font-size: 20px;
-		}
-	}
+}

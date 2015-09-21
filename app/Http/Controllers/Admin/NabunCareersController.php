@@ -75,6 +75,11 @@ class NabunCareersController extends Controller {
 		$career->wage_14        = $request->input('wage_14');
 		$career->wage_15        = $request->input('wage_15');
 		$career->wage_16        = $request->input('wage_16');
+		//Staff
+		$career->staff_1        = $request->input('staff_1');
+		$career->staff_2        = $request->input('staff_2');
+		$career->staff_3        = $request->input('staff_3');
+		$career->staff_4        = $request->input('staff_4');
 		$career->save();
 
 		// Now check if image file exist
@@ -131,6 +136,11 @@ class NabunCareersController extends Controller {
 		$career->wage_14        = $request->input('wage_14');
 		$career->wage_15        = $request->input('wage_15');
 		$career->wage_16        = $request->input('wage_16');
+		//Staff
+		$career->staff_1        = $request->input('staff_1');
+		$career->staff_2        = $request->input('staff_2');
+		$career->staff_3        = $request->input('staff_3');
+		$career->staff_4        = $request->input('staff_4');
 		$career->save();
 
 		// Now check if image file exist

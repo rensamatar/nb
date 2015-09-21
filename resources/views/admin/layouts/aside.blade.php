@@ -4,7 +4,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-      <img src="{{ Auth::user()->gravatar() }}" class="img-circle" alt="User Image" />
+        <img src="{{ Auth::user()->gravatar() }}" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
         <p>{{ Auth::user()->getFullName() }}</p>
@@ -15,13 +15,13 @@
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <li>
-        <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+        <a href="{!! url('admin') !!}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
       </li>
       <li class="treeview {!! (Request::is('admin/activity*') ? 'active' : '') !!}">
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Activity</span>
-          <span class="label label-primary pull-right">4</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
           <li><a href="{{ url('admin/activity') }}"><i class="fa fa-circle-o {!! (Request::is('admin/activity') ? 'text-red' : '') !!}"></i> All activity</a></li>
@@ -38,10 +38,15 @@
           <li><a href="{{ url('admin/career/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/career/create') ? 'text-red' : '') !!}"></i> Add new carreer</a></li>
         </ul>
       </li>
-      <li>
+      <li class="treeview {!! (Request::is('admin/staff*') ? 'active' : '') !!}">
         <a href="#">
-          <i class="fa fa-th"></i> <span>System Configuration</span> <small class="label pull-right bg-green">new</small>
+          <i class="fa fa-user"></i> <span>Nabun Staff</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url('admin/staff') }}"><i class="fa fa-circle-o {!! (Request::is('admin/staff') ? 'text-red' : '') !!}"></i> All staff</a></li>
+          <li><a href="{{ url('admin/staff/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/staff/create') ? 'text-red' : '') !!}"></i> Add new staff</a></li>
+        </ul>
       </li>
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

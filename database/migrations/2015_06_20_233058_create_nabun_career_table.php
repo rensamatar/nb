@@ -38,7 +38,10 @@ class CreateNabunCareerTable extends Migration {
 			$table->string('wage_14')->nullable();
 			$table->string('wage_15')->nullable();
 			$table->string('wage_16')->nullable();
-			$table->string('person_id')->nullable();
+			$table->string('staff_1')->nullable();
+			$table->string('staff_2')->nullable();
+			$table->string('staff_3')->nullable();
+			$table->string('staff_4')->nullable();
 			$table->timestamp('published_date');
 			$table->timestamps();
 		});

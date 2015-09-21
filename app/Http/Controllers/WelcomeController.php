@@ -24,7 +24,7 @@ class WelcomeController extends Controller {
 
 	public function index()
 	{
-		$careers = $this->careers->latest()->published()->get();
+		$careers = $this->careers->latest()->published()->get()->take(3);
 		return view('welcome', compact('careers'));
 	}
 

@@ -4,10 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Nabun Upgrade | Dashboard</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
 	<link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-
 	<link href="{{ asset('css/vendor/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('plugins/iCheck/icheck.css') }}" rel="stylesheet" type="text/css" />
 
@@ -53,7 +50,7 @@
     			{!! Form::close() !!}
 
 			<a href="{{ url('/password/email') }}">I forgot my password</a><br>
-			<a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>
+			<a href="{{ url('/auth/signup') }}" class="text-center">Register a new membership</a>
 
 		</div>
 	</div>

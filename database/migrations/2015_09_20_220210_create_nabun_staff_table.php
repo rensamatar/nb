@@ -16,6 +16,7 @@ class CreateNabunStaffTable extends Migration {
 		{
 			$table->increments('id')->unsigned();
 			$table->string('name');
+			$table->string('nickname')->nullable();
 			$table->string('position')->nullable();
 			$table->string('phone')->nullable();
 			$table->string('image')->nullable();

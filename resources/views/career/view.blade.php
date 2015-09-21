@@ -48,22 +48,30 @@
 		</div>
 		<div class="col-md-3">
 			<h3><strong><i class="fa fa-phone"></i> ติดต่อ</strong></h3>
+			@if($person_one)
 			<div class="">
-				<p><strong>พี่ยุพิน</strong></p>
-				<p>086-3932296</p>
+				<p><strong>{!! $person_one->nickname !!}</strong></p>
+				<p>{!! $person_one->phone !!}</p>
 			</div>
+			@endif
+			@if($person_two)
 			<div class="">
-				<p><strong>พี่โอม</strong></p>
-				<p>086-3080943</p>
+				<p><strong>{!! $person_two->nickname !!}</strong></p>
+				<p>{!! $person_two->phone !!}</p>
 			</div>
+			@endif
+			@if($person_three)
 			<div class="">
-				<p><strong>พี่เติ้ล</strong></p>
-				<p>086-3080941</p>
+				<p><strong>{!! $person_three->nickname !!}</strong></p>
+				<p>{!! $person_three->phone !!}</p>
 			</div>
+			@endif
+			@if($person_four)
 			<div class="">
-				<p><strong>พี่เติ้ล</strong></p>
-				<p>086-3080941</p>
+				<p><strong>{!! $person_four->nickname !!}</strong></p>
+				<p>{!! $person_four->phone !!}</p>
 			</div>
+			@endif
 		</div>
 	</div>
 </div>

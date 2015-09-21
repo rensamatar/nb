@@ -180,7 +180,7 @@
 						<figure><img class="img-responsive" src="{!! asset('img/dummy.jpg') !!}" alt="">
 							<figcaption>
 								<h5>{!! str_limit($career->title, $limit = 100, $end = '...') !!}<br>ผลิตเครื่องปรับอากาศ</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a>
+								<a data-toggle="modal" href="#myModal" class="btn-eye"><i class="fa fa-5x fa-eye"></i></a>
 							</figcaption>
 						</figure>
 					</div>
