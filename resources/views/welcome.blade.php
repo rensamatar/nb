@@ -15,7 +15,7 @@
 <div id="about" name="about">
 	<div class="container wow fadeInUp">
 		<div class="row white">
-			<div class="col-md-6"><img class="img-responsive" src="{!! asset('img/about1.jpg') !!}"></div>
+			<div class="col-md-6"><img class="img-responsive" src="{!! asset('img/desktop.jpg') !!}"></div>
 			<div class="col-md-6">
 				<h3>About us</h3>
 				<p>

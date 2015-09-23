@@ -12,6 +12,9 @@
 		<li {!! Request::is('team/*') ? 'class="selected"' : '' !!}>
 			<a class="linkside smoothScroll" href="{!! url('team') !!}">Team</a>
 		</li>
+		<li {!! Request::is('client/*') ? 'class="selected"' : '' !!}>
+			<a class="linkside smoothScroll" href="{!! url('client') !!}">Client</a>
+		</li>
 		<li {!! Request::is('activities/*') ? 'class="selected"' : '' !!}>
 			<a class="linkside smoothScroll" href="{!! url('activities') !!}">Activity</a>
 		</li>
