@@ -39,11 +39,13 @@
 			<div class="col-lg-8 col-lg-offset-2">
 				<p class="large">We are group of professionals focused on sub-contract service and human resource consultant.</p>
 			</div>
-			<div class="col-lg-4"> <i class="fa fa-eye fa-4x"></i>
+			<div class="col-lg-4">
+				<i class="icon icon-telescope"></i>
 				<h3>Vision</h3>
 				<p>To be a leading organization in terms of service through Sub-contract, that businesses needed.</p>
 			</div>
-			<div class="col-lg-4"> <i class="fa fa-dot-circle-o fa-4x"></i>
+			<div class="col-lg-4">
+				<i class="icon icon-layers"></i>
 				<h3>Mission</h3>
 				<p>
 					To have a good and efficient management.<br>
@@ -51,7 +53,8 @@
 					To have an efficient Information Technology System.
 				</p>
 			</div>
-			<div class="col-lg-4"> <i class="fa fa-lightbulb-o fa-4x"></i>
+			<div class="col-lg-4">
+				<i class="icon icon-lightbulb"></i>
 				<h3>Philosophy</h3>
 				<p>
 					Service mind.<br>
@@ -82,7 +85,7 @@
 	</div>
 </div>
 
-<!-- ==== TEAM MEMBERS ==== -->
+<!-- ==== TEAM ==== -->
 <div id="team" name="team">
 	<div class="container">
 		<div class="row centered">
@@ -92,33 +95,33 @@
 				<img class="img img-circle" src="{!! asset('img/team/anucha.png') !!}" height="120px" width="120px" alt="">
 				<h4>นายอนุชา เจียมสกุลทิพย์</h4>
 				<p>ผู้จัดการฝ่ายทรัพยากรมนุษย์</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered bottom">
 				<img class="img img-circle" src="{!! asset('img/team/wethinee.png') !!}" height="120px" width="120px" alt="">
 				<h4>นางเวธินี จงจิตกลาง</h4>
 				<p>ผู้จัดการฝ่ายเงินเดือนและค่าจ้าง</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered bottom">
 				<img class="img img-circle" src="{!! asset('img/team/pratuang.png') !!}" height="120px" width="120px" alt="">
 				<h4>นายประเทือง ปั้นแจ่ม</h4>
 				<p>ผู้จัดการฝ่ายสรรหาและคัดเลือกบุคลากร</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered bottom">
 				<img class="img img-circle" src="{!! asset('img/team/chareeporn.png') !!}" height="120px" width="120px" alt="">
 				<h4>นางสาวชรีพร เทพมงคล</h4>
 				<p>ผู้จัดการฝ่ายแรงงานสัมพันธ์</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 		</div>
 
@@ -127,33 +130,33 @@
 				<img class="img img-circle" src="{!! asset('img/team/amonrat.png') !!}" height="120px" width="120px" alt="">
 				<h4>นางสาวอมรรัตน์ มาธุระ</h4>
 				<p>ผู้จัดการฝ่ายบัญชีและการเงิน</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered">
 				<img class="img img-circle" src="{!! asset('img/team/akira.png') !!}" height="120px" width="120px" alt="">
 				<h4>นายอคิราภ์ ลำจวง</h4>
 				<p>ผู้จัดการฝ่ายทรัพยากรมนุษย์</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered">
 				<img class="img img-circle" src="{!! asset('img/team/charnchai.png') !!}" height="120px" width="120px" alt="">
 				<h4>นายชาญชัย ดาวงษ์</h4>
 				<p>ผู้จัดการฝ่ายความปลอดภัยการทำงาน</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 			<div class="col-lg-3 centered">
 				<img class="img img-circle" src="{!! asset('img/team/jantra.png') !!}" height="120px" width="120px" alt="">
 				<h4>นางสาวจันทรา ทองสามสี</h4>
 				<p>ผู้จัดการฝ่ายการตลาด</p>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="icon icon-twitter"></i></a>
+				<a href="#"><i class="icon icon-facebook"></i></a>
+				<a href="#"><i class="icon icon-googleplus"></i></a>
 			</div>
 		</div>
 	</div>
@@ -180,7 +183,9 @@
 						<figure><img class="img-responsive" src="{!! asset('img/dummy.jpg') !!}" alt="">
 							<figcaption>
 								<h5>{!! str_limit($career->title, $limit = 100, $end = '...') !!}<br>ผลิตเครื่องปรับอากาศ</h5>
-								<a data-toggle="modal" href="#myModal" class="btn-eye"><i class="fa fa-5x fa-eye"></i></a>
+								<a href="{!! url('careers/'.$career->id) !!}" class="btn-eye">
+									<i class="icon icon-magnifying-glass"></i>
+								</a>
 							</figcaption>
 						</figure>
 					</div>
@@ -198,8 +203,7 @@
 	</div>
 </div>
 
-
-<!-- ===== Fun Fact ==== -->
+<!-- ===== Fun Facts ==== -->
 <div id="fun-facts">
 	<div class="container">
 		<div class="row">
@@ -207,34 +211,34 @@
 			<span class="border"></span>
 
 			<div class="col-md-3">
-				<div class="de_count">
-					<i class="fa fa-clock-o fa-5x fadeInDown"></i>
-					<h3 class="timer" data-to="1980" data-speed="2500">1980</h3>
+				<div class="de_count wow fadeInLeft">
+					<i class="icon icon-clock"></i>
+					<h3 class="timer" data-to="4337" data-speed="2500">4337</h3>
 					<span class="sub-title">Hours of Works</span>
 				</div>
 			</div>
 
 			<div class="col-md-3">
-				<div class="de_count">
-					<i class="fa fa-desktop fa-5x fadeInDown"></i>
-					<h3 class="timer" data-to="1280" data-speed="2500">50</h3>
+				<div class="de_count wow fadeInLeft">
+					<i class="icon icon-trophy"></i>
+					<h3 class="timer" data-to="280" data-speed="2500">280</h3>
 					<span class="sub-title">Winning Awards</span>
 				</div>
 			</div>
 
 			<div class="col-md-3">
-				<div class="de_count">
-					<i class="fa fa-leaf fa-5x fadeInDown"></i>
-					<h3 class="timer" data-to="750" data-speed="2500">21</h3>
+				<div class="de_count wow fadeInRight">
+					<i class="icon icon-briefcase"></i>
+					<h3 class="timer" data-to="20" data-speed="2500">20</h3>
 					<span class="sub-title">Happy Clients</span>
 				</div>
 			</div>
 
 			<div class="col-md-3">
-				<div class="de_count">
-					<i class="fa fa-coffee fa-5x fadeInDown"></i>
-					<h3 class="timer" data-to="520" data-speed="2500">520</h3>
-					<span class="sub-title">Cups of Coffee</span>
+				<div class="de_count wow fadeInRight">
+					<i class="icon icon-profile-male"></i>
+					<h3 class="timer" data-to="5040" data-speed="2500">5040</h3>
+					<span class="sub-title">Happy Employees</span>
 				</div>
 			</div>
 		</div>
@@ -327,41 +331,23 @@
 		<div class="row">
 			<h2 class="centered">Contact Us</h2>
 			<span class="border"></span>
-
-			<div class="col-md-4 centered"> <i class="fa fa-map-marker fa-2x"></i>
-				<p>230/49 หมู่ 11 ตำบลทุ่งสุขลา<br>
-					อำเภอศรีราชา ชลบุรี 20230</p>
-				</div>
-				<div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
-					<p>info@companyname.com</p>
-				</div>
-				<div class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
-					<p>(038) 763025</p>
-				</div>
+			<div class="col-md-4">
+				<i class="icon icon-envelope"></i>
+				<p>info@nabun-upgrade.com</p>
 			</div>
-			<div class="row">
-				<div class="col-lg-12 centered">
-					<p>Get in touch with us. Feel Free to use contact below.</p>
-					{!! Form::open(array('url' => 'contact')) !!}
-					<div class="row form-wrapper">
-						<div class="col-md-5 col-md-offset-1">
-							<input placeholder="Your name" required="required" name="name" type="text">
-							<input placeholder="Your e-mail" required="required" name="email" type="email">
-							<input placeholder="Subject" required="required" name="subject" type="text">
-						</div>
-						<div class="col-md-5">
-							<textarea placeholder="Your message" required="required" name="message" cols="50" rows="10"></textarea>
-							<input class="pull-right" type="submit" value="Send message">
-						</div>
-					</div>
-					{!! Form::close() !!}
-					<!-- form --> 
-				</div>
+			<div class="col-md-4 centered">
+				<i class="icon icon-map"></i>
+				<p>
+					230/49 M.11 Nongkham, Sriracha<br>
+					Chonburi, Thailand 20230
+				</p>
 			</div>
-			<!-- row --> 
-
+			<div class="col-md-4">
+			<i class="icon icon-mic"></i>
+				<p>+(66) 038-763025</p>
+			</div>
 		</div>
 	</div>
-	<!-- container -->
+</div>
 
-	@stop
+@stop

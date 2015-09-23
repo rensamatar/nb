@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
     // CountTo init
     $('.timer').countTo();
 
+    // Fancybox
+    $('.work-box').fancybox();
+
 	//------- Navigation Menu ---------
 	var toggleNav   = $('.nb-nav-trigger');
 	var menuPanel   = $('#menu');

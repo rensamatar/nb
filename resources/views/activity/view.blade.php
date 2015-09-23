@@ -20,4 +20,99 @@
 	</div>
 </div>
 
+<section id="works" class="works section no-padding">
+	<div class="container-fluid no-padding-right">
+		<div class="row no-gutter">
+			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 work">
+				<a href="{!! asset('img/work-3.jpg') !!}" class="work-box">
+					<img src="{!! asset('img/work-3.jpg') !!}" alt="">
+					<div class="overlay">
+						<div class="overlay-caption">
+							<h5>Project Name</h5>
+							<p>Website Design</p>
+						</div>
+					</div><!-- overlay -->
+				</a>
+			</div>
+		</div>
+	</div>
+</section><!-- works -->
+
 @stop

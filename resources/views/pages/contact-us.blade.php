@@ -21,7 +21,7 @@
 		</div>
 	</div>
 </div>
-<div id="contact">
+<div id="find-us-form">
 	<div class="container">
 		<h2>Write to us</h2>
 		{!! Form::open(array('url' => 'contact')) !!}
