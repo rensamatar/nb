@@ -13,10 +13,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('img/favicon-16x16.png') !!}">
 
     <link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/vendor/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/vendor/animate-custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/menu.css') }}" rel="stylesheet">
     <link href="{{ asset('css/eleganticon.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/vendor/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/vendor/fancybox.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
