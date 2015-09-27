@@ -22,8 +22,9 @@ class NabunActivityController extends Controller {
 	public function view($id)
 	{
 		$activity = $this->activity->where('id', $id)->first();
+		$recent = $this->activity->where('id', '!=', $id)->latest()->published()->take(5);
 
-		return view('activity.view', compact('activity'));
+		return view('activity.view', compact('activity', 'recent'));
 	}
 
 }

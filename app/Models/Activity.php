@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Request;
 
 class Activity extends Model {
 
@@ -35,7 +36,11 @@ class Activity extends Model {
 
 	public function thumbnail_01($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_01 == '' )
 		{
@@ -49,7 +54,11 @@ class Activity extends Model {
 
 	public function thumbnail_02($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_02 == '' )
 		{
@@ -63,7 +72,11 @@ class Activity extends Model {
 
 	public function thumbnail_03($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_03 == '' )
 		{
@@ -77,7 +90,11 @@ class Activity extends Model {
 
 	public function thumbnail_04($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_04 == '' )
 		{
@@ -91,7 +108,11 @@ class Activity extends Model {
 
 	public function thumbnail_05($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_05 == '' )
 		{
@@ -105,7 +126,11 @@ class Activity extends Model {
 
 	public function thumbnail_06($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_06 == '' )
 		{
@@ -119,7 +144,11 @@ class Activity extends Model {
 
 	public function thumbnail_07($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_07 == '' )
 		{
@@ -133,7 +162,11 @@ class Activity extends Model {
 
 	public function thumbnail_08($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'large';
+		if ( Request::is('admin/*'))
+        {
+           $filter = 'small';
+        }
 
 		if($this->img_file_08 == '' )
 		{

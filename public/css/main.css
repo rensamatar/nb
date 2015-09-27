@@ -709,6 +709,39 @@ ul.social-buttons li a:active {
 #blog-body .separate {
 	border-bottom: solid 1px #eee;
 }
+/*-------- Sidebar --------*/
+.sidebar {
+    padding-left: 0px;
+}
+.sidebar a {
+    color: #666;
+}
+.sidebar .widget {
+    margin-bottom: 60px;
+}
+.widget .widget-heading h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.widget-recent-posts ul {
+    list-style: none;
+    padding-left: 0;
+}
+.widget-recent-posts ul li {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.widget-recent-posts ul li span {
+    font-size: 13px;
+    display: block;
+    color: #aaa;
+}
+
 #find-us {
 	padding-top: 60px;
 	padding-right: 30px;
@@ -888,7 +921,7 @@ ul.social-buttons li a:active {
 	-moz-box-shadow: 0 0 0 1px #fff;
 	-webkit-box-shadow: 0 0 0 1px #fff;
 	box-shadow: 0 0 0 1px #fff;
-	min-height: 350px;
+	min-height: 300px;
 	overflow: hidden;
 	position: relative;
 	visibility: visible; 
@@ -909,6 +942,7 @@ ul.social-buttons li a:active {
 .work .overlay-caption {
 	position: absolute;
 	text-align: center;
+	font-size: 30px;
 	top: 50%;
 	width: 100%;
 	-moz-transform: translateY(-50%);
