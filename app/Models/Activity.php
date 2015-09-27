@@ -33,4 +33,116 @@ class Activity extends Model {
 		}
 	}
 
+	public function thumbnail_01($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_01 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_01 );
+		}
+	}
+
+	public function thumbnail_02($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_02 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_02 );
+		}
+	}
+
+	public function thumbnail_03($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_03 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_03 );
+		}
+	}
+
+	public function thumbnail_04($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_04 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_04 );
+		}
+	}
+
+	public function thumbnail_05($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_05 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_05 );
+		}
+	}
+
+	public function thumbnail_06($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_06 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_06 );
+		}
+	}
+
+	public function thumbnail_07($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_07 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_07 );
+		}
+	}
+
+	public function thumbnail_08($default = 'dummy.jpg')
+	{   
+		$filter = 'small';
+
+		if($this->img_file_08 == '' )
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
+		}
+		else
+		{
+			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_08 );
+		}
+	}
+
 }

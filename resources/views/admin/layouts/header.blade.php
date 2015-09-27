@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="index2.html" class="logo">
+  <a href="{!! url('admin') !!}" class="logo">
     <span class="logo-mini"><b>N</b>B</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>Admin</b>Nabun</span>
@@ -51,10 +51,6 @@
               </div>
             </li>
           </ul>
-        </li>
-        <!-- Control Sidebar Toggle Button -->
-        <li>
-          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
         </li>
       </ul>
     </div>

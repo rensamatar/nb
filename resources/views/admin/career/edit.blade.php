@@ -2,30 +2,28 @@
 
 @section('content')
 
-<div class="content-wrapper">
-	<!-- Content Header (Page header) -->
-	<section class="content-header">
-		<h1>Edit Career<small>edit the career</small></h1>
-		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-			<li class="active">Edit</li>
-		</ol>
-	</section>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>Edit Career<small>Edit the career</small></h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">Edit</li>
+	</ol>
+</section>
 
-	<!-- Main content -->
-	<section class="content">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="box">
-					{!! Form::model($career, ['method' => 'PATCH', 'action' => ['Admin\NabunCareersController@update', $career->id ]]) !!}
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box">
+				{!! Form::model($career, ['method' => 'PATCH', 'action' => ['Admin\NabunCareersController@update', $career->id ]]) !!}
 
-					@include('admin.career.form', array('buttonText' => 'Edit career'))
+				@include('admin.career.form', array('buttonText' => 'Edit career'))
 
-					{!! Form::close() !!}
-				</div>
+				{!! Form::close() !!}
 			</div>
 		</div>
-	</section>
-</div>
+	</div>
+</section>
 
 @stop

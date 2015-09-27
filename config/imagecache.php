@@ -32,6 +32,7 @@ return array(
     
     'paths' => array(
         public_path('uploads'),
+        public_path('uploads/activity'),
         public_path('img')
     ),
 
