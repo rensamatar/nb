@@ -1,11 +1,11 @@
 @extends('layouts.default')
 @section('content')
 
-<div id="blog" name="blog">
+<div id="blog" name="blog" data-parallax="scroll" data-image-src="{!! asset('img/bg-subheader.jpg') !!}">
 	<div class="container">
-		<div class="row white-font-color centered wow fadeInUp animated">
+		<div class="row centered wow fadeInUp delay-1s">
 			<h2>{!! $activity->title !!}</h2>
-			<div class="col-sm-10 col-sm-offset-1 white-font-color centered wow fadeInUp animated">
+			<div class="col-sm-10 col-sm-offset-1 centered wow fadeInUp delay-15s">
 				<p class="created-date">{!! $activity->created_at->diffForHumans() !!}</p>
 			</div>
 		</div>

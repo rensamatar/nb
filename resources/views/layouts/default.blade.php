@@ -20,6 +20,7 @@
     <link href="{{ asset('css/vendor/fancybox.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+    <script src="{{ asset('js/vendor/pace.js') }}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +31,7 @@
 
     </head>
     <body>
-
+        @include('layouts.pageloader')
     	@include('layouts.menu')
 
     	<main id="main">
@@ -44,6 +45,8 @@
     	<script src="{{ asset('js/vendor/retina.js') }}"></script>
         <script src="{{ asset('js/vendor/countTo.js') }}"></script>
         <script src="{{ asset('js/vendor/fancybox.js') }}"></script>
+        <script src="{{ asset('js/vendor/fitvids.js') }}"></script>
+        <script src="{{ asset('js/vendor/parallax.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
 
         @yield('script')

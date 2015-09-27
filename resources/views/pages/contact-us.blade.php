@@ -1,7 +1,17 @@
 @extends('layouts.default')
 @section('content')
 
-@include('pages.google-map')
+<div id="blog" name="blog" data-parallax="scroll" data-image-src="{!! asset('img/bg-subheader.jpg') !!}">
+	<div class="container">
+		<div class="row wow fadeInUp delay-1s">
+			<h2>Keep in touch</h2>
+			<div class="col-sm-10 col-sm-offset-1 wow fadeInUp delay-15s">
+				<p class="created-date">ติดต่อเรา</p>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div id="find-us" class="container">
 	<div class="row">
@@ -21,7 +31,7 @@
 		</div>
 	</div>
 </div>
-<div id="find-us-form">
+<div id="find-us-form" class="parallax dark-section" data-parallax="scroll" data-image-src="{!! asset('img/img-06.jpg') !!}">
 	<div class="container">
 		<h2>Write to us</h2>
 		{!! Form::open(array('url' => 'contact')) !!}
@@ -39,5 +49,7 @@
 		{!! Form::close() !!}
 	</div>
 </div>
+
+@include('pages.google-map')
 
 @stop

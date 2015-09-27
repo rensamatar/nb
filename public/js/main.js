@@ -1,5 +1,16 @@
 'use strict';
 
+jQuery(window).load(function() {
+    jQuery(".loader-container").delay(600).fadeOut(600);
+    jQuery("#pageloader").delay(1200).fadeOut(800);
+});
+
+//---- Fit Video
+jQuery('.fitvid').each(function() {
+    jQuery(this).fitVids();
+});
+
+
 jQuery(document).ready(function($) {
 
 	//wow animation init
@@ -9,7 +20,9 @@ jQuery(document).ready(function($) {
     $('.timer').countTo();
 
     // Fancybox
-    $('.work-box').fancybox();
+    //$('.work-box').fancybox();
+
+    // Play Video
 
 	//------- Navigation Menu ---------
 	var toggleNav   = $('.nb-nav-trigger');
@@ -32,3 +45,5 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+

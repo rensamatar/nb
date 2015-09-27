@@ -1,11 +1,11 @@
 @extends('layouts.default')
 @section('content')
 
-<div id="blog" name="blog">
+<div id="blog" name="blog" data-parallax="scroll" data-image-src="{!! asset('img/bg-subheader.jpg') !!}">
 	<div class="container">
-		<div class="row wow fadeInUp animated">
+		<div class="row wow fadeInUp delay-1s">
 			<h2>Our Services</h2>
-			<div class="col-sm-10 col-sm-offset-1 wow fadeInUp animated">
+			<div class="col-sm-10 col-sm-offset-1 wow fadeInUp delay-15s">
 				<p class="created-date">บริการของเรา</p>
 			</div>
 		</div>
