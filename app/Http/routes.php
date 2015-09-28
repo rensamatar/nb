@@ -95,3 +95,19 @@ Route::group(array('prefix' => 'auth'), function () {
 
 });
 
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+| Here is where you can call from device to get Careers and our Activity.
+|
+|
+*/
+Route::group(array('prefix' => 'api'), function () {
+
+    # Career
+    Route::get('hire', array('as' => 'hire', 'uses' => 'APIController@getCareer'));
+    
+});
+
+
