@@ -306,6 +306,11 @@ img.img-animate:hover {
 	text-align: center;
 	background: #fff;
 }
+.light-section .white
+{
+	padding-left: 20px;
+	padding-right: 20px;
+}
 .light-section .white h1 {
 	color: #999;
 	text-align: left;
@@ -314,7 +319,7 @@ img.img-animate:hover {
 	text-align: left;
 }
 .light-section .white p {
-	padding-top: 25px;
+	padding-top: 20px;
 	text-align: left;
 }
 /*-------- Video Section --------*/

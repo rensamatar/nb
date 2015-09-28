@@ -1,7 +1,7 @@
 <!-- Page Loader -->
 <div id="pageloader" class="dark">
     <div class="loader-container">
-        <div class="loader-logo"><img src="{!! asset('img/loader-logo.png') !!}" alt=""></div>
+        <div class="loader-logo"><img src="{!! asset('img/logo.png') !!}" alt=""></div>
         <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
