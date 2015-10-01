@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     $('.timer').countTo();
 
     // Fancybox
-    $('.work-box').fancybox();
+    $('.work-box, #fancybox').fancybox();
 
     // Play Video
 

@@ -20,7 +20,7 @@ class Activity extends Model {
 		$this->attributes['published_date'] = Carbon::parse($date);
 	}
 
-	public function thumbnail($default = 'dummy.jpg')
+	public function thumbnail($default = 'no-image.png')
 	{   
 		$filter = 'backend';
 
@@ -34,7 +34,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_01($default = 'dummy.jpg')
+	public function thumbnail_01($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -52,7 +52,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_02($default = 'dummy.jpg')
+	public function thumbnail_02($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -70,7 +70,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_03($default = 'dummy.jpg')
+	public function thumbnail_03($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -88,7 +88,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_04($default = 'dummy.jpg')
+	public function thumbnail_04($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -106,7 +106,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_05($default = 'dummy.jpg')
+	public function thumbnail_05($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -124,7 +124,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_06($default = 'dummy.jpg')
+	public function thumbnail_06($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -142,7 +142,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_07($default = 'dummy.jpg')
+	public function thumbnail_07($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))
@@ -160,7 +160,7 @@ class Activity extends Model {
 		}
 	}
 
-	public function thumbnail_08($default = 'dummy.jpg')
+	public function thumbnail_08($default = 'no-image.png')
 	{   
 		$filter = 'large';
 		if ( Request::is('admin/*'))

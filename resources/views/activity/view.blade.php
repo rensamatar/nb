@@ -19,9 +19,53 @@
 		</div>
 		<div class="col-md-3 sidebar">
 			<div class="widget widget-recent-posts">
-				<div class="widget-heading"><h4>Recent Posts</h4></div>
+				<div class="widget-heading"><h4>Photos From Posts</h4></div>
 				<div class="widget-body">
+					<div class="row">
+						@if($activity->img_file_01)
+						<a href="{!! $activity->thumbnail_01() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_01() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+						@if($activity->img_file_02)
+						<a href="{!! $activity->thumbnail_02() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_02() !!}" style="padding-bottom: 10px"> 
+						</a>
+						@endif
+						@if($activity->img_file_03)
+						<a href="{!! $activity->thumbnail_03() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_03() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+						@if($activity->img_file_04)
+						<a href="{!! $activity->thumbnail_04() !!}" id="fancybox" rel="{!! $activity->id !!}"> 
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_04() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+						@if($activity->img_file_05)
+						<a href="{!! $activity->thumbnail_05() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_05() !!}" style="padding-bottom: 10px"> 
+						</a>
+						@endif
+						@if($activity->img_file_06)
+						<a href="{!! $activity->thumbnail_06() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_06() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+						@if($activity->img_file_07)
+						<a href="{!! $activity->thumbnail_07() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_07() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+						@if($activity->img_file_08)
+						<a href="{!! $activity->thumbnail_08() !!}" id="fancybox" rel="{!! $activity->id !!}">
+							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_08() !!}" style="padding-bottom: 10px">
+						</a>
+						@endif
+					</div>
+
 					@if($recent->count())
+					<div class="widget-heading"><h4>Recent Posts</h4></div>
 					<ul>
 						@foreach($recent as $item)
 						<li>
