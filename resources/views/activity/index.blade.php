@@ -16,12 +16,18 @@
 	<div class="row">
 		@foreach($activities as $activity)
 		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			<div class="card">
-				<a href="{!! url('activities/'.$activity->id) !!}">
-					<img src="{!! $activity->thumbnail() !!}" width="100%" alt="">
-					<h3>{!! str_limit($activity->title, $limit = 44, $end = '...') !!}</h3>
-					{!! $activity->created_at->diffForHumans() !!}
-				</a>
+			<div class="overlay-effect effects clearfix">
+				<div class="img">
+					<img src="{!! $activity->thumbnail() !!}" alt="Activity Item" draggable="false">
+					<div class="overlay">
+						<a href="{!! url('activities/'.$activity->id) !!}" class="expand">
+							<i class="icon icon-search"></i><br />
+							View More
+						</a>
+						<a class="close-overlay hidden">x</a>
+					</div>
+				</div>
+				<h3><a href="{!! url('activities/'.$activity->id) !!}">{!! str_limit($activity->title, $limit = 44, $end = '...') !!}</a></h3>
 				<p>{!! str_limit(strip_tags($activity->body), $limit = 250, $end = '...') !!}</p>
 			</div>
 		</div>

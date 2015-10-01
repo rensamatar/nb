@@ -6,11 +6,6 @@
 	<meta name="description" content="Nabun Upgrade International Co.,Ltd.">
 	<meta name="author" content="Sarawut Popadcha">
 	<title>Nabun Upgrade International</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{!! asset('img/android-icon-192x192.png') !!}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{!! asset('img/favicon-32x32.png') !!}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{!! asset('img/favicon-96x96.png') !!}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('img/favicon-16x16.png') !!}">
 
     <link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/vendor/animate.css') }}" rel="stylesheet">

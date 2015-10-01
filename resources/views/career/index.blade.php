@@ -16,11 +16,18 @@
 	<div class="row">
 		@foreach($careers as $career)
 		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			<div class="card">
-				<a href="{!! url('careers/'.$career->id) !!}">
-					<img src="{!! $career->thumbnail() !!}" width="100%" alt="">
-					<h3>{!! str_limit($career->title, $limit = 44, $end = '...') !!}</h3>
-				</a>
+			<div class="overlay-effect effects clearfix">
+				<div class="img">
+					<img src="{!! $career->thumbnail() !!}" alt="Career Item" draggable="false">
+					<div class="overlay">
+						<a href="{!! url('careers/'.$career->id) !!}" class="expand">
+							<i class="icon icon-search"></i><br />
+							View More
+						</a>
+						<a class="close-overlay hidden">x</a>
+					</div>
+				</div>
+				<h3><a href="{!! url('careers/'.$career->id) !!}">{!! str_limit($career->title, $limit = 44, $end = '...') !!}</a></h3>
 				<p>{!! str_limit($career->attribute, $limit = 250, $end = '...') !!}</p>
 			</div>
 		</div>

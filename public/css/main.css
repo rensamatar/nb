@@ -190,6 +190,10 @@ img.img-animate:hover {
 	letter-spacing: 1px;
 	border-radius: 0;
 }
+.btn-black {
+	border: solid 1px #666;
+
+}
 .img-circle {
 	border-radius: 50%;
 	border: 4px solid rgba(255,255,255,0.5);
@@ -271,6 +275,7 @@ img.img-animate:hover {
 .delay-1s { animation-delay: 1s; -webkit-animation-delay: 1s; }
 .delay-15s { animation-delay: 1.5s; -webkit-animation-delay: 1.5s; }
 .animated { visibility: visible; }
+
 /* Parallax */
 .parallax {
 	background-position: 50% 0;
@@ -322,40 +327,112 @@ img.img-animate:hover {
 	padding-top: 20px;
 	text-align: left;
 }
-/*-------- Video Section --------*/
-.video-section {
-	overflow: hidden;
-	position: relative;
+/*-------- Career & Activity page --------*/
+.effects { 
+	padding-left: 15px; 
 }
-.video-section .container {
-	z-index: 32;
-	position: relative;
-    opacity: 0.7;
-    filter: Alpha(Opacity=0.7);
+.effects a {
+	color: #666;
+	text-decoration: none;
 }
-.video-section .fullscreen-video {
-	position: absolute;
-	top: -50px;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 30;
+.effects .img { 
+	position: relative; 
+	margin-bottom: 5px; 
+	position: relative; 
+	z-index: 1; 
+	overflow: hidden; 
 }
-.video-section video {
-	min-width: 100% !important;
-	height: auto;
-	min-height: 100%;
+.effects .img img { 
+	display: block; 
+	margin: 0; 
+	padding: 0; 
+	height: auto; 
 }
-.video-section .video-section-mask {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 31;
+.overlay { 
+	display: block; 
+	position: absolute; 
+	z-index: 20; 
+	background: rgba(100, 194, 158, 0.8); 
+	overflow: hidden; 
+	transition: all 0.5s; 
+	-webkit-transition: all 0.5s; 
+	-moz-transition: all 0.5s; 
+	-o-transition: all 0.5s; 
 }
-.video-section.dark-section .video-section-mask {
-	background: url(../img/overlay.png) repeat rgba(0,0,0,.6);
+a.close-overlay { 
+	display: block; 
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	z-index: 100; 
+	width: 45px; 
+	height: 45px; 
+	font-size: 20px; 
+	font-weight: 700; 
+	color: #fff; 
+	line-height: 45px; 
+	text-align: center; 
+	background-color: #000; 
+	cursor: pointer; 
+}
+a.close-overlay.hidden { 
+	display: none; 
+}
+a.expand { 
+	display: block; 
+	position: absolute; 
+	z-index: 100; 
+	text-align: center; 
+	color: #fff; 
+	font-weight: 600; 
+	font-size: 14px; 
+	text-transform: uppercase; 
+	line-height: 30px; 
+}
+.overlay-effect .img i { 
+	font-size: 30px; 
+}
+.overlay-effect .overlay { 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	width: 100%; 
+	height: 100%; 
+	opacity: 0; 
+}
+.overlay-effect .overlay a.expand { 
+	left: 0; 
+	right: 0; 
+	bottom: 47%; 
+	margin: 0 auto -30px auto; 
+}
+.overlay-effect .img.hover .overlay { 
+	height: 100%; opacity: 1; 
+}
+.img img { 
+	width: -webkit-calc(100% + 40px) !important; 
+	width: calc(100% + 40px) !important; 
+	-webkit-transition: opacity 0.35s, 
+	-webkit-transform 0.35s; 
+	transition: opacity 0.35s, transform 0.35s; 
+	-moz-transition: opacity 0.35s, -moz-transform 0.35s; 
+	-o-transition: opacity 0.35s, -o-transform 0.35s; 
+	-webkit-transform: translate3d(-40px, 0, 0); 
+	transform: translate3d(-40px, 0, 0);
+	-ms-transform: translate3d(-40px, 0, 0); 
+}
+.img:hover img { 
+	-webkit-transform: translate3d(0, 0, 0); 
+	transform: translate3d(0, 0, 0); 
+	-ms-transform: translate3d(-40px, 0, 0); 
+}
+.designs { 
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	top: 50px; 
 }
 /* Wrap Sections */
 #hero {

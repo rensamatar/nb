@@ -39,6 +39,16 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-9">
+			@if($previousActivity > 0)
+			<a href="{!! url('activity/' . $previousActivity ) !!}" class="pull-left btn btn-md btn-black">Previous</a>
+			@endif
+			@if($nextActivity > $activity->count())
+			<a href="{!! url('activity/' . $nextActivity ) !!}" class="pull-right btn btn-md btn-black">Next</a>
+			@endif
+		</div>
+	</div>
 </div>
 
 <section id="works" class="works section no-padding">
