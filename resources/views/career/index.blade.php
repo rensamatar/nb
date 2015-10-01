@@ -6,7 +6,7 @@
 		<div class="row centered wow fadeInUp delay-1s">
 			<h2>Our Career</h2>
 			<div class="col-sm-10 col-sm-offset-1 centered wow fadeInUp delay-15s">
-				<p class="created-date">ตำแหน่งงานที่เปิดรับสมัคร</p>
+				<p class="created-date">ตำแหน่งงานที่ประกาศรับสมัคร</p>
 			</div>
 		</div>
 	</div>
@@ -21,7 +21,7 @@
 					<img src="{!! $career->thumbnail() !!}" width="100%" alt="">
 					<h3>{!! str_limit($career->title, $limit = 44, $end = '...') !!}</h3>
 				</a>
-				<p>{!! str_limit(strip_tags($career->body), $limit = 250, $end = '...') !!}</p>
+				<p>{!! str_limit($career->attribute, $limit = 250, $end = '...') !!}</p>
 			</div>
 		</div>
 		@endforeach

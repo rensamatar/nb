@@ -24,13 +24,6 @@ class RoleTableSeeder extends Seeder {
 		'created_at'   => Carbon\Carbon::now()->subWeek(),
 		'updated_at'   => Carbon\Carbon::now()->subWeek(),
 		],
-		[
-		'id'           => 3,
-		'name'         => 'member',
-		'display_name' => 'Member',
-		'created_at'   => Carbon\Carbon::now()->subWeek(),
-		'updated_at'   => Carbon\Carbon::now()->subWeek(),
-		],
 		];
 
 		DB::table('roles')->insert($roles);
