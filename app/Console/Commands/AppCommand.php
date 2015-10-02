@@ -253,10 +253,22 @@ class AppCommand extends Command {
     	$user->activation_code = str_random(20) . '+' .$this->userData['email'];
     	$user->save();
 
+    	// Create Nabun admin user
+		$nb = new User();
+    	$nb->firstname = 'Saiphon';
+    	$nb->lastname  = 'Jantasaeng';
+    	$nb->email     = 'sjta.nabun@gmail.com';
+    	$nb->gravatar  = 'sjta.nabun@gmail.com';
+    	$nb->password  = bcrypt('nabunupgrade');
+    	$nb->activated = 1;
+    	$nb->activation_code = str_random(20) . '+' .'sjta.nabun@gmail.com';
+    	$nb->save();
+
     	// Show the success message.
 		$this->info('Create User successfully.');
 
 		$user->roles()->attach($admin->id);
+		$nb->roles()->attach($admin->id);
 		$admin->perms()->sync(array($createPost->id, $editUser->id));
 		$staff->perms()->sync(array($createPost->id));
 
