@@ -36,7 +36,7 @@
 									<a href="{{ url('admin/career', $career->id) }}">{{ $career->title }}</a>
 								</td>
 								<td>
-									<p>{{ $career->created_at->diffForHumans() }}</p>
+									<p>{{ $career->created_at }}</p>
 								</td>
 								<td>
 									<a href="{!! url('admin/career/' .$career->id.'/edit') !!}">

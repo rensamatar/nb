@@ -6,7 +6,7 @@
 		<div class="row centered wow fadeInUp delay-1s">
 			<h2>{!! $activity->title !!}</h2>
 			<div class="col-sm-10 col-sm-offset-1 centered wow fadeInUp delay-15s">
-				<p class="created-date">{!! $activity->created_at->diffForHumans() !!}</p>
+				<p class="created-date">{!! $activity->created_at !!}</p>
 			</div>
 		</div>
 	</div>
@@ -72,7 +72,7 @@
 							<a href="{!! url('activities/'.$item->id) !!}">
 								{!! str_limit($item->title, $limit = 44, $end = '...') !!}
 							</a>
-							<span>{!! $item->created_at->diffForHumans() !!}</span>
+							<span>{!! $item->created_at !!}</span>
 						</li>
 						@endforeach
 					</ul>
@@ -105,7 +105,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -118,7 +118,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -131,7 +131,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -144,7 +144,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -157,7 +157,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -170,7 +170,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -183,7 +183,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>
@@ -196,7 +196,7 @@
 					<div class="overlay">
 						<div class="overlay-caption">
 							<h5></h5>
-							<p>{!! $activity->created_at->diffForHumans() !!}</p>
+							<p>{!! $activity->created_at !!}</p>
 						</div>
 					</div><!-- overlay -->
 				</a>

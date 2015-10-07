@@ -6,7 +6,7 @@
 		<div class="row centered wow fadeInUp delay-1s">
 			<h2>{!! $career->title !!}</h2>
 			<div class="col-sm-10 col-sm-offset-1 centered wow fadeInUp delay-15s">
-				<p class="created-date">{!! $career->updated_at->diffForHumans() !!}</p>
+				<p class="created-date">{!! $career->updated_at !!}</p>
 			</div>
 		</div>
 	</div>

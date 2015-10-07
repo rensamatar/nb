@@ -36,7 +36,7 @@
 									<a href="{{ url('admin/activity', $activity->id) }}">{{ $activity->title }}</a>
 								</td>
 								<td>
-									<p>{{ $activity->created_at->diffForHumans() }}</p>
+									<p>{{ $activity->created_at }}</p>
 								</td>
 								<td>
 									<a href="{!! url('admin/activity/' .$activity->id.'/edit') !!}">

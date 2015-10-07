@@ -20,6 +20,21 @@ class Activity extends Model {
 		$this->attributes['published_date'] = Carbon::parse($date);
 	}
 
+	public function getPublishedDateAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	}
+
+	public function getCreatedAtAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	}
+
+	public function getUpdatedAtAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	}
+
 	public function thumbnail($default = 'no-image.png')
 	{   
 		$filter = 'backend';

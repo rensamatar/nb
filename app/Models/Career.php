@@ -16,9 +16,9 @@ class Career extends Model {
 	}
 
 	public function staff()
-    {
-        return $this->hasMany('App\Models\Staff', 'id');
-    }
+	{
+		return $this->hasMany('App\Models\Staff', 'id');
+	}
 
 	public function scopePublished($query)
 	{
@@ -42,6 +42,21 @@ class Career extends Model {
 		{
 			return asset( config('imagecache.route').'/'.$filter.'/'.$this->banner );
 		}
+	}
+
+	public function getPublishedDateAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	}
+
+	public function getCreatedAtAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	}
+
+	public function getUpdatedAtAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
 	}
 
 }

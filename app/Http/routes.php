@@ -106,7 +106,13 @@ Route::group(array('prefix' => 'auth'), function () {
 Route::group(array('prefix' => 'api'), function () {
 
     # Career
-    Route::get('hire', array('as' => 'hire', 'uses' => 'APIController@getCareer'));
+    Route::get('career', array('as' => 'career', 'uses' => 'APIController@getCareer'));
+
+    # Activity
+    Route::get('event', array('as' => 'event', 'uses' => 'APIController@getActivity'));
+
+    # Staff
+    Route::get('staff', array('as' => 'staff', 'uses' => 'APIController@getStaff'));
     
 });
 
