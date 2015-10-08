@@ -101,7 +101,7 @@
 			<img src="{{ asset('img/logo/amaka.png') }}" class="img-animate" alt="client logo">
 			<hgroup>
 				<h4>Amaga Saki Pipe (Thailand) </h4>
-				<small>บริษัท อมากา ซากิ ไปพพ (ประเทศไทย) จำกัด</small>
+				<small>บริษัท อมากา ซากิ ไปพ์ (ประเทศไทย) จำกัด</small>
 			</hgroup>
 		</div>
 	</div>

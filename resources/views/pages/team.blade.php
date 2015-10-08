@@ -16,8 +16,8 @@
 	<div class="row centered bottom">
 		<div class="col-sm-10 col-sm-offset-1 centered wow fadeInDown">
 			<img class="img img-circle" src="{!! asset('img/team/phichet.png') !!}" height="160px" width="160px" alt="">
-			<h4>Dr.Picheat Wongsawat</h4>
-			<p>Chairman</p>
+			<h4>ดร.พิเชต วงศ์สวัสดิ์</h4>
+			<p>ประธานบริษัท</p>
 		</div>
 	</div>
 	<div class="row centered bottom wow fadeInUp" data-wow-delay="0.1s">

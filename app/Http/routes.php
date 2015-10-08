@@ -56,6 +56,8 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 	Route::resource('career', 'Admin\NabunCareersController');
 	Route::resource('staff', 'Admin\NabunStaffController');
 
+	#summernote upload
+	Route::post('activity/upload', array( 'as' => 'admin.activity.upload', 'uses' => 'Admin\NabunActivityController@postUpload'));
 });
 
 /*

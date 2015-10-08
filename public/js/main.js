@@ -21,6 +21,7 @@ jQuery(document).ready(function($) {
 
     // Fancybox
     $('.work-box, #fancybox').fancybox();
+    $('#box-body img').fancybox();
 
     // Play Video
 

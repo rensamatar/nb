@@ -28,7 +28,7 @@
 
 	<div class="form-group {!! $errors->first('body', 'has-error') !!}">
 		{!! Form::label('body', 'Body : ') !!}
-		{!! Form::textarea('body', null, array('class' => 'form-control', 'id' => 'content-editor')) !!}
+		{!! Form::textarea('body', null, array('class' => 'form-control', 'id' => 'content-editor', 'size' => '30x5')) !!}
 		{!! $errors->first('body', '<span class="help-block">:message</span>') !!}
 	</div>
 
@@ -131,8 +131,34 @@
 
 @section('script')
 <script type="text/javascript">
+	function sendFile(file) {
+		data = new FormData();
+		data.append("file", file);
+		data.append("_token", '{!! csrf_token() !!}' );
+		$.ajax({
+			data: data,
+			type: "POST",
+			url: "{!! url('admin/activity/upload') !!}",
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function(url) {
+				//alert(url);
+				//editor.insertImage(welEditable, url);
+				$('#content-editor').summernote("insertImage", url);
+			}
+		});
+	}
+
 	$(document).ready(function() {
-		$('#content-editor').summernote({ height: 300, minHeight: null, maxHeight: null });
+		$('#content-editor').summernote({ 
+			height: 300, 
+			minHeight: null, 
+			maxHeight: null,
+			onImageUpload: function(files) {
+				sendFile(files[0]);
+			}
+		});
 	});
 </script>
 @stop

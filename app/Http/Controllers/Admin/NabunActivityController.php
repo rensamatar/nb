@@ -322,4 +322,19 @@ class NabunActivityController extends Controller {
 		return redirect('admin/activity');
 	}
 
+	public function postUpload()
+    {   
+        // Now check if image file exist
+        if (Input::hasFile('file'))
+        {
+
+            $ext       = Input::file('file')->getClientOriginalExtension();
+            $imagename = 'post_'.str_random(10).'.'.$ext ;
+            $image     = Image::make(Input::file('file'))->save('uploads/activity/'.$imagename);
+
+            echo  '/uploads/activity/'.$image->basename;
+            
+        }
+    }
+
 }
