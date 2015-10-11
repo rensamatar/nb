@@ -56,6 +56,21 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 	Route::resource('career', 'Admin\NabunCareersController');
 	Route::resource('staff', 'Admin\NabunStaffController');
 
+	# Albums
+	Route::get('albums', array('as' => 'albums','uses' => 'Admin\AlbumsController@getList'));
+	Route::get('albums/create', array('as' => 'albums/create','uses' => 'Admin\AlbumsController@getCreate'));
+	Route::post('albums/create', array('as' => 'albums/create','uses' => 'Admin\AlbumsController@postCreate'));
+	Route::get('albums/edit/{id}', array('as' => 'albums/edit','uses' => 'Admin\AlbumsController@getEdit'));
+	Route::post('albums/edit/{id}', array('as' => 'albums/edit/{id}','uses' => 'Admin\AlbumsController@postEdit'));
+	Route::get('deletealbum/{id}', array('as' => 'delete_album','uses' => 'Admin\AlbumsController@getDelete'));
+	Route::get('albums/{id}', array('as' => 'show_album','uses' => 'Admin\AlbumsController@getAlbum'));
+
+	# Add Images
+	Route::get('addimage/{id}', array('as' => 'add_image','uses' => 'Admin\ImagesController@getAdd'));
+	Route::post('addimage', array('as' => 'add_image_to_album','uses' => 'Admin\ImagesController@postAdd'));
+	Route::get('deleteimage/{id}', array('as' => 'delete_image','uses' => 'Admin\ImagesController@getDelete'));
+	Route::post('moveimage', array('as' => 'move_image', 'uses' => 'Admin\ImagesController@postMove'));
+
 	#summernote upload
 	Route::post('activity/upload', array( 'as' => 'admin.activity.upload', 'uses' => 'Admin\NabunActivityController@postUpload'));
 });
