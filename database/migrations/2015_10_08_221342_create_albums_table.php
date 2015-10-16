@@ -19,6 +19,7 @@ class CreateAlbumsTable extends Migration {
 			$table->text('description');
 			$table->string('cover_image');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration {
 			$table->string('activation_code')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

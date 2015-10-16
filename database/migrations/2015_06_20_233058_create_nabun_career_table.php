@@ -43,7 +43,11 @@ class CreateNabunCareerTable extends Migration {
 			$table->string('staff_3')->nullable();
 			$table->string('staff_4')->nullable();
 			$table->timestamp('published_date');
+			$table->integer('click')->default(0);
+			$table->float('rating_cache')->default(0);
+			$table->integer('rating_count')->default(0);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

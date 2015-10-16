@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNabunStaffTable extends Migration {
+class CreateSubscribesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CreateNabunStaffTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('staff', function(Blueprint $table)
+		Schema::create('subscribes', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
-			$table->string('name');
-			$table->string('nickname')->nullable();
-			$table->string('position')->nullable();
-			$table->string('phone')->nullable();
-			$table->string('image')->nullable();
+			$table->string('email');
+			$table->tinyInteger('status');
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -32,7 +29,7 @@ class CreateNabunStaffTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('staff');
+		Schema::drop('subscribes');
 	}
 
 }

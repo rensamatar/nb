@@ -28,7 +28,11 @@ class CreateNabunActivityTable extends Migration {
 			$table->string('img_file_06')->nullable();
 			$table->string('img_file_07')->nullable();
 			$table->string('img_file_08')->nullable();
+			$table->integer('click')->default(0);
+			$table->float('rating_cache')->default(0);
+			$table->integer('rating_count')->default(0);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

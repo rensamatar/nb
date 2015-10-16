@@ -91,7 +91,7 @@ class AppCommand extends Command {
 		$this->entryRunner();
 
         // Seed the tables with dummy data
-		$this->call('db:seed');
+        //$this->call('db:seed');
 	}
 
 	 /**
@@ -188,7 +188,7 @@ class AppCommand extends Command {
     		$this->userData['password'] = $password;
     	} while ( ! $password);
     }
-
+    
     /**
      * Runs all the necessary commands.
      * @return void
