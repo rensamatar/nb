@@ -70,7 +70,7 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 	Route::group(array('prefix' => 'career'), function () {
 		Route::get('/', array('as' => 'admin.career', 'uses' => 'Admin\NabunCareersController@getIndex'));
 		Route::get('create', array('as' => 'create/career', 'uses' => 'Admin\NabunCareersController@getCreate'));
-		Route::post('{careerId}/create', 'Admin\NabunCareersController@postCreate');
+		Route::post('create', 'Admin\NabunCareersController@postCreate');
 		Route::get('{careerId}/edit', array('as' => 'update/career', 'uses' => 'Admin\NabunCareersController@getEdit'));
 		Route::post('{careerId}/edit', 'Admin\NabunCareersController@postEdit');
 		Route::get('{careerId}/view', array('as' => 'view/career', 'uses' => 'Admin\NabunCareersController@getView'));
