@@ -53,8 +53,32 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 
 	Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
 	Route::resource('activity', 'Admin\NabunActivityController');
-	Route::resource('career', 'Admin\NabunCareersController');
-	Route::resource('staff', 'Admin\NabunStaffController');
+	#Route::resource('career', 'Admin\NabunCareersController');
+	#Route::resource('staff', 'Admin\NabunStaffController');
+
+	# Staff
+	Route::group(array('prefix' => 'staff'), function () {
+		Route::get('/', array('as' => 'admin.staff', 'uses' => 'Admin\NabunStaffController@getIndex'));
+		Route::get('create', array('as' => 'create/staff', 'uses' => 'Admin\NabunStaffController@getCreate'));
+		Route::post('create', 'Admin\NabunStaffController@postCreate');
+		Route::get('{staffId}/edit', array('as' => 'update/staff', 'uses' => 'Admin\NabunStaffController@getEdit'));
+		Route::post('{staffId}/edit', 'Admin\NabunStaffController@postEdit');
+		Route::get('{staffId}/view', array('as' => 'view/staff', 'uses' => 'Admin\NabunStaffController@getView'));
+		Route::get('{staffId}/delete', array('as' => 'delete/staff', 'uses' => 'Admin\NabunStaffController@getDelete'));
+		Route::get('{staffId}/restore', array('as' => 'restore/staff', 'uses' => 'Admin\NabunStaffController@getRestore'));
+	});
+
+	# Career
+	Route::group(array('prefix' => 'career'), function () {
+		Route::get('/', array('as' => 'admin.career', 'uses' => 'Admin\NabunCareersController@getIndex'));
+		Route::get('create', array('as' => 'create/career', 'uses' => 'Admin\NabunCareersController@getCreate'));
+		Route::post('create', 'Admin\NabunCareersController@postCreate');
+		Route::get('{careerId}/edit', array('as' => 'update/career', 'uses' => 'Admin\NabunCareersController@getEdit'));
+		Route::post('{careerId}/edit', 'Admin\NabunCareersController@postEdit');
+		Route::get('{careerId}/view', array('as' => 'view/career', 'uses' => 'Admin\NabunCareersController@getView'));
+		Route::get('{careerId}/delete', array('as' => 'delete/career', 'uses' => 'Admin\NabunCareersController@getDelete'));
+		Route::get('{careerId}/restore', array('as' => 'restore/career', 'uses' => 'Admin\NabunCareersController@getRestore'));
+	});
 
 	# Albums
 	Route::get('albums', array('as' => 'albums','uses' => 'Admin\AlbumsController@getList'));
@@ -123,14 +147,14 @@ Route::group(array('prefix' => 'auth'), function () {
 Route::group(array('prefix' => 'api'), function () {
 
     # Career
-    Route::get('career', array('as' => 'career', 'uses' => 'APIController@getCareer'));
+	Route::get('career', array('as' => 'career', 'uses' => 'APIController@getCareer'));
 
     # Activity
-    Route::get('event', array('as' => 'event', 'uses' => 'APIController@getActivity'));
+	Route::get('event', array('as' => 'event', 'uses' => 'APIController@getActivity'));
 
     # Staff
-    Route::get('staff', array('as' => 'staff', 'uses' => 'APIController@getStaff'));
-    
+	Route::get('staff', array('as' => 'staff', 'uses' => 'APIController@getStaff'));
+
 });
 
 

@@ -17,13 +17,25 @@
 		<div class="col-md-6">
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">Number : {{ $staff->id }}</h3>
+					<h3 class="box-title">
+					<a href="{!! url('admin/staff/'.$staff->id .'/edit') !!}">
+							<i class="fa fa-pencil"></i>
+						</a>
+					</h3>
+					<div class="box-tools pull-right">
+						<a href="{!! url('admin/staff/'.$previous .'/view') !!}" class="btn btn-box-tool {!! ($staff->id == 1 ? 'disabled' : '') !!}" data-toggle="tooltip" title="" data-original-title="Previous">
+							<i class="fa fa-chevron-left"></i>
+						</a>
+						<a href="{!! url('admin/staff/'.$next .'/view') !!}" class="btn btn-box-tool {!! ($staff->id == $maxId ? 'disabled' : '') !!}" data-toggle="tooltip" title="" data-original-title="Next">
+							<i class="fa fa-chevron-right"></i>
+						</a>
+					</div>
 				</div><!-- /.box-header -->
-				<div class="box-body">
-					<p><img src="{!! $staff->thumbnail() !!}" /></p>
-					<h3 class="box-title">{{ $staff->name }}</h3>
-					<p>{{ $staff->position }}</p>
-					<p>{{ $staff->phone }}</p>
+				<div class="box-body text-center">
+					<img class="img-circle" src="{!! $staff->thumbnail() !!}" width="120px" />
+					<h3 class="box-title">{!! $staff->name !!}</h3>
+					<p>{!! $staff->position !!}</p>
+					<p>{!! $staff->phone !!}</p>
 				</div>
 			</div>
 		</div>

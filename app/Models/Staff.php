@@ -24,7 +24,7 @@ class Staff extends Model {
 
 	public function thumbnail($default = 'dummy.jpg')
 	{   
-		$filter = 'small';
+		$filter = 'staff';
 
 		if($this->image == '')
 		{

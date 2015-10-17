@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers\Admin;
 
-use App\Models\Career;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
+use Illuminate\Http\Request;
+use App\Models\Career;
 use Input;
 use Image;
 use Auth;
@@ -26,26 +26,19 @@ class NabunCareersController extends Controller {
 		$this->career = $career;
 	}
 
-	public function index()
+	public function getIndex()
 	{
 		$careers = $this->career->latest()->published()->paginate(20);
 
 		return view('admin.career.index', compact('careers'));
 	}
 
-	public function show($id)
-	{
-		$career = $this->career->findOrFail($id);
-
-		return view('admin.career.show', compact('career'));
-	}
-
-	public function create()
+	public function getCreate()
 	{
 		return view('admin.career.create');
 	}
 
-	public function store(Request $request)
+	public function postCreate(Request $request)
 	{
 		// Validate
 		$this->validate($request, $this->validationRules);
@@ -98,14 +91,14 @@ class NabunCareersController extends Controller {
 		return redirect('admin/career');
 	}
 
-	public function edit($id)
+	public function getEdit($id)
 	{
 		$career = $this->career->findOrFail($id);
 
 		return view('admin.career.edit', compact('career'));
 	}
 
-	public function update($id, Request $request)
+	public function postEdit($id, Request $request)
 	{
 		$career = $this->career->findOrFail($id);
 
@@ -158,5 +151,24 @@ class NabunCareersController extends Controller {
 
 		return redirect('admin/career');
 	}
+
+
+	public function getView($id)
+	{
+		$career = $this->career->findOrFail($id);
+
+		return view('admin.career.show', compact('career'));
+	}
+
+	public function getDelete()
+	{
+
+	}
+
+	public function getRestore()
+	{
+		
+	}
+
 
 }

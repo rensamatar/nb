@@ -33,6 +33,8 @@ return array(
     'paths' => array(
         public_path('uploads'),
         public_path('uploads/activity'),
+        public_path('uploads/career'),
+        public_path('uploads/staff'),
         public_path('img')
     ),
 
@@ -57,6 +59,7 @@ return array(
         'medium'  => 'Intervention\Image\Templates\Medium',
         'large'   => 'Intervention\Image\Templates\Large',
         'backend' => 'App\Filters\BackendFilter',
+        'staff'   => 'App\Filters\StaffFilter',
     ),
 
     /*

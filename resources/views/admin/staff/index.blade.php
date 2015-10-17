@@ -36,10 +36,10 @@
 							<tr>
 								<td>{!! $i++ !!}</td>
 								<td>
-									<img class="img-circle" src="{{ $staff->thumbnail() }}" width="60px" height="60px;">
+									<img class="img-circle" src="{!! $staff->thumbnail() !!}" width="60px">
 								</td>
 								<td>
-									<a href="{{ url('admin/staff', $staff->id) }}">{{ $staff->name }}</a>
+									<a href="{!! url('admin/staff/' .$staff->id. '/view') !!}">{{ $staff->name }}</a>
 								</td>
 								<td>
 									<p>{!! $staff->nickname !!}</p>
@@ -56,7 +56,7 @@
 									</a>
 								</td>
 								<td>
-									<a href="{!! url('admin/staff/' .$staff->id.'/delete') !!}">
+									<a href="{!! url('admin/staff/' .$staff->id.'/delete') !!}" onclick="return confirm('Are you sure ?')">
 										<span class="badge bg-red"><i class="fa fa-trash"></i></span>
 									</a>
 								</td>

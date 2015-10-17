@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Staff;
+use Wage;
 
 class Career extends Model {
 
@@ -21,6 +22,11 @@ class Career extends Model {
 	public function staff()
 	{
 		return $this->hasMany('App\Models\Staff', 'id');
+	}
+
+	public function wages()
+	{
+		return $this->hasMany('App\Models\Wage');
 	}
 
 	public function scopePublished($query)
