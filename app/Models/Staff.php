@@ -22,6 +22,11 @@ class Staff extends Model {
 		return $this->belongsTo('App\Models\Career', 'id');
 	}
 
+	public function careerStaff()
+	{
+		return $this->hasMany('App\Models\CareerStaff', 'id');
+	}
+
 	public function thumbnail($default = 'dummy.jpg')
 	{   
 		$filter = 'staff';

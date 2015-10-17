@@ -15,8 +15,6 @@ class CreateNabunCareerTable extends Migration {
 		Schema::create('career', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
-			$table->integer('wage_id');
-			$table->integer('staff_id');
 			$table->string('title');
 			$table->string('banner')->nullable();
 			$table->string('author')->nullable();

@@ -3,8 +3,8 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
-use Staff;
-use Wage;
+use App\Models\CareerStaff;
+use App\Models\Wage;
 
 class Career extends Model {
 
@@ -27,6 +27,23 @@ class Career extends Model {
 	public function wages()
 	{
 		return $this->hasMany('App\Models\Wage');
+	}
+
+	public function careerStaff()
+	{
+		return $this->hasMany('App\Models\CareerStaff');
+	}
+
+	public function getWageCount($careerId) 
+	{
+		$wageCount = Wage::where('career_id', $careerId)->count();
+		return $wageCount;
+	}
+
+	public function getStaffCount($careerId) 
+	{
+		$staffCount = CareerStaff::where('career_id', $careerId)->count();
+		return $staffCount;
 	}
 
 	public function scopePublished($query)

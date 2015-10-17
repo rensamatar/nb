@@ -24,6 +24,8 @@
 							<tr>
 								<th style="width: 10px">#</th>
 								<th>Title</th>
+								<th>Wage</th>
+								<th>Staff</th>
 								<th>Created at</th>
 								<th style="width: 40px">Edit</th>
 								<th style="width: 40px">Trash</th>
@@ -33,10 +35,16 @@
 							<tr>
 								<td>{!! $i++ !!}</td>
 								<td>
-									<a href="{{ url('admin/career', $career->id) }}">{{ $career->title }}</a>
+									<a href="{!! url('admin/career/' .$career->id. '/view') !!}">{{ $career->title }}</a>
 								</td>
 								<td>
-									<p>{{ $career->created_at }}</p>
+									<p>{!! $career->getWageCount($career->id) !!}</p>
+								</td>
+								<td>
+									<p>{!! $career->getStaffCount($career->id) !!}</p>
+								</td>
+								<td>
+									<p>{!! $career->created_at !!}</p>
 								</td>
 								<td>
 									<a href="{!! url('admin/career/' .$career->id.'/edit') !!}">

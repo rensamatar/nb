@@ -14,50 +14,128 @@
 <!-- Main content -->
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="box">
-				<div class="box-header with-border">
+
+		<!-- Career detail -->
+		<div class="col-md-6">
+			<div class="box box-primary">
+				<div class="box-header">
 					<h3 class="box-title">{!! $career->title !!}</h3>
-				</div><!-- /.box-header -->
+				</div>
+
 				<div class="box-body">
-					<div class="row">
-						<div class="col-md-6">
-							<h4><strong><i class="fa fa-database"></i> รายละเอียด</strong></h4>
-							<p><strong><i class="fa fa-gear"></i> ที่ทำงาน</strong></p>
-							<p>{!! $career->title !!}</p>
-							<p><strong><i class="fa fa-gavel"></i> ผลิต</strong></p>
-							<p>{!! $career->attribute !!}</p>
-							<p><strong><i class="fa fa-venus-mars"></i> เพศ</strong></p>
-							<p>{!! $career->gender !!}</p>
-							<p><strong><i class="fa fa-life-bouy"></i> อายุ</strong></p>
-							<p>{!! $career->age !!}</p>
-							<p><strong><i class="fa fa-mortar-board"></i> วุฒิการศึกษา</strong></p>
-							<p>{!! $career->qualifications !!}</p>
-						</div>
-						<div class="col-md-6">
-							<h4><strong><i class="fa fa-bullhorn"></i> ค่าจ้าง / สวัสดิการ</strong></h4>
-							<p>{!! $career->wage_1 !!}</p>
-							<p>{!! $career->wage_2 !!}</p>
-							<p>{!! $career->wage_3 !!}</p>
-							<p>{!! $career->wage_4 !!}</p>
-							<p>{!! $career->wage_5 !!}</p>
-							<p>{!! $career->wage_6 !!}</p>
-							<p>{!! $career->wage_7 !!}</p>
-							<p>{!! $career->wage_8 !!}</p>
-							<p>{!! $career->wage_9 !!}</p>
-							<p>{!! $career->wage_10 !!}</p>
-							<p>{!! $career->wage_11 !!}</p>
-							<p>{!! $career->wage_12 !!}</p>
-							<p>{!! $career->wage_13 !!}</p>
-							<p>{!! $career->wage_14 !!}</p>
-							<p>{!! $career->wage_15 !!}</p>
-							<p>{!! $career->wage_16 !!}</p>
-						</div>
-						
-					</div>
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th style="width: 30%;">Label</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td><strong>Title</strong></td>
+								<td>{!! $career->title !!}</td>
+							</tr>
+							<tr>
+								<td><strong>Detail</strong></td>
+								<td>{!! $career->attribute !!}</td>
+							</tr>
+							<tr>
+								<td><strong>Gender</strong></td>
+								<td>{!! $career->gender !!}</td>
+							</tr>
+							<tr>
+								<td><strong>Age</strong></td>
+								<td>{!! $career->age !!}</td>
+							</tr>
+							<tr>
+								<td><strong>Qualifications</strong></td>
+								<td>{!! $career->qualifications !!}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="box-footer text-right">
+					<a class="btn btn-info" href="{!! url('admin/career/' . $career->id . '/edit') !!}">Edit</a>
+				</div>
+			</div>
+
+			<!-- Career Staff -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">Staff of {!! $career->title !!}</h3>
+				</div>
+
+				<div class="box-body">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th>Name</th>
+								<th>Phone</th>
+								<th style="width: 80px;">Actions</th>
+							</tr>
+							@foreach ($members as $member)
+							<tr>
+								<td>
+									{!! $member->staff->name !!} 
+									<a href="{!! url('admin/staff/' . $member->staff->id . '/edit') !!}" class="badge">{!! $member->staff->nickname !!}</a>
+								</td>
+								<td>{!! $member->staff->phone !!}</td>
+								<td class="text-center">
+									<a href="{!! url('admin/sub/' . $member['id'] . '/edit') !!}" class="btn btn-xs btn-info">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a href="{!! url('admin/sub/' . $member['id'] . '/delete') !!}" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure ?')">
+										<i class="fa fa-trash"></i>
+									</a>
+								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+
+				<div class="box-footer text-right">
+					<a class="btn btn-info" href="{!! url('admin/sub/' . $career->id . '/create') !!}">Add</a>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Wage detail -->
+		<div class="col-md-6">
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">Wage of {!! $career->title !!}</h3>
+				</div>
+
+				<div class="box-body">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th>Title</th>
+								<th style="width: 80px;">Actions</th>
+							</tr>
+							@foreach ($wages as $wage)
+							<tr>
+								<td>{!! $wage['title'] !!}</td>
+								<td class="text-center">
+									<a href="{!! url('admin/wage/' . $wage['id'] . '/edit') !!}" class="btn btn-xs btn-info">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a href="{!! url('admin/wage/' . $wage['id'] . '/delete') !!}" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure ?')">
+										<i class="fa fa-trash"></i>
+									</a>
+								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+
+				<div class="box-footer text-right">
+					<a class="btn btn-info" href="{!! url('admin/wage/' . $career->id . '/create') !!}">Add</a>
 				</div>
 			</div>
 		</div>
+
 	</div>
 </section>
 

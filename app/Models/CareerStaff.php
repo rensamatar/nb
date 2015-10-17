@@ -4,17 +4,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 
-class Wage extends Model {
+class CareerStaff extends Model {
 
 	use SoftDeletes;
 
-	protected $table = 'wage';
+	protected $table = 'career_staff';
 
-	protected $fillable = array('title');
+	protected $fillable = array();
 
 	public function career()
 	{
 		return $this->belongsTo('App\Models\Career');
+	}
+
+	public function staff()
+	{
+		return $this->belongsTo('App\Models\Staff');
 	}
 
 }

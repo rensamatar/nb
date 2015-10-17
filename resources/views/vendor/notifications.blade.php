@@ -47,6 +47,6 @@
 
 @section('script')
 <script type="text/javascript">
-    //$('div.alert').not('alert-important').delay(3000).slideUp(300);
+    $('div.alert').not('alert-important').delay(3000).slideUp(300);
 </script>
 @stop

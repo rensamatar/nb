@@ -53,8 +53,6 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 
 	Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
 	Route::resource('activity', 'Admin\NabunActivityController');
-	#Route::resource('career', 'Admin\NabunCareersController');
-	#Route::resource('staff', 'Admin\NabunStaffController');
 
 	# Staff
 	Route::group(array('prefix' => 'staff'), function () {
@@ -72,12 +70,30 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 	Route::group(array('prefix' => 'career'), function () {
 		Route::get('/', array('as' => 'admin.career', 'uses' => 'Admin\NabunCareersController@getIndex'));
 		Route::get('create', array('as' => 'create/career', 'uses' => 'Admin\NabunCareersController@getCreate'));
-		Route::post('create', 'Admin\NabunCareersController@postCreate');
+		Route::post('{careerId}/create', 'Admin\NabunCareersController@postCreate');
 		Route::get('{careerId}/edit', array('as' => 'update/career', 'uses' => 'Admin\NabunCareersController@getEdit'));
 		Route::post('{careerId}/edit', 'Admin\NabunCareersController@postEdit');
 		Route::get('{careerId}/view', array('as' => 'view/career', 'uses' => 'Admin\NabunCareersController@getView'));
 		Route::get('{careerId}/delete', array('as' => 'delete/career', 'uses' => 'Admin\NabunCareersController@getDelete'));
 		Route::get('{careerId}/restore', array('as' => 'restore/career', 'uses' => 'Admin\NabunCareersController@getRestore'));
+	});
+
+	# Career Wage
+	Route::group(array('prefix' => 'wage'), function () {
+		Route::get('{careerId}/create', array('as' => 'create/wage', 'uses' => 'Admin\CareerWageController@getCreate'));
+		Route::post('{careerId}/create', 'Admin\CareerWageController@postCreate');
+		Route::get('{careerId}/edit', array('as' => 'update/wage', 'uses' => 'Admin\CareerWageController@getEdit'));
+		Route::post('{careerId}/edit', 'Admin\CareerWageController@postEdit');
+		Route::get('{careerId}/delete', array('as' => 'delete/wage', 'uses' => 'Admin\CareerWageController@getDelete'));
+	});
+
+	# Career Wage
+	Route::group(array('prefix' => 'sub'), function () {
+		Route::get('{careerId}/create', array('as' => 'create/sub', 'uses' => 'Admin\CareerStaffController@getCreate'));
+		Route::post('{careerId}/create', 'Admin\CareerStaffController@postCreate');
+		Route::get('{careerId}/edit', array('as' => 'update/sub', 'uses' => 'Admin\CareerStaffController@getEdit'));
+		Route::post('{careerId}/edit', 'Admin\CareerStaffController@postEdit');
+		Route::get('{careerId}/delete', array('as' => 'delete/sub', 'uses' => 'Admin\CareerStaffController@getDelete'));
 	});
 
 	# Albums

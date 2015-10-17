@@ -3,6 +3,8 @@
 use App\Http\Controllers\Controller as Controller;
 use Illuminate\Http\Request;
 use App\Models\Career;
+use App\Models\Wage;
+use App\Models\CareerStaff;
 use Input;
 use Image;
 use Auth;
@@ -10,6 +12,8 @@ use Auth;
 class NabunCareersController extends Controller {
 
 	protected $career;
+	protected $wages;
+	protected $staff;
 	protected $validationRules = array(
 		'title'          => 'required|min:3',
 		'banner'         => '',
@@ -21,9 +25,11 @@ class NabunCareersController extends Controller {
 		'published_date' => 'required|date'
 		);
 
-	public function __construct(Career $career)
+	public function __construct(Career $career, Wage $wages, CareerStaff $staff)
 	{  
 		$this->career = $career;
+		$this->wages  = $wages;
+		$this->staff  = $staff;
 	}
 
 	public function getIndex()
@@ -51,28 +57,6 @@ class NabunCareersController extends Controller {
 		$career->age            = $request->input('age');
 		$career->qualifications = $request->input('qualifications');
 		$career->published_date = $request->input('published_date');
-		//wage
-		$career->wage_1         = $request->input('wage_1');
-		$career->wage_2         = $request->input('wage_2');
-		$career->wage_3         = $request->input('wage_3');
-		$career->wage_4         = $request->input('wage_4');
-		$career->wage_5         = $request->input('wage_5');
-		$career->wage_6         = $request->input('wage_6');
-		$career->wage_7         = $request->input('wage_7');
-		$career->wage_8         = $request->input('wage_8');
-		$career->wage_9         = $request->input('wage_9');
-		$career->wage_10        = $request->input('wage_10');
-		$career->wage_11        = $request->input('wage_11');
-		$career->wage_12        = $request->input('wage_12');
-		$career->wage_13        = $request->input('wage_13');
-		$career->wage_14        = $request->input('wage_14');
-		$career->wage_15        = $request->input('wage_15');
-		$career->wage_16        = $request->input('wage_16');
-		//Staff
-		$career->staff_1        = $request->input('staff_1');
-		$career->staff_2        = $request->input('staff_2');
-		$career->staff_3        = $request->input('staff_3');
-		$career->staff_4        = $request->input('staff_4');
 		$career->save();
 
 		// Now check if image file exist
@@ -80,7 +64,7 @@ class NabunCareersController extends Controller {
 		{
 			$ext       = Input::file('banner')->getClientOriginalExtension();
 			$imagename = 'career_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('banner'))->save('uploads/'.$imagename);
+			$image     = Image::make(Input::file('banner'))->save('uploads/career/'.$imagename);
 			if($image)
 			{
 				$career->banner = $image->basename;
@@ -88,7 +72,7 @@ class NabunCareersController extends Controller {
 			}
 		}
 
-		return redirect('admin/career');
+		return redirect('admin/career/' .$career->id. '/view')->with('success', 'Create new career success.');
 	}
 
 	public function getEdit($id)
@@ -112,28 +96,6 @@ class NabunCareersController extends Controller {
 		$career->age            = $request->input('age');
 		$career->qualifications = $request->input('qualifications');
 		$career->published_date = $request->input('published_date');
-		//wage
-		$career->wage_1         = $request->input('wage_1');
-		$career->wage_2         = $request->input('wage_2');
-		$career->wage_3         = $request->input('wage_3');
-		$career->wage_4         = $request->input('wage_4');
-		$career->wage_5         = $request->input('wage_5');
-		$career->wage_6         = $request->input('wage_6');
-		$career->wage_7         = $request->input('wage_7');
-		$career->wage_8         = $request->input('wage_8');
-		$career->wage_9         = $request->input('wage_9');
-		$career->wage_10        = $request->input('wage_10');
-		$career->wage_11        = $request->input('wage_11');
-		$career->wage_12        = $request->input('wage_12');
-		$career->wage_13        = $request->input('wage_13');
-		$career->wage_14        = $request->input('wage_14');
-		$career->wage_15        = $request->input('wage_15');
-		$career->wage_16        = $request->input('wage_16');
-		//Staff
-		$career->staff_1        = $request->input('staff_1');
-		$career->staff_2        = $request->input('staff_2');
-		$career->staff_3        = $request->input('staff_3');
-		$career->staff_4        = $request->input('staff_4');
 		$career->save();
 
 		// Now check if image file exist
@@ -141,7 +103,7 @@ class NabunCareersController extends Controller {
 		{
 			$ext       = Input::file('banner')->getClientOriginalExtension();
 			$imagename = 'career_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('banner'))->save('uploads/'.$imagename);
+			$image     = Image::make(Input::file('banner'))->save('uploads/career/'.$imagename);
 			if($image)
 			{
 				$career->banner = $image->basename;
@@ -149,7 +111,7 @@ class NabunCareersController extends Controller {
 			}
 		}
 
-		return redirect('admin/career');
+		return redirect('admin/career/' .$career->id. '/view')->with('success', 'Update career success.');
 	}
 
 
@@ -157,18 +119,38 @@ class NabunCareersController extends Controller {
 	{
 		$career = $this->career->findOrFail($id);
 
-		return view('admin.career.show', compact('career'));
+		$wages = $this->wages->where('career_id', $id)->get();
+
+		$members = $this->staff->where('career_id', $id)->get();
+
+		return view('admin.career.show', compact('career', 'wages', 'members'));
 	}
 
-	public function getDelete()
+	public function getDelete($id)
+	{
+		if (is_null($career = $this->career->find($id))) 
+    	{
+    		return redirect('admin/career')->with('error', 'Career not exist.');
+    	}
+
+        // Delete the career
+    	$career->delete();
+
+    	return redirect('admin/career')->with('success', 'Delete career success.');
+	}
+
+	public function getRestore($id = null)
 	{
 
-	}
+		if (is_null($career = $this->career->find($id))) 
+    	{
+    		return redirect('admin/career')->with('error', 'Career not exist.');
+    	}
 
-	public function getRestore()
-	{
-		
-	}
+        // Restore the career 
+    	$career->restore();
 
+    	return redirect('admin/career')->with('success', 'Restore career success.');
+	}
 
 }
