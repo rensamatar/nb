@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-          <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+          <span class="info-box-icon bg-aqua"><i class="fa fa-gears"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Clients</span>
             <span class="info-box-number">20</span>
@@ -28,7 +28,7 @@
       </div><!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-          <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+          <span class="info-box-icon bg-red"><i class="fa fa-photo"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Activity</span>
             <span class="info-box-number">{!! $activities->count() !!}</span>
@@ -41,7 +41,7 @@
 
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-          <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+          <span class="info-box-icon bg-green"><i class="fa fa-table"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Career</span>
             <span class="info-box-number">{!! $careers->count() !!}</span>
@@ -50,7 +50,7 @@
       </div><!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-          <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+          <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Staff</span>
             <span class="info-box-number">{!! $staff->count() !!}</span>

@@ -15,9 +15,6 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box">
-				<div class="box-header with-border">
-					<h3 class="box-title">Staff Table</h3>
-				</div><!-- /.box-header -->
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tbody>

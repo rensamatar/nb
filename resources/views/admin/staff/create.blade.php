@@ -14,13 +14,13 @@
 <!-- Main content -->
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<div class="box">
 				{!! Form::open(array('url' => 'admin/staff/create', 'files' => true)) !!}
 
 				<section class="content">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="form-group {!! $errors->first('name', 'has-error') !!}">
 								{!! Form::label('name', 'Name : ') !!}
 								{!! Form::text('name', null, array('class' => 'form-control')) !!}
@@ -36,18 +36,24 @@
 								{!! Form::text('position', null, array('class' => 'form-control')) !!}
 								{!! $errors->first('position', '<span class="help-block">:message</span>') !!}
 							</div>
-							<div class="form-group {!! $errors->first('phone', 'has-error') !!}">
-								{!! Form::label('phone', 'Phone : ') !!}
-								{!! Form::text('phone', null, array('class' => 'form-control')) !!}
-								{!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group {!! $errors->first('image', 'has-error') !!}">
-								{!! Form::label('image', 'Image : ') !!}
-								{!! Form::file('image') !!}
-								<p class="help-block">Photo for staff</p>
-								{!! $errors->first('image', '<span class="help-block">:message</span>') !!}
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group {!! $errors->first('phone', 'has-error') !!}">
+										{!! Form::label('phone', 'Phone : ') !!}
+										{!! Form::text('phone', null, array('class' => 'form-control')) !!}
+										{!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group {!! $errors->first('image', 'has-error') !!}">
+										{!! Form::label('image', 'Image : ') !!}
+										{!! Form::file('image') !!}
+										<p class="help-block">
+											<img src="{!! asset('img/no-image.png') !!}" width="120px"/>
+										</p>
+										{!! $errors->first('image', '<span class="help-block">:message</span>') !!}
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
