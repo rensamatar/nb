@@ -171,6 +171,7 @@ Route::group(array('prefix' => 'api'), function () {
 	Route::get('career', array('as' => 'career.all', 'uses' => 'APIController@getAllCareer'));
 	Route::get('career/{careerId}', array('as' => 'career.single', 'uses' => 'APIController@getSingleCareer'));
 	Route::get('career/staff/{careerId}', array('as' => 'career.staff.single', 'uses' => 'APIController@getSingleCareerStaff'));
+	Route::get('career/wage/{careerId}', array('as' => 'career.wage.single', 'uses' => 'APIController@getSingleCareerWage'));
 
     # Activity
 	Route::get('event', array('as' => 'event.all', 'uses' => 'APIController@getAllActivity'));

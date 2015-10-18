@@ -6,6 +6,7 @@ use App\Models\ActivityPhotos;
 use App\Models\Career;
 use App\Models\CareerStaff;
 use App\Models\Staff;
+use App\Models\Wage;
 use Response;
 use Carbon\Carbon;
 
@@ -16,14 +17,16 @@ class APIController extends Controller {
 	protected $activity;
 	protected $photo;
 	protected $careerStaff;
+	protected $wage;
 
-	public function __construct(Career $career, Staff $staff, Activity $activity, ActivityPhotos $photo, CareerStaff $careerStaff)
+	public function __construct(Career $career, Staff $staff, Activity $activity, ActivityPhotos $photo, CareerStaff $careerStaff, Wage $wage)
 	{
 		$this->career      = $career;
 		$this->staff       = $staff;
 		$this->activity    = $activity;
 		$this->photo       = $photo;
 		$this->careerStaff = $careerStaff;
+		$this->wage        = $wage;
 	}
 
 	public function getStaff()
@@ -111,6 +114,30 @@ class APIController extends Controller {
 				'photo'       => asset( config('imagecache.route').'/'.'backend'.'/'.$key->staff->image ),
 				'created_at'  => Carbon::createFromFormat('Y-m-d H:i:s', $key->created_at)->format('d M Y'),
 				'updated_at'  => Carbon::createFromFormat('Y-m-d H:i:s', $key->updated_at)->format('d M Y')
+				];
+			}
+		} 
+		catch (Exception $e) 
+		{
+			// do stuff
+		} 
+		finally 
+		{
+			return Response::json($response, $statusCode);
+		}
+	}
+
+	public function getSingleCareerWage($id)
+	{
+		try {
+			$statusCode  = 200;
+			$response    = []; 
+			$wage = $this->wage->where('career_id', $id)->get();
+
+			foreach ($wage as $key) {
+				$response[] = [
+				'id'          => $key->id,
+				'title'       => $key->title
 				];
 			}
 		} 
