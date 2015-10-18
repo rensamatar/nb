@@ -48,16 +48,6 @@
           <li><a href="{{ url('admin/activity/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/activity/create') ? 'text-red' : '') !!}"></i> Add new activity</a></li>
         </ul>
       </li> 
-      <li class="treeview {!! (Request::is('admin/albums*') ? 'active' : '') !!}">
-        <a href="#">
-          <i class="fa fa-photo"></i> <span>Nabun Gallery</span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="{{ url('admin/albums') }}"><i class="fa fa-circle-o {!! (Request::is('admin/albums') ? 'text-red' : '') !!}"></i> All gallery</a></li>
-          <li><a href="{{ url('admin/albums/create') }}"><i class="fa fa-circle-o {!! (Request::is('admin/albums/create') ? 'text-red' : '') !!}"></i> Add new gallery</a></li>
-        </ul>
-      </li>
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
