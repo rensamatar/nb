@@ -52,7 +52,6 @@ Route::get('admin/signout', array('as' => 'admin/signout', 'uses' => 'AuthContro
 Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function () {
 
 	Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
-	//Route::resource('activity', 'Admin\NabunActivityController');
 
 	# Staff
 	Route::group(array('prefix' => 'staff'), function () {
@@ -117,21 +116,6 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 		Route::get('{activityId}/delete', array('as' => 'delete/photo', 'uses' => 'Admin\ActivityPhotoController@getDelete'));
 	});
 
-	# Albums
-	Route::get('albums', array('as' => 'albums','uses' => 'Admin\AlbumsController@getList'));
-	Route::get('albums/create', array('as' => 'albums/create','uses' => 'Admin\AlbumsController@getCreate'));
-	Route::post('albums/create', array('as' => 'albums/create','uses' => 'Admin\AlbumsController@postCreate'));
-	Route::get('albums/edit/{id}', array('as' => 'albums/edit','uses' => 'Admin\AlbumsController@getEdit'));
-	Route::post('albums/edit/{id}', array('as' => 'albums/edit/{id}','uses' => 'Admin\AlbumsController@postEdit'));
-	Route::get('deletealbum/{id}', array('as' => 'delete_album','uses' => 'Admin\AlbumsController@getDelete'));
-	Route::get('albums/{id}', array('as' => 'show_album','uses' => 'Admin\AlbumsController@getAlbum'));
-
-	# Add Images
-	Route::get('addimage/{id}', array('as' => 'add_image','uses' => 'Admin\ImagesController@getAdd'));
-	Route::post('addimage', array('as' => 'add_image_to_album','uses' => 'Admin\ImagesController@postAdd'));
-	Route::get('deleteimage/{id}', array('as' => 'delete_image','uses' => 'Admin\ImagesController@getDelete'));
-	Route::post('moveimage', array('as' => 'move_image', 'uses' => 'Admin\ImagesController@postMove'));
-
 	#summernote upload
 	Route::post('activity/upload', array( 'as' => 'admin.activity.upload', 'uses' => 'Admin\NabunActivityController@postUpload'));
 });
@@ -184,10 +168,14 @@ Route::group(array('prefix' => 'auth'), function () {
 Route::group(array('prefix' => 'api'), function () {
 
     # Career
-	Route::get('career', array('as' => 'career', 'uses' => 'APIController@getCareer'));
+	Route::get('career', array('as' => 'career.all', 'uses' => 'APIController@getAllCareer'));
+	Route::get('career/{careerId}', array('as' => 'career.single', 'uses' => 'APIController@getSingleCareer'));
+	Route::get('career/staff/{careerId}', array('as' => 'career.staff.single', 'uses' => 'APIController@getSingleCareerStaff'));
 
     # Activity
-	Route::get('event', array('as' => 'event', 'uses' => 'APIController@getActivity'));
+	Route::get('event', array('as' => 'event.all', 'uses' => 'APIController@getAllActivity'));
+	Route::get('event/{eventId}', array('as' => 'event.single', 'uses' => 'APIController@getSingleActivity'));
+	Route::get('event/photos/{eventId}', array('as' => 'event.photos.single', 'uses' => 'APIController@getSingleActivityPhotos'));
 
     # Staff
 	Route::get('staff', array('as' => 'staff', 'uses' => 'APIController@getStaff'));
