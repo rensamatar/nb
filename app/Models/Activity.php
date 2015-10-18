@@ -35,19 +35,9 @@ class Activity extends Model {
 		$this->attributes['published_date'] = Carbon::parse($date);
 	}
 
-	public function getPublishedDateAttribute($date)
+	public function getPublishedDate()
 	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
-	}
-
-	public function getCreatedAtAttribute($date)
-	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
-	}
-
-	public function getUpdatedAtAttribute($date)
-	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+		return Carbon::createFromFormat('Y-m-d H:i:s', $this->published_date)->format('Y-m-d');
 	}
 
 	public function thumbnail($default = 'no-image.png')
@@ -63,5 +53,20 @@ class Activity extends Model {
 			return asset( config('imagecache.route').'/'.$filter.'/'.$this->banner );
 		}
 	}
+
+	// public function getPublishedDateAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
+
+	// public function getCreatedAtAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
+
+	// public function getUpdatedAtAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
 
 }

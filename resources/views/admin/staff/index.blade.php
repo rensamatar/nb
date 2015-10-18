@@ -20,7 +20,6 @@
 						<tbody>
 							<tr>
 								<th style="width: 10px">#</th>
-								<th>Photo</th>
 								<th>Name</th>
 								<th>Nickname</th>
 								<th>Position</th>
@@ -32,9 +31,6 @@
 							@foreach ($members as $staff)
 							<tr>
 								<td>{!! $i++ !!}</td>
-								<td>
-									<img class="img-circle" src="{!! $staff->thumbnail() !!}" width="60px">
-								</td>
 								<td>
 									<a href="{!! url('admin/staff/' .$staff->id. '/view') !!}">{{ $staff->name }}</a>
 								</td>

@@ -56,7 +56,7 @@
 								<div class="col-md-6">
 									<div class="form-group {!! $errors->first('published_date', 'has-error') !!}">
 										{!! Form::label('published_date', 'Published On : ') !!}
-										{!! Form::input('date', 'published_date', date('Y-m-d'), array('class' => 'form-control')) !!}
+										{!! Form::input('date', 'published_date', $career->getPublishedDate(), array('class' => 'form-control')) !!}
 										{!! $errors->first('published_date', '<span class="help-block">:message</span>') !!}
 									</div>
 								</div>

@@ -17,7 +17,7 @@
 		<div class="col-md-4">
 			<div class="box box-success">
 				<div class="box-header with-border">
-					<h3 class="box-title">Activity {!! $activity->created_at !!}</h3>
+					<h3 class="box-title">Published on {!! $activity->getPublishedDate() !!}</h3>
 				</div><!-- /.box-header -->
 				<div class="box-body">
 					<p><img src="{!! $activity->thumbnail() !!}" width="100%" /></p>

@@ -70,19 +70,24 @@ class Career extends Model {
 		}
 	}
 
-	public function getPublishedDateAttribute($date)
+	public function getPublishedDate()
 	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+		return Carbon::createFromFormat('Y-m-d H:i:s', $this->published_date)->format('Y-m-d');
 	}
 
-	public function getCreatedAtAttribute($date)
-	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
-	}
+	// public function getPublishedDateAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
 
-	public function getUpdatedAtAttribute($date)
-	{
-		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
-	}
+	// public function getCreatedAtAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
+
+	// public function getUpdatedAtAttribute($date)
+	// {
+	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');
+	// }
 
 }
