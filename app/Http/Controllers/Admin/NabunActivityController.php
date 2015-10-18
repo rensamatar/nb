@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Models\Activity;
+use App\Models\ActivityPhotos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
 use Input;
@@ -10,47 +11,34 @@ use Auth;
 class NabunActivityController extends Controller {
 
 	protected $activity;
+	protected $photo;
 	protected $validationRules = array(
 		'title'          => 'required|min:3',
 		'body'           => 'required',
 		'banner'         => '',
 		'author'         => '',
-		'published_date' => 'required|date',
-		'img_file_01'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_02'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_03'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_04'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_05'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_06'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_07'    => 'image|mimes:jpeg,png|min:1|max:1024',
-		'img_file_08'    => 'image|mimes:jpeg,png|min:1|max:1024'
+		'published_date' => 'required|date'
 		);
 
-	public function __construct(Activity $activity)
+	public function __construct(Activity $activity, ActivityPhotos $photo)
 	{  
 		$this->activity = $activity;
+		$this->photo    = $photo;
 	}
 
-	public function index()
+	public function getIndex()
 	{
 		$activities = $this->activity->latest()->published()->paginate(20);
 
 		return view('admin.activity.index', compact('activities'));
 	}
 
-	public function show($id)
-	{
-		$activity = $this->activity->findOrFail($id);
-
-		return view('admin.activity.show', compact('activity'));
-	}
-
-	public function create()
+	public function getCreate()
 	{
 		return view('admin.activity.create');
 	}
 
-	public function store(Request $request)
+	public function postCreate(Request $request)
 	{
 		// Validate
 		$this->validate($request, $this->validationRules);
@@ -67,7 +55,7 @@ class NabunActivityController extends Controller {
 		{
 			$ext       = Input::file('banner')->getClientOriginalExtension();
 			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('banner'))->save('uploads/'.$imagename);
+			$image     = Image::make(Input::file('banner'))->save('uploads/activity/'.$imagename);
 			if($image)
 			{
 				$activity->banner = $image->basename;
@@ -75,121 +63,17 @@ class NabunActivityController extends Controller {
 			}
 		}
 
-		// Now check if image file_01 exist
-		if (Input::hasFile('img_file_01'))
-		{
-			$ext       = Input::file('img_file_01')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_01'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_01 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_02 exist
-		if (Input::hasFile('img_file_02'))
-		{
-			$ext       = Input::file('img_file_02')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_02'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_02 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_03 exist
-		if (Input::hasFile('img_file_03'))
-		{
-			$ext       = Input::file('img_file_03')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_03'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_03 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_04 exist
-		if (Input::hasFile('img_file_04'))
-		{
-			$ext       = Input::file('img_file_04')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_04'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_04 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_05 exist
-		if (Input::hasFile('img_file_05'))
-		{
-			$ext       = Input::file('img_file_05')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_05'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_05 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_06 exist
-		if (Input::hasFile('img_file_06'))
-		{
-			$ext       = Input::file('img_file_06')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_06'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_06 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_07 exist
-		if (Input::hasFile('img_file_07'))
-		{
-			$ext       = Input::file('img_file_07')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_07'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_07 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_08 exist
-		if (Input::hasFile('img_file_08'))
-		{
-			$ext       = Input::file('img_file_08')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_08'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_08 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		return redirect('admin/activity');
+		return redirect('admin/activity/' .$activity->id. '/view')->with('success', 'Create activity success.');
 	}
 
-	public function edit($id)
+	public function getEdit($id)
 	{
 		$activity = $this->activity->findOrFail($id);
 
 		return view('admin.activity.edit', compact('activity'));
 	}
 
-	public function update($id, Request $request)
+	public function postEdit($id, Request $request)
 	{
 		$activity = $this->activity->findOrFail($id);
 
@@ -207,7 +91,7 @@ class NabunActivityController extends Controller {
 		{
 			$ext       = Input::file('banner')->getClientOriginalExtension();
 			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('banner'))->save('uploads/'.$imagename);
+			$image     = Image::make(Input::file('banner'))->save('uploads/activity/'.$imagename);
 			if($image)
 			{
 				$activity->banner = $image->basename;
@@ -215,126 +99,58 @@ class NabunActivityController extends Controller {
 			}
 		}
 
-		// Now check if image file_01 exist
-		if (Input::hasFile('img_file_01'))
-		{
-			$ext       = Input::file('img_file_01')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_01'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_01 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_02 exist
-		if (Input::hasFile('img_file_02'))
-		{
-			$ext       = Input::file('img_file_02')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_02'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_02 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_03 exist
-		if (Input::hasFile('img_file_03'))
-		{
-			$ext       = Input::file('img_file_03')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_03'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_03 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_04 exist
-		if (Input::hasFile('img_file_04'))
-		{
-			$ext       = Input::file('img_file_04')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_04'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_04 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_05 exist
-		if (Input::hasFile('img_file_05'))
-		{
-			$ext       = Input::file('img_file_05')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_05'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_05 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_06 exist
-		if (Input::hasFile('img_file_06'))
-		{
-			$ext       = Input::file('img_file_06')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_06'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_06 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_07 exist
-		if (Input::hasFile('img_file_07'))
-		{
-			$ext       = Input::file('img_file_07')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_07'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_07 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		// Now check if image file_08 exist
-		if (Input::hasFile('img_file_08'))
-		{
-			$ext       = Input::file('img_file_08')->getClientOriginalExtension();
-			$imagename = 'activity_'.str_random(10).'.'.$ext ;
-			$image     = Image::make(Input::file('img_file_08'))->save('uploads/activity/'.$imagename);
-			if($image)
-			{
-				$activity->img_file_08 = $image->basename;
-				$activity->save();
-			}
-		}
-
-		return redirect('admin/activity');
+		return redirect('admin/activity/' .$activity->id. '/view')->with('success', 'Update activity success.');
 	}
 
+	public function getView($id)
+	{
+		$activity = $this->activity->findOrFail($id);
+
+		$photos = $this->photo->where('activity_id', $id)->get();
+
+		return view('admin.activity.show', compact('activity', 'photos'));
+	}
+
+	public function getDelete($id)
+	{
+		if (is_null($activity = $this->activity->find($id))) 
+		{
+			return redirect('admin/activity')->with('error', 'Activity not exist.');
+		}
+
+        // Delete the activity
+		$activity->delete();
+
+		return redirect('admin/activity')->with('success', 'Delete activity success.');
+	}
+
+	public function getRestore($id = null)
+	{
+		if (is_null($activity = $this->activity->find($id))) 
+		{
+			return redirect('admin/activity')->with('error', 'Activity not exist.');
+		}
+
+        // Restore the activity 
+		$activity->restore();
+
+		return redirect('admin/activity')->with('success', 'Restore activity success.');
+	}
+
+	// for summernote
 	public function postUpload()
-    {   
+	{   
         // Now check if image file exist
-        if (Input::hasFile('file'))
-        {
+		if (Input::hasFile('file'))
+		{
 
-            $ext       = Input::file('file')->getClientOriginalExtension();
-            $imagename = 'post_'.str_random(10).'.'.$ext ;
-            $image     = Image::make(Input::file('file'))->save('uploads/activity/'.$imagename);
+			$ext       = Input::file('file')->getClientOriginalExtension();
+			$imagename = 'post_'.str_random(10).'.'.$ext ;
+			$image     = Image::make(Input::file('file'))->save('uploads/activity/'.$imagename);
 
-            echo  '/uploads/activity/'.$image->basename;
-            
-        }
-    }
+			echo  '/uploads/activity/'.$image->basename;
+
+		}
+	}
 
 }

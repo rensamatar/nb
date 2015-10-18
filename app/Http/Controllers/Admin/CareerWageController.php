@@ -60,7 +60,6 @@ class CareerWageController extends Controller {
 	public function postEdit($id, Request $request)
 	{
 		$wage   = $this->wage->findOrFail($id);
-		$career = $this->career->findOrFail($id);
 
 		// Validate
 		$this->validate($request, $this->validationRules);
@@ -68,22 +67,20 @@ class CareerWageController extends Controller {
 		$wage->title = $request->input('title');
 		$wage->save();
 
-		return redirect('admin/career/' .$career->id. '/view')->with('success', 'Update wage success.');
+		return redirect('admin/career/' .$wage->career_id. '/view')->with('success', 'Update wage success.');
 	}
 
 	public function getDelete($id)
 	{
-		$career = $this->career->findOrFail($id);
-
 		if (is_null($wage = $this->wage->find($id))) 
     	{
-    		return redirect('admin/career/' .$career->id. '/view')->with('error', 'Wage not exist.');
+    		return redirect('admin/career/' .$wage->career_id. '/view')->with('error', 'Wage not exist.');
     	}
 
         // Delete the staff
     	$wage->delete();
 
-    	return redirect('admin/career/' .$career->id. '/view')->with('success', 'Delete Wage success.');
+    	return redirect('admin/career/' .$wage->career_id. '/view')->with('success', 'Delete Wage success.');
 	}
 
 }

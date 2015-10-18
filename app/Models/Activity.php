@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Request;
+use App\Models\ActivityPhotos;
 
 class Activity extends Model {
 
@@ -12,6 +13,17 @@ class Activity extends Model {
 	protected $table = 'activity';
 
 	protected $fillable = ['title', 'body', 'published_date'];
+
+	public function activityPhotos()
+	{
+		return $this->hasMany('App\Models\ActivityPhotos');
+	}
+
+	public function getPhotoCount($activityId) 
+	{
+		$photoCount = ActivityPhotos::where('activity_id', $activityId)->count();
+		return $photoCount;
+	}
 
 	public function scopePublished($query)
 	{
@@ -49,150 +61,6 @@ class Activity extends Model {
 		else
 		{
 			return asset( config('imagecache.route').'/'.$filter.'/'.$this->banner );
-		}
-	}
-
-	public function thumbnail_01($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_01 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_01 );
-		}
-	}
-
-	public function thumbnail_02($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_02 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_02 );
-		}
-	}
-
-	public function thumbnail_03($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_03 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_03 );
-		}
-	}
-
-	public function thumbnail_04($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_04 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_04 );
-		}
-	}
-
-	public function thumbnail_05($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_05 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_05 );
-		}
-	}
-
-	public function thumbnail_06($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_06 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_06 );
-		}
-	}
-
-	public function thumbnail_07($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_07 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_07 );
-		}
-	}
-
-	public function thumbnail_08($default = 'no-image.png')
-	{   
-		$filter = 'large';
-		if ( Request::is('admin/*'))
-        {
-           $filter = 'small';
-        }
-
-		if($this->img_file_08 == '' )
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$default );
-		}
-		else
-		{
-			return asset( config('imagecache.route').'/'.$filter.'/'.$this->img_file_08 );
 		}
 	}
 

@@ -18,7 +18,7 @@
 			<div class="box">
 				<div class="box-header with-border">
 					<h3 class="box-title">
-					<a href="{!! url('admin/staff/'.$staff->id .'/edit') !!}">
+						<a href="{!! url('admin/staff/'.$staff->id .'/edit') !!}">
 							<i class="fa fa-pencil"></i>
 						</a>
 					</h3>

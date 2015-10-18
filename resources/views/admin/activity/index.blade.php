@@ -24,6 +24,7 @@
 							<tr>
 								<th style="width: 10px">#</th>
 								<th>Title</th>
+								<th>Photos</th>
 								<th>Created at</th>
 								<th style="width: 40px">Edit</th>
 								<th style="width: 40px">Trash</th>
@@ -33,10 +34,15 @@
 							<tr>
 								<td>{!! $i++ !!}</td>
 								<td>
-									<a href="{{ url('admin/activity', $activity->id) }}">{{ $activity->title }}</a>
+									<a href="{!! url('admin/activity/' .$activity->id. '/view') !!}">
+										{!! $activity->title !!}
+									</a>
 								</td>
 								<td>
-									<p>{{ $activity->created_at }}</p>
+									<p>{!! $activity->getPhotoCount($activity->id) !!}</p>
+								</td>
+								<td>
+									<p>{!! $activity->created_at !!}</p>
 								</td>
 								<td>
 									<a href="{!! url('admin/activity/' .$activity->id.'/edit') !!}">
@@ -44,7 +50,7 @@
 									</a>
 								</td>
 								<td>
-									<a href="{!! url('admin/activity/' .$activity->id.'/delete') !!}">
+									<a href="{!! url('admin/activity/' .$activity->id.'/delete') !!}" onclick="return confirm('Are you sure ?')">
 										<span class="badge bg-red"><i class="fa fa-trash"></i></span>
 									</a>
 								</td>

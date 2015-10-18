@@ -15,7 +15,6 @@ class CreateNabunActivityTable extends Migration {
 		Schema::create('activity', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
-			$table->integer('image_id');
 			$table->string('title');
 			$table->string('banner')->nullable();
 			$table->text('body');

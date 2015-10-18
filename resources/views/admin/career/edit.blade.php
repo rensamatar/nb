@@ -65,9 +65,13 @@
 										{!! Form::label('banner', 'Image : ') !!}
 										{!! Form::file('banner', Input::old('banner')) !!}
 										@if($career->banner)
-										<p class="help-block"><img src="{!! $career->thumbnail() !!}" width="210px"></p>
+										<p class="help-block">
+											<img src="{!! $career->thumbnail() !!}" width="210px">
+										</p>
 										@else
-										<p class="help-block">Banner for Career</p>
+										<p class="help-block">
+											<img src="{!! asset('img/no-image.png') !!}" width="210px">
+										</p>
 										@endif
 										{!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
 									</div>

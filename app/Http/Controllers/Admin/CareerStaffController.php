@@ -20,9 +20,9 @@ class CareerStaffController extends Controller {
 
 	public function __construct(Career $career, Staff $staff, CareerStaff $careerStaff)
 	{  
-		$this->career = $career;
-		$this->staff  = $staff;
-		$this->careerStaff  = $careerStaff;
+		$this->career      = $career;
+		$this->staff       = $staff;
+		$this->careerStaff = $careerStaff;
 	}
 
 	public function getCreate($careerId = null)
@@ -63,7 +63,6 @@ class CareerStaffController extends Controller {
 	public function postEdit($id, Request $request)
 	{
 		$careerStaff = $this->careerStaff->findOrFail($id);
-		$career      = $this->career->findOrFail($id);
 
 		// Validate
 		$this->validate($request, $this->validationRules);
@@ -71,22 +70,20 @@ class CareerStaffController extends Controller {
 		$careerStaff->staff_id = $request->input('staff');
 		$careerStaff->save();
 
-		return redirect('admin/career/' .$career->id. '/view')->with('success', 'Update career staff success.');
+		return redirect('admin/career/' .$careerStaff->career_id. '/view')->with('success', 'Update career staff success.');
 	}
 
 	public function getDelete($id)
 	{
-		$career = $this->career->findOrFail($id);
-
 		if (is_null($careerStaff = $this->careerStaff->find($id))) 
     	{
-    		return redirect('admin/career/' .$career->id. '/view')->with('error', 'Career staff not exist.');
+    		return redirect('admin/career/' .$careerStaff->career_id. '/view')->with('error', 'Career staff not exist.');
     	}
 
         // Delete the career staff
     	$careerStaff->delete();
 
-    	return redirect('admin/career/' .$career->id. '/view')->with('success', 'Delete career staff success.');
+    	return redirect('admin/career/' .$careerStaff->career_id. '/view')->with('success', 'Delete career staff success.');
 	}
 
 }

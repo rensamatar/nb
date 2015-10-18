@@ -64,11 +64,9 @@
 									<div class="form-group {!! $errors->first('banner', 'has-error') !!}">
 										{!! Form::label('banner', 'Image : ') !!}
 										{!! Form::file('banner') !!}
-										@if(isset($career))
-										<p class="help-block"><img src="{!! $career->thumbnail() !!}" alt=""></p>
-										@else
-										<p class="help-block">Banner for Career</p>
-										@endif
+										<p class="help-block">
+											<img src="{!! asset('img/no-image.png') !!}" width="210px">
+										</p>
 										{!! $errors->first('banner', '<span class="help-block">:message</span>') !!}
 									</div>
 								</div>

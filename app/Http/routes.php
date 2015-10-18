@@ -52,7 +52,7 @@ Route::get('admin/signout', array('as' => 'admin/signout', 'uses' => 'AuthContro
 Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function () {
 
 	Route::get('dashboard', array( 'as' => 'dashboard', 'uses' => 'Admin\DashboardController@index'));
-	Route::resource('activity', 'Admin\NabunActivityController');
+	//Route::resource('activity', 'Admin\NabunActivityController');
 
 	# Staff
 	Route::group(array('prefix' => 'staff'), function () {
@@ -87,13 +87,34 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth.admin'), function (
 		Route::get('{careerId}/delete', array('as' => 'delete/wage', 'uses' => 'Admin\CareerWageController@getDelete'));
 	});
 
-	# Career Wage
+	# Career Staff
 	Route::group(array('prefix' => 'sub'), function () {
 		Route::get('{careerId}/create', array('as' => 'create/sub', 'uses' => 'Admin\CareerStaffController@getCreate'));
 		Route::post('{careerId}/create', 'Admin\CareerStaffController@postCreate');
 		Route::get('{careerId}/edit', array('as' => 'update/sub', 'uses' => 'Admin\CareerStaffController@getEdit'));
 		Route::post('{careerId}/edit', 'Admin\CareerStaffController@postEdit');
 		Route::get('{careerId}/delete', array('as' => 'delete/sub', 'uses' => 'Admin\CareerStaffController@getDelete'));
+	});
+
+	# Activity
+	Route::group(array('prefix' => 'activity'), function () {
+		Route::get('/', array('as' => 'admin.activity', 'uses' => 'Admin\NabunActivityController@getIndex'));
+		Route::get('create', array('as' => 'create/activity', 'uses' => 'Admin\NabunActivityController@getCreate'));
+		Route::post('create', 'Admin\NabunActivityController@postCreate');
+		Route::get('{activityId}/edit', array('as' => 'update/activity', 'uses' => 'Admin\NabunActivityController@getEdit'));
+		Route::post('{activityId}/edit', 'Admin\NabunActivityController@postEdit');
+		Route::get('{activityId}/view', array('as' => 'view/activity', 'uses' => 'Admin\NabunActivityController@getView'));
+		Route::get('{activityId}/delete', array('as' => 'delete/activity', 'uses' => 'Admin\NabunActivityController@getDelete'));
+		Route::get('{activityId}/restore', array('as' => 'restore/activity', 'uses' => 'Admin\NabunActivityController@getRestore'));
+	});
+
+	# Activity Photos
+	Route::group(array('prefix' => 'photo'), function () {
+		Route::get('{activityId}/create', array('as' => 'create/photo', 'uses' => 'Admin\ActivityPhotoController@getCreate'));
+		Route::post('{activityId}/create', 'Admin\ActivityPhotoController@postCreate');
+		Route::get('{activityId}/edit', array('as' => 'update/photo', 'uses' => 'Admin\ActivityPhotoController@getEdit'));
+		Route::post('{activityId}/edit', 'Admin\ActivityPhotoController@postEdit');
+		Route::get('{activityId}/delete', array('as' => 'delete/photo', 'uses' => 'Admin\ActivityPhotoController@getDelete'));
 	});
 
 	# Albums
