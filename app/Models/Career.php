@@ -75,6 +75,13 @@ class Career extends Model {
 		return Carbon::createFromFormat('Y-m-d H:i:s', $this->published_date)->format('Y-m-d');
 	}
 
+	// Add click to access ranking 
+    function addClick()
+    {
+        $this->click = $this->click + 1;
+        $this->save();
+    }
+
 	// public function getPublishedDateAttribute($date)
 	// {
 	// 	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d M Y');

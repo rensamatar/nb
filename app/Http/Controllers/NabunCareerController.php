@@ -1,18 +1,21 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Career;
-use App\Models\Staff;
+use App\Models\CareerStaff;
+use App\Models\Wage;
 
 class NabunCareerController extends Controller {
 
 	protected $career;
 	protected $staff;
+	protected $wage;
 
-	public function __construct(Career $career, Staff $staff)
+	public function __construct(Career $career, CareerStaff $staff, Wage $wage)
 	{
 		$this->middleware('guest');
 		$this->career = $career;
 		$this->staff  = $staff;
+		$this->wage   = $wage;
 	}
 
 	public function index()
@@ -25,12 +28,13 @@ class NabunCareerController extends Controller {
 	public function view($id)
 	{
 		$career = $this->career->where('id', $id)->first();
-		$person_one   = $this->staff->find($career->staff_1);
-		$person_two   = $this->staff->find($career->staff_2);
-		$person_three = $this->staff->find($career->staff_3);
-		$person_four  = $this->staff->find($career->staff_4);
+		$wages  = $this->wage->where('career_id', $id)->get();
+		$staffs = $this->staff->where('career_id', $id)->get();
+
+		// click count
+		$career->addClick();
 		
-		return view('career.view', compact('career', 'person_one', 'person_two', 'person_three', 'person_four'));
+		return view('career.view', compact('career', 'staffs', 'wages'));
 	}
 
 }

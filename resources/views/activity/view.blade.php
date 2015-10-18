@@ -6,7 +6,7 @@
 		<div class="row centered wow fadeInUp delay-1s">
 			<h2>{!! $activity->title !!}</h2>
 			<div class="col-sm-10 col-sm-offset-1 centered wow fadeInUp delay-15s">
-				<p class="created-date">{!! $activity->created_at !!}</p>
+				<p class="created-date">{!! $activity->getPublishedDate() !!}</p>
 			</div>
 		</div>
 	</div>
@@ -15,57 +15,22 @@
 <div id="blog-body" class="container">
 	<div class="row">
 		<div class="col-md-9">
-			<p class="small">{!! $activity->body !!}</p>
+			<h3>{!! $activity->body !!}</h3>
+			<hr>
+			<div class="row">
+				@foreach($photos as $photo)
+				<a href="{!! $photo->originalImage() !!}" id="fancybox" rel="{!! $activity->id !!}">
+					<img class="col-sm-4 col-xs-4 no-padding-right" src="{!! $photo->thumbnail() !!}" style="padding-bottom: 10px" alt="{!! $photo->description !!}">
+				</a>
+				@endforeach
+			</div>
+
 		</div>
 		<div class="col-md-3 sidebar">
 			<div class="widget widget-recent-posts">
-				<div class="widget-heading"><h4>Photos From Posts</h4></div>
+			<div class="widget-heading"><h4>Mosted View</h4></div>
 				<div class="widget-body">
-					<div class="row">
-						@if($activity->img_file_01)
-						<a href="{!! $activity->thumbnail_01() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_01() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-						@if($activity->img_file_02)
-						<a href="{!! $activity->thumbnail_02() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_02() !!}" style="padding-bottom: 10px"> 
-						</a>
-						@endif
-						@if($activity->img_file_03)
-						<a href="{!! $activity->thumbnail_03() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_03() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-						@if($activity->img_file_04)
-						<a href="{!! $activity->thumbnail_04() !!}" id="fancybox" rel="{!! $activity->id !!}"> 
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_04() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-						@if($activity->img_file_05)
-						<a href="{!! $activity->thumbnail_05() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_05() !!}" style="padding-bottom: 10px"> 
-						</a>
-						@endif
-						@if($activity->img_file_06)
-						<a href="{!! $activity->thumbnail_06() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_06() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-						@if($activity->img_file_07)
-						<a href="{!! $activity->thumbnail_07() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_07() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-						@if($activity->img_file_08)
-						<a href="{!! $activity->thumbnail_08() !!}" id="fancybox" rel="{!! $activity->id !!}">
-							<img class="col-sm-6 col-xs-6 no-padding-right" src="{!! $activity->thumbnail_08() !!}" style="padding-bottom: 10px">
-						</a>
-						@endif
-					</div>
-
 					@if($recent->count())
-					<div class="widget-heading"><h4>Recent Posts</h4></div>
 					<ul>
 						@foreach($recent as $item)
 						<li>
@@ -77,7 +42,7 @@
 						@endforeach
 					</ul>
 					@else
-					<p>No data.</p>
+					<p>No data available.</p>
 					@endif
 				</div>
 			</div>
@@ -85,125 +50,10 @@
 	</div>
 	<div class="row">
 		<div class="col-md-9">
-			@if($previousActivity > 0)
-			<a href="{!! url('activity/' . $previousActivity ) !!}" class="pull-left btn btn-md btn-black">Previous</a>
-			@endif
-			@if($nextActivity > $activity->count())
-			<a href="{!! url('activity/' . $nextActivity ) !!}" class="pull-right btn btn-md btn-black">Next</a>
-			@endif
+			<a href="{!! url('activities/' . $previousActivity ) !!}" class="pull-left btn btn-md btn-black {!! ($activity->id == 1 ? 'disabled' : '') !!}">Previous</a>
+			<a href="{!! url('activities/' . $nextActivity ) !!}" class="pull-right btn btn-md btn-black {!! ($activity->id == $previousActivity ? 'disabled' : '') !!}">Next</a>
 		</div>
 	</div>
 </div>
-
-<section id="works" class="works section no-padding">
-	<div class="container-fluid no-padding-right">
-		<div class="row no-gutter">
-			@if($activity->img_file_01)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_01() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_01() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_02)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_02() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_02() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_03)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_03() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_03() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_04)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_04() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_04() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_05)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_05() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_05() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_06)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_06() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_06() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_07)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_07() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_07() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-			@if($activity->img_file_08)
-			<div class="col-lg-3 col-md-6 col-sm-6 work no-padding-top no-padding-bottom">
-				<a href="{!! $activity->thumbnail_08() !!}" class="work-box" id="fancybox" rel="{!! $activity->id !!}">
-					<img src="{!! $activity->thumbnail_08() !!}" alt="" width="">
-					<div class="overlay">
-						<div class="overlay-caption">
-							<h5></h5>
-							<p>{!! $activity->created_at !!}</p>
-						</div>
-					</div><!-- overlay -->
-				</a>
-			</div>
-			@endif
-		</div>
-	</div>
-</section><!-- works -->
 
 @stop
