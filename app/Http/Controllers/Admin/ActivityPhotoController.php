@@ -14,7 +14,7 @@ class ActivityPhotoController extends Controller {
 	protected $photo;
 	protected $validationRules = array(
 		'description' => 'required|min:3',
-		'photo'       => 'image|max:1024'
+		'photo'       => 'image|max:2048'
 		);
 
 	public function __construct(Activity $activity, ActivityPhotos $photo)

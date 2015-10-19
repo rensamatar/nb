@@ -47,9 +47,10 @@ class APIController extends Controller {
 			foreach ($careers as $career) {
 				$thumbnail = asset( config('imagecache.route').'/'.'backend'.'/'.$career->banner );
 				$response[] = [
-				'id'     => $career->id,
-				'title'  => $career->title,
-				'banner' => $thumbnail,
+				'id'        => $career->id,
+				'title'     => $career->title,
+				'attribute' => $career->attribute,
+				'banner'    => $thumbnail,
 				];
 			}
 		} 
@@ -136,8 +137,8 @@ class APIController extends Controller {
 
 			foreach ($wage as $key) {
 				$response[] = [
-				'id'          => $key->id,
-				'title'       => $key->title
+				'id'    => $key->id,
+				'title' => $key->title
 				];
 			}
 		} 
