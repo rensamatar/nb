@@ -189,7 +189,7 @@
 				@foreach($careers as $career)
 				<div class="col-md-4 ">
 					<div class="grid mask">
-						<figure><img class="img-responsive" src="{!! asset('img/dummy.jpg') !!}" alt="">
+						<figure><img class="img-responsive" src="{!! $career->thumbnail() !!}" alt="">
 							<figcaption>
 								<h5>{!! str_limit($career->title, $limit = 100, $end = '...') !!}</h5>
 								<a href="{!! url('careers/'.$career->id) !!}" class="btn-eye">
