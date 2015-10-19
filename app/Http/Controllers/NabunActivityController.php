@@ -17,7 +17,7 @@ class NabunActivityController extends Controller {
 
 	public function index()
 	{
-		$activities = $this->activity->latest()->published()->get();
+		$activities = $this->activity->orderBy('id', 'ASC')->published()->get();
 
 		return view('activity.index', compact('activities'));
 	}

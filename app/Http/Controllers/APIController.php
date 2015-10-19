@@ -42,7 +42,7 @@ class APIController extends Controller {
 		try {
 			$statusCode = 200;
 			$response   = [];
-			$careers    = $this->career->latest()->published()->get();
+			$careers    = $this->career->orderBy('id', 'ASC')->published()->get();
 
 			foreach ($careers as $career) {
 				$thumbnail = asset( config('imagecache.route').'/'.'backend'.'/'.$career->banner );
@@ -158,7 +158,7 @@ class APIController extends Controller {
 		try {
 			$statusCode = 200;
 			$response   = [];
-			$activities = $this->activity->latest()->published()->get();
+			$activities = $this->activity->orderBy('id', 'ASC')->published()->get();
 
 			foreach ($activities as $activity) {
 				$thumbnail = asset( config('imagecache.route').'/'.'backend'.'/'.$activity->banner );

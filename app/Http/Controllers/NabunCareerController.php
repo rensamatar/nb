@@ -20,7 +20,7 @@ class NabunCareerController extends Controller {
 
 	public function index()
 	{
-		$careers = $this->career->latest()->published()->get();
+		$careers = $this->career->orderBy('id', 'ASC')->published()->get();
 
 		return view('career.index', compact('careers'));
 	}
