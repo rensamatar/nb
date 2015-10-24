@@ -7,7 +7,7 @@
 	<meta name="author" content="Sarawut Popadcha">
     <meta name="robots" content="index,follow">
     <meta name="keywords" content="นาบุญ อัพเกรด, หางาน, นาบุญ, ชลบุรี, ฝ่ายผลิต, ซับคอนแทรก, sub contract, nabun upgrade">
-    <title>Nabun Upgrade International</title>
+    <title>นาบุญ อัพเกรด อินเตอร์เนชันแนล จำกัด</title>
 
     <link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/vendor/animate.css') }}" rel="stylesheet">

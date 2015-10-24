@@ -27,7 +27,7 @@
 						<a class="close-overlay hidden">x</a>
 					</div>
 				</div>
-				<h3><a href="{!! url('careers/'.$career->id) !!}">{!! str_limit($career->title, $limit = 44, $end = '...') !!}</a></h3>
+				<h3><a href="{!! url('careers/'.$career->id) !!}">{!! str_limit($career->title, $limit = 42, $end = '...') !!}</a></h3>
 				<p>{!! str_limit($career->attribute, $limit = 250, $end = '...') !!}</p>
 			</div>
 		</div>
