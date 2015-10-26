@@ -4,23 +4,18 @@
 			<div class="col-sm-10 col-sm-offset-1 centered">
 				<ul class="list-inline social-buttons">
 					<li>
-						<a href="http://twitter.com/" target="_blank" title="follow on facebook">
+						<a href="http://twitter.com/" target="_blank" title="follow on facebook" rel="nofollow">
 							<i class="icon icon-twitter"></i>
 						</a>
 					</li>
 					<li>
-						<a href="http://facebook.com/" target="_blank" title="follow on twitter">
+						<a href="http://facebook.com/" target="_blank" title="follow on twitter" rel="nofollow">
 							<i class="icon icon-facebook"></i>
 						</a>
 					</li>
 					<li>
-						<a href="{!! url('admin') !!}">
+						<a href="http://google.com/" target="_blank" title="follow on Google+" rel="nofollow">
 							<i class="icon icon-googleplus"></i>
-						</a>
-					</li>
-					<li>
-						<a href="{!! url('contact') !!}">
-							<i class="icon icon-linkedin"></i>
 						</a>
 					</li>
 				</ul>

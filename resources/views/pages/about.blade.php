@@ -13,6 +13,27 @@
 </div>
 
 <div id="blog-body" class="container">
+	<div class="row white">
+		<div class="col-md-6 wow slideInLeft">
+			<h3>About us</h3>
+			<p>
+				We always happy to make valuable new contacts and are looking forward to receiving your mail or call. Even if you’re not sure we’ll be the right ones for your project. We’re always open to a chat and will be happy to help – of course also in person, wherever you are.
+			</p>
+			<h3>Why choose us?</h3>
+			<p>
+				We always send employees with good quality service to every industry needed in operation of business such as: production staff, warehouseing staff, packing staff, quality control staff, foreman, sales representatives, sales assistants to department stores. Administration staff such as: computer clerk staff, messenger, housekeeper or cleaners and car-drivers.
+			</p>
+		</div>
+		<div class="col-md-6 wow fadeIn delay-1s">
+			<h3>Our Present Video</h3>
+			<div class="fitvid">
+				<div class="video-wrapper">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/kpGGfXbJL7A" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
 	<div class="row wow fadeIn">
 		<div class="col-md-offset-3 col-md-3 wow fadeInLeft">
 			<p class="text"><strong>November 7, 2003</strong></p>
