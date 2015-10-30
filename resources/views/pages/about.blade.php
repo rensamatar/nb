@@ -17,11 +17,10 @@
 		<div class="col-md-6 wow slideInLeft">
 			<h3>About us</h3>
 			<p>
-				We always happy to make valuable new contacts and are looking forward to receiving your mail or call. Even if you’re not sure we’ll be the right ones for your project. We’re always open to a chat and will be happy to help – of course also in person, wherever you are.
+				เรายินดีให้คำปรึกษาและการบริการผ่านทางอีเมล และถ้าหากท่านยังไม่มั่นใจว่าเราจะเหมาะสมกับโปนเจคของท่าน เรายินดีเป็นอย่างยิ่งที่จะสนทนาเป็นการส่วนบุคคลเมื่อท่านต้องการ
 			</p>
 			<h3>Why choose us?</h3>
-			<p>
-				We always send employees with good quality service to every industry needed in operation of business such as: production staff, warehouseing staff, packing staff, quality control staff, foreman, sales representatives, sales assistants to department stores. Administration staff such as: computer clerk staff, messenger, housekeeper or cleaners and car-drivers.
+			<p>เราจัดส่งพนักงานที่มีคุณภาพให้แก่ธุรกิจภาคอุตสาหกรรมและพายิชกรรม ได้แก่ พนักงานสาการผลิต พนักงงานคลังสินค้า พนักงงานบรรจุหีบห่อ พนักงานควบคุมคุณภาพ พนักงานควบคุมงานก่อสร้าง พนักงานขายหรือแนะนำสินค้าทุกประเภทตามห้างสรรพสินค้าหรือตามสถานที่แสดงสินค้า และพนักงานธุรการด้านอื่นๆ เช่น พนักงานพิมพ์คอมพิวเตอร์ พนักงานรับส่งเอกสาร พนักงานทำความสะอาดหรือแม่บ้าน พนักงานขับรถยนต์ เป็นค้น
 			</p>
 		</div>
 		<div class="col-md-6 wow fadeIn delay-1s">
